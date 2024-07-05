@@ -26,7 +26,7 @@ Then went to my terminal and cloned the repo
 ```
 Get a .gitignore file from another PIRE species repo and copy it here, then push this file to github.
 ```
-[hpc-0356@wahab-01 pire]$ cd pire_sphaeramia_orbicularis_lcwgs
+[hpc-0356@wahab-01 pire]$ cd pire_stethojulis_interrupta_lcwgs
 [hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ cp ../pire_taeniamia_zosterophora_lcwgs/.gitignore .
 [hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ git pull
 [hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ git add .gitignore
