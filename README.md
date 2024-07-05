@@ -42,3 +42,18 @@ Make 1st sequencing run directory
 ---
 </details>
 
+<details><summary>1. Get raw data</summary>
+<p>
+
+## 1. Get raw data
+
+```
+
+[hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ cd 1st_sequencing_run
+[hpc-0356@wahab-01 1st_sequencing_run]$ rsync -r /archive/carpenterlab/pire/downloads/stethojulis_interrupta/1st_sequencing_run-lcwgs/fq_raw 1st_sequencing_run
+```
+
+</p>
+
+---
+</details>
