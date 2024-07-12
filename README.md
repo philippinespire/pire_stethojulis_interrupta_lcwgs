@@ -50,7 +50,6 @@ Make 1st sequencing run directory
 ## 1. Get raw data
 
 ```
-
 [hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ cd 1st_sequencing_run
 [hpc-0356@wahab-01 1st_sequencing_run]$ rsync -r /archive/carpenterlab/pire/downloads/stethojulis_interrupta/1st_sequencing_run-lcwgs/fq_raw 1st_sequencing_run
 ```
@@ -59,3 +58,88 @@ Make 1st sequencing run directory
 
 ---
 </details>
+
+<details><summary>2. Proofread the decode file</summary>
+<p>
+
+## 2. Proofread the decode file
+
+```
+[hpc-0356@wahab-01 fq_raw]$ cat Sin_lcwgs-testlane_SequenceNameDecode.tsv
+```
+Checked that I have sequencing data for all individuals in the decode file:
+```
+salloc
+bash
+
+[hpc-0356@d5-w6420b-23 fq_raw]$ ls *1.fq.gz | wc -l 
+				ls *2.fq.gz | wc -l 
+90
+90
+```
+Number of lines:
+```
+[hpc-0356@d5-w6420b-23 fq_raw]$ wc -l Sin_lcwgs-testlane_SequenceNameDecode.tsv
+89 Sin_lcwgs-testlane_SequenceNameDecode.tsv
+```
+Are there duplicates?
+```
+[hpc-0356@d5-w6420b-23 fq_raw]$ cat Sin_lcwgs-testlane_SequenceNameDecode.tsv| sort | uniq | wc -l
+89
+```
+***Skip steps 3 and 4***
+
+---
+</details>
+
+<details><summary>5. Perform a renaming dry run</summary>
+
+## 5. Perform a renaming dry run
+
+```
+[hpc-0356@d1-w6420a-23 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sin_lcwgs-testlane_SequenceNameDecode.tsv
+```
+---
+
+</details>
+
+<details><summary>6. Rename the files</summary>
+	
+## 6. Rename the files
+```
+[hpc-0356@d1-w6420a-23 fq_raw]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sin_lcwgs-testlane_SequenceNameDecode.tsv rename
+```
+---
+
+</details>
+
+<details><summary>7. Check the quality of raw data (*)</summary>
+
+## 7. Check the quality of raw data (*)
+
+Execute `Multi_FASTQC.sh`:
+```
+[hpc-0356@d5-w6420b-23 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
+Submitted batch job 3347515
+```
+
+### MultiQC output (fq_raw/fqc_raw_report.html):
+*
+
+```
+‣ % duplication - 
+	• Alb: 
+ 	• Contemp: 
+	• Undertermined: 
+‣ GC content - 
+	• Alb: 
+ 	• Contemp: 
+	• Undetermined: 
+‣ number of reads - 
+	• Alb: 
+ 	• Contemp: 
+```
+---
+
+</details>
+
