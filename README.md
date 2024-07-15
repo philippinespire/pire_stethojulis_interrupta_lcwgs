@@ -247,3 +247,65 @@ Submitted batch job 3349946
 ---
 </details>
 
+
+<details><summary>10. Second trim (*)</summary>
+<p>
+
+## 10. Second trim (*)
+ 
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_2.sbatch fq_fp1_clmp fq_fp1_clmp_fp2 33
+Submitted batch job 3350043
+```
+
+### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
+After 2nd trim:
+* 
+
+```
+‣ % duplication -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+‣ GC content -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+‣ passing filter -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+‣ % adapter -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+‣ number of reads -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+```
+
+---
+</details>
+
+<details><summary>11. Decontaminate files (*)</summary>
+<p>
+
+## 11. Decontaminate files (*)
+
+<details><summary>11a. Run fastq_screen</summary>
+	
+### 11a. Run fastq_screen
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+indir=fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+nodes=20
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+---
+
+</details>
+
