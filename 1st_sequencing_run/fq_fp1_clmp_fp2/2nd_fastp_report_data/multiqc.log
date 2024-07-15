@@ -1,0 +1,26 @@
+[2024-07-15 03:12:59,112] multiqc                                            [DEBUG  ]  This is MultiQC v1.13
+[2024-07-15 03:12:59,114] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2024-07-15 03:12:59,115] multiqc                                            [DEBUG  ]  New config: {'max_table_rows': 3000}
+[2024-07-15 03:12:59,115] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename 2nd_fastp_report --outdir fq_fp1_clmp_fp2 fq_fp1_clmp_fp2
+[2024-07-15 03:12:59,595] multiqc                                            [WARNING]  MultiQC Version v1.23 now available!
+[2024-07-15 03:12:59,595] multiqc                                            [DEBUG  ]  Working dir : /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run
+[2024-07-15 03:12:59,595] multiqc                                            [DEBUG  ]  Template    : default
+[2024-07-15 03:12:59,595] multiqc                                            [DEBUG  ]  Running Python 3.9.12 (main, Aug 29 2022, 00:54:58)  [GCC 11.2.0]
+[2024-07-15 03:12:59,596] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, ccs, ngsderive, purple, conpair, lima, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, bustools, goleft_indexcov, gffcompare, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, sambamba, homer, hops, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, pbmarkdup, damageprofiler, biobambam2, jcvi, mtnucratio, picard, vep, sentieon, prokka, qc3C, nanostat, samblaster, samtools, sexdeterrmine, eigenstratdatabasetools, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, snippy, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, odgi, pangolin, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pychopper, pycoqc, minionqc, multivcfanalyzer, clusterflow, checkqc, bcl2fastq, bclconvert, interop, ivar, flash, seqyclean, optitype, whatshap
+[2024-07-15 03:12:59,596] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpw8uinhvf
+[2024-07-15 03:12:59,857] multiqc                                            [INFO   ]  Search path : /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2
+[2024-07-15 03:13:21,549] multiqc                                            [DEBUG  ]  Summary of files that were skipped by the search: [skipped_module_specific_max_filesize: 540] // [skipped_no_match: 450] // [skipped_ignore_pattern: 360]
+[2024-07-15 03:13:22,781] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-07-15 03:13:22,782] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-07-15 03:13:22,785] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2024-07-15 03:13:22,873] multiqc.modules.fastp.fastp                        [DEBUG  ]  No insert size plot data: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.r1r2_fastp.json
+[2024-07-15 03:13:22,958] multiqc.modules.fastp.fastp                        [DEBUG  ]  No insert size plot data: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.r1r2_fastp.json
+[2024-07-15 03:13:23,146] multiqc.modules.fastp.fastp                        [DEBUG  ]  No insert size plot data: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.r1r2_fastp.json
+[2024-07-15 03:13:24,233] multiqc.modules.fastp.fastp                        [INFO   ]  Found 90 reports
+[2024-07-15 03:14:05,833] multiqc                                            [INFO   ]  Compressing plot data
+[2024-07-15 03:14:12,679] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2/2nd_fastp_report.html
+[2024-07-15 03:14:12,679] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2/2nd_fastp_report_data
+[2024-07-15 03:14:12,680] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpw8uinhvf/multiqc_data' to 'fq_fp1_clmp_fp2/2nd_fastp_report_data'
+[2024-07-15 03:14:13,426] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2/2nd_fastp_report_plots
+[2024-07-15 03:14:13,427] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpw8uinhvf/multiqc_plots' to 'fq_fp1_clmp_fp2/2nd_fastp_report_plots'
+[2024-07-15 03:14:14,206] multiqc                                            [INFO   ]  MultiQC complete
