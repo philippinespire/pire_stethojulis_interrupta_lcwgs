@@ -160,28 +160,90 @@ Submitted batch job 3349635
 
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
 After 1st trim:
-*
+* `Sin-CPnd_016-Ex1-1E-lcwgs-1-1` has only 24 reads
+* After filtering, GC content appears to have stabilized, except for `Sin-CPnd_016-Ex1-1E-lcwgs-1-1`. This volatility is likely from the low read count.
 
 ```  
 ‣ % duplication - 
-    	• Albatross: 
-	• Contemporary:
-	• Undetermined:
+    	• Albatross: 1.3 - 8.4%, 17.4%: `Sin-APnd_023-Ex1-6D`, 23.7%: `Sin-APnd_006-Ex1-4C`
+	• Contemporary: 0.0 - 6.9% 
+	• Undetermined: 1.7%
 ‣ GC content -
-    	• Albatross: 
-	• Contemporary:
-	• Undetermined:
+    	• Albatross: 36.9 - 40.4%
+	• Contemporary: 39.4 - 44.8%
+	• Undetermined:39.2%
 ‣ passing filter - 
-    	• Albatross: 
-	• Contemporary:
-	• Undetermined:
+    	• Albatross: 66.9%: `Sin-APnd_005-Ex1-4B`, 89.4 - 94.6%
+	• Contemporary: 84.6 - 95.9%
+	• Undetermined: 73.0%
 ‣ % adapter - 
-    	• Albatross: 
-	• Contemporary:
-	• Undetermined:
+    	• Albatross: 82.3 - 96.2%
+	• Contemporary: 48.7 - 93.4%
+	• Undetermined: 83.6%
 ‣ number of reads - 
-    	• Albatross: 
-	• Contemporary:
-	• Undetermined:
+    	• Albatross: - 125.5 mil
+	• Contemporary: 0 - 14.4 mil
+	• Undetermined: 333.5 mil
 ```
+
+---
+</details>
+
+<details><summary>9. Remove duplicates with clumpify</summary>
+<p>
+
+## 9. Remove duplicates with clumpify
+
+### 9a. Remove duplicates
+ ```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0356 20
+Submitted batch job 3349789
+```
+
+### 9c. Check duplicate removal success
+
+Clumpify Successfully worked on all samples
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ salloc
+[hpc-0356@d6-w6420b-07 1st_sequencing_run]$ enable_lmod
+[hpc-0356@d6-w6420b-07 1st_sequencing_run]$ module load container_env R/4.3 
+[hpc-0356@d4-w6420b-07 1st_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
+[hpc-0356@d6-w6420b-07 1st_sequencing_run]$ exit
+```
+### 9d. Clean the scratch drive
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
+Submitted batch job 3349945
+```
+### 9e. Generate metadata on deduplicated FASTQ files
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 3349946
+```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+*
+
+```
+‣ % duplication - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+‣ GC content - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+‣ length - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+```
+</p>
+
+---
+</details>
 
