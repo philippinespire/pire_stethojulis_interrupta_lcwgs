@@ -124,23 +124,64 @@ Submitted batch job 3347515
 ```
 
 ### MultiQC output (fq_raw/fqc_raw_report.html):
-*
+* Overall, Albatross samples have much higher read counts
+	* The Undetermined library has 166.8 million reads
+	* Proportion of Undetermined Reads: 0.177
+ * Almost all samples are failing Per Base Sequence Content
+ * At this point, there are many overrepresented sequences (almost all failed) as well as high adapter content (all failed)
 
 ```
 ‣ % duplication - 
-	• Alb: 
- 	• Contemp: 
-	• Undertermined: 
+	• Alb: 20 - 50.1%
+ 	• Contemp: 0 - 16.6%
+	• Undertermined: 34.9 - 35.8%
 ‣ GC content - 
-	• Alb: 
- 	• Contemp: 
-	• Undetermined: 
+	• Alb: 42 - 54%, 62%: `Sin-APnd_005-Ex1-4B-lcwgs-1-1.2`
+ 	• Contemp: 43 - 54%
+	• Undetermined: 47 - 54%
 ‣ number of reads - 
-	• Alb: 
- 	• Contemp:
-	• Undetermined: 
+	• Alb: 3.3 - 62.8 mil
+ 	• Contemp: 0 - 7.2 mil
+	• Undetermined: 166.8 mil
 ```
 ---
 
 </details>
+
+<details><summary>8. First trim (*)</summary>
+<p>
+
+## 8. First trim (*)
+	
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+Submitted batch job 3349635
+```
+
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
+After 1st trim:
+*
+
+```  
+‣ % duplication - 
+    	• Albatross: 
+	• Contemporary:
+	• Undetermined:
+‣ GC content -
+    	• Albatross: 
+	• Contemporary:
+	• Undetermined:
+‣ passing filter - 
+    	• Albatross: 
+	• Contemporary:
+	• Undetermined:
+‣ % adapter - 
+    	• Albatross: 
+	• Contemporary:
+	• Undetermined:
+‣ number of reads - 
+    	• Albatross: 
+	• Contemporary:
+	• Undetermined:
+```
 
