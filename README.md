@@ -309,3 +309,83 @@ nodes=20
 
 </details>
 
+<details><summary>11b. Check for Errors</summary>
+	
+### 11b. Check for Errors
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 3351748
+
+# when complete check the $outdir/fqValidateReport.txt file
+less -S $outdir/fqValidationReport.txt file
+```
+#### Confirm files were succesfully completed:
+
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+90
+90
+90
+90
+90
+90
+90
+90
+90
+90
+```
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+90
+90
+```
+Check for any errors in the `*out` files: (none)
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+					grep 'No reads in' slurm-fqscrn.*out
+					grep 'FATAL' slurm-fqscrn.*out
+```
+Looked at the outfiles to see if there are any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun: (none)
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+					ls $outdir/*temp*
+ls: cannot access '/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
+```
+
+**Since fq screen worked properly, there are no files that need to be rerun!**
+
+---
+
+</details>
+
+<details><summary>11e. Move output files</summary>
+	
+### 11e. Move output files
+
+```
+outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
+fqscrndir=fq_fp1_clmp_fp2_fqscrn
+mkdir $fqscrndir
+screen mv $outdir $fqscrndir
+```
+---
+</details>
+
+<details><summary>11f. Run MultiQC (*)</summary>
+	
+### 11f. Run MultiQC (*)
