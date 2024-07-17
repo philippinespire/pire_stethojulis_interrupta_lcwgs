@@ -136,7 +136,7 @@ Submitted batch job 3347515
  	• Contemp: 0 - 16.6%
 	• Undertermined: 34.9 - 35.8%
 ‣ GC content - 
-	• Alb: 42 - 54%, 62%: `Sin-APnd_005-Ex1-4B-lcwgs-1-1.2`
+	• Alb: 42 - 54%, 62%: [Sin-APnd_005-Ex1-4B-lcwgs-1-1.2]
  	• Contemp: 43 - 54%
 	• Undetermined: 47 - 54%
 ‣ number of reads - 
@@ -165,7 +165,7 @@ After 1st trim:
 
 ```  
 ‣ % duplication - 
-    	• Albatross: 1.3 - 8.4%, 17.4%: `Sin-APnd_023-Ex1-6D`, 23.7%: `Sin-APnd_006-Ex1-4C`
+    	• Albatross: 1.3 - 8.4%, 17.4%: [Sin-APnd_023-Ex1-6D], 23.7%: [Sin-APnd_006-Ex1-4C]
 	• Contemporary: 0.0 - 6.9% 
 	• Undetermined: 1.7%
 ‣ GC content -
@@ -173,7 +173,7 @@ After 1st trim:
 	• Contemporary: 39.4 - 44.8%
 	• Undetermined:39.2%
 ‣ passing filter - 
-    	• Albatross: 66.9%: `Sin-APnd_005-Ex1-4B`, 89.4 - 94.6%
+    	• Albatross: 66.9%: [Sin-APnd_005-Ex1-4B], 89.4 - 94.6%
 	• Contemporary: 84.6 - 95.9%
 	• Undetermined: 73.0%
 ‣ % adapter - 
@@ -226,21 +226,21 @@ Submitted batch job 3349946
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 1.8 - 6.4%
+    • Contemp: 0 - 1.3%
+    • Undetermined: 4.7%
 ‣ GC content - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 36 - 41%
+    • Contemp: 39 - 44%
+    • Undetermined: 40%
 ‣ length - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 77 - 88 bp
+    • Contemp: 81 - 130 bp
+    • Undetermined: 85 bp
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 2.5 - 37.8 mil
+    • Contemp: 0 - 1.7 mil, 6.3 mil: [Sin-CPnd_088-Ex1-2D]
+    • Undetermined: 83.3 mil
 ```
 </p>
 
@@ -376,12 +376,26 @@ ls: cannot access '/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/*temp*': No such fil
 <details><summary>11e. Move output files</summary>
 	
 ### 11e. Move output files
-
+The recommended instructions using `screen mv` have not been working for me so I did this:
 ```
-outdir=/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn
-fqscrndir=fq_fp1_clmp_fp2_fqscrn
-mkdir $fqscrndir
-screen mv $outdir $fqscrndir
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Sin* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+
+#for some reason mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined* did not work so I had to move each file:
+
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r1_screen.html \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r1_screen.png \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r1_screen.txt \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r1.tagged.fastq.gz \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r1.tagged_filter.fastq.gz \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r2_screen.html \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r2_screen.png \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r2_screen.txt \
+   					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r2.tagged.fastq.gz \
+					/scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/Undetermined.clmp.fp2_r2.tagged_filter.fastq.gz \
+					/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2_fqscrn/
+
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv /scratch/hpc-0356/fq_fp1_clmp_fp2_fqscrn/fqValidationReport.txt /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2_fqscrn/
+
 ```
 ---
 </details>
@@ -389,3 +403,44 @@ screen mv $outdir $fqscrndir
 <details><summary>11f. Run MultiQC (*)</summary>
 	
 ### 11f. Run MultiQC (*)
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 3353560
+```
+
+Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
+*
+
+```
+‣ multiple genomes -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+‣ no hits -
+	• Alb: 
+	• Contemp: 
+	• Undetermined:
+```
+
+</details>
+
+---
+
+</details>
+
+<details><summary>12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)</summary>
+<p>
+
+## 12. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
+
+#### Execute `runREPAIR.sbatch`
+
+Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 3353569 
+```
+#### Confirm that the paired end fq.gz files are complete and formatted correctly:
+
+Start by running the script:
