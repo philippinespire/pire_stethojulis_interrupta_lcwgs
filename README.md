@@ -617,7 +617,15 @@ Submitted batch job 3355582
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-
+* 6 contemporary libaries with under 1000 reads:
+	* `Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	11
+	* `Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	113
+	* `Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	226
+	* `Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	454
+	*` Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	457
+	*` Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	669
+* Overall, low #'s for Contemporary individuals -> 24 more are under 10,000 reads 
+* Mean depth with coverage is pretty good for Albatross: between 1.16 and 3.1
 ```
 numreads:
 * Alb: 3,095,833 - 5,3152,622
