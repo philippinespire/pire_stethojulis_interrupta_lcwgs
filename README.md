@@ -593,10 +593,6 @@ Submitted batch job 3353876
 
 </details>
 
----
-
-</details>
-
 <details><summary>16. Filter BAM Files</summary>
 
 ## 16. Filter BAM Files
@@ -611,3 +607,48 @@ Submitted batch job 3355185
 
 </details>
 
+<details><summary>17. Generate Number of Mapped Reads</summary>
+
+## 17. Generate Number of Mapped Reads
+
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job 3355582
+```
+
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+
+```
+numreads:
+* Alb: 3,095,833 - 5,3152,622
+* Contemp: 11 - 9,716,147
+* Und: 97,814,629
+
+meanreadlength:
+* Alb: 76.05 - 87.22
+* Contemp: 83.46 - 128.20
+* Und: 82.63
+
+meandepth_wcvg:
+* Alb: 1.16 - 3.10
+* Contemp: 0.997 - 1.39
+* Und: 4.56
+
+numpos:
+* 1,356,329,670 bp
+
+numpos_wcvg:
+* Alb: 110,401,751 - 716,514,117 bp
+* Contemp: 665 - 339,212,571 bp
+* Und: 894,543,777 bp
+
+meandepth:
+* Alb: 0.097 - 1.64
+* Contemp: 0.0000005 - 0.35
+* Und: 3.01
+
+pctpos_wcvg:
+* Alb: 8.14 - 52.83%
+* Contemp: 0.00005 - 25.01%
+* Und: 65.95%
+```
