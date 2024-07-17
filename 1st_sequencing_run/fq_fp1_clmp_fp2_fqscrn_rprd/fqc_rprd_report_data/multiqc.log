@@ -1,0 +1,748 @@
+[2024-07-16 20:40:14,938] multiqc                                            [DEBUG  ]  No MultiQC config found: /opt/conda/lib/python3.7/site-packages/multiqc_config.yaml
+[2024-07-16 20:40:14,939] multiqc                                            [DEBUG  ]  No MultiQC config found: /home/hpc-0356/.multiqc_config.yaml
+[2024-07-16 20:40:14,941] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2024-07-16 20:40:14,942] multiqc                                            [DEBUG  ]  Found command line config: {'max_table_rows': 3000}
+[2024-07-16 20:40:14,942] multiqc                                            [DEBUG  ]  New config 'max_table_rows': 3000
+[2024-07-16 20:40:14,943] multiqc                                            [DEBUG  ]  Command used: /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fqc_rprd_report --outdir ./fq_fp1_clmp_fp2_fqscrn_rprd ./fq_fp1_clmp_fp2_fqscrn_rprd
+[2024-07-16 20:40:15,077] multiqc                                            [DEBUG  ]  Could not connect to multiqc.info for version check: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1076)>
+[2024-07-16 20:40:15,079] multiqc                                            [INFO   ]  This is MultiQC v1.9
+[2024-07-16 20:40:15,079] multiqc                                            [DEBUG  ]  Command     : /opt/conda/bin/multiqc -v -p -ip -f --data-dir --data-format tsv --cl-config max_table_rows: 3000 --filename fqc_rprd_report --outdir ./fq_fp1_clmp_fp2_fqscrn_rprd ./fq_fp1_clmp_fp2_fqscrn_rprd
+[2024-07-16 20:40:15,080] multiqc                                            [DEBUG  ]  Working dir : /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run
+[2024-07-16 20:40:15,080] multiqc                                            [INFO   ]  Template    : default
+[2024-07-16 20:40:15,081] multiqc                                            [DEBUG  ]  Running Python 3.7.7 (default, Jun 26 2020, 05:10:03)  [GCC 7.3.0]
+[2024-07-16 20:40:15,081] multiqc                                            [INFO   ]  Searching   : /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2_fqscrn_rprd
+[2024-07-16 20:40:15,082] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, conpair, peddy, somalier, methylQA, mosdepth, phantompeakqualtools, qualimap, preseq, quast, qorts, rna_seqc, rockhopper, rsem, rseqc, busco, goleft_indexcov, disambiguate, supernova, deeptools, sargasso, verifybamid, mirtrace, happy, mirtop, homer, macs2, theta2, snpeff, gatk, htseq, bcftools, featureCounts, fgbio, dragen, dedup, damageprofiler, biobambam2, mtnucratio, picard, prokka, samblaster, samtools, sexdeterrmine, bamtools, jellyfish, vcftools, longranger, stacks, varscan2, bbmap, bismark, biscuit, hicexplorer, hicup, hicpro, salmon, kallisto, slamdunk, star, hisat2, tophat, bowtie2, bowtie1, snpsplit, kat, leehom, adapterRemoval, clipandmerge, cutadapt, flexbar, kaiju, kraken, malt, trimmomatic, sickle, skewer, sortmerna, biobloomtools, fastq_screen, afterqc, fastp, fastqc, pycoqc, minionqc, multivcfanalyzer, clusterflow, bcl2fastq, interop, ivar, flash, seqyclean
+[2024-07-16 20:40:15,083] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpf2ccc1yh
+[2024-07-16 20:40:15,389] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,403] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,489] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:15,489] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:15,490] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:15,517] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:15,531] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:15,612] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:15,644] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,657] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:15,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:15,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:15,759] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,772] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,874] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,888] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:15,993] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,006] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,081] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,082] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,109] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,121] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,222] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,235] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,339] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:16,352] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:16,423] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,453] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,466] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,569] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,582] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,688] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:16,701] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:16,793] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:16,804] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:16,890] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,899] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:16,962] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,964] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:16,986] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,001] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,084] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,093] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,153] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:17,154] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,155] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,175] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,185] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,254] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,255] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,274] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,283] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,362] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,372] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,450] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,459] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,538] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,548] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,623] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,633] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,692] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,713] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,722] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,783] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:17,803] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,812] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,872] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,872] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:17,873] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:17,893] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,902] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:17,961] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:17,963] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:17,982] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:17,991] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:18,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:18,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:18,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:18,071] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,081] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,164] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,173] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,232] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:18,234] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:18,254] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,264] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,342] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,351] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,431] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Undetermined.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,440] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Undetermined.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,517] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,526] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,610] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,620] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,693] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:18,717] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,728] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:18,812] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,822] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:18,885] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:18,886] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:18,909] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:18,920] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,004] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,015] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,101] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,111] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:19,175] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:19,198] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,208] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,293] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,303] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,386] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,397] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,500] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,514] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,594] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:19,617] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,627] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,689] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:19,710] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: fqValidationReport.txt
+[2024-07-16 20:40:19,720] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: fqValidationReport.txt
+[2024-07-16 20:40:19,838] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,851] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:19,953] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:19,967] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,049] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,050] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,051] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,078] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,090] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,168] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,170] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,172] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,200] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,214] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,294] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,294] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,324] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,337] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,416] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,417] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,445] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,458] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,559] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,572] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,670] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,682] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,753] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,782] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,794] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:20,892] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,905] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:20,977] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,977] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:20,979] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:20,980] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,009] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,022] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,119] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,132] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,204] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,231] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:21,243] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:21,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,344] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:21,358] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:21,451] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,461] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,521] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:21,523] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,545] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,555] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,636] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,647] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,707] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,729] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,739] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,800] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,800] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:21,823] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,834] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,894] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,895] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:21,917] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:21,927] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,018] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,031] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,128] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,141] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,239] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,252] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:22,326] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:22,352] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,365] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,433] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:22,455] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,465] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,525] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:22,527] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:22,527] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:22,529] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:22,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:22,530] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:22,552] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,563] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,650] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,660] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,744] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,754] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:22,846] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,858] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,937] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:22,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:22,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:22,969] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:22,982] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,052] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:23,078] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,091] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,163] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:23,191] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,204] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,306] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,317] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,399] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,410] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,491] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,501] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,582] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,592] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,651] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:23,652] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:23,672] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,682] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,760] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,769] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,847] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,856] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:23,933] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:23,956] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:23,965] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,026] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,027] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,047] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,057] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,148] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,159] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,220] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:24,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,222] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,222] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:24,222] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,246] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,257] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,342] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,353] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,435] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,446] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,508] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,509] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,510] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,533] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,544] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,643] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,654] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,715] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:24,735] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,744] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:24,803] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,826] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,836] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,926] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,936] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:24,995] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,997] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:24,998] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:24,999] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:25,021] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,030] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,108] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,118] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,197] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,207] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,300] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,309] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,413] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,425] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,518] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,528] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,604] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:25,607] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:25,636] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,650] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,747] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:25,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:25,748] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:25,777] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,789] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,875] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,886] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:25,949] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:25,970] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:25,980] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:26,043] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:26,065] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,075] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,159] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,169] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,279] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,292] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,391] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,403] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,494] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:26,504] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:26,583] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,592] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,670] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:26,680] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:26,761] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,771] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,850] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,859] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:26,940] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:26,941] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:26,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:26,942] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:26,964] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:26,973] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,039] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:27,062] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,072] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,160] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,169] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,229] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:27,252] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,263] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,347] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,357] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,439] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,449] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,534] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,545] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,628] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,639] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,720] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,730] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:27,813] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,824] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,908] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,918] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:27,981] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,004] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,015] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,077] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,079] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,103] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,114] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,196] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,207] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,292] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,302] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,368] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,369] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,370] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,395] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,406] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,500] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,512] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,581] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,609] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,620] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,687] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,688] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,689] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,712] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,723] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,787] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,788] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,789] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,789] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,790] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,791] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,811] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,820] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:28,897] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,907] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,967] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:28,968] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:28,989] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:28,999] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,078] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,088] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,149] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:29,170] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,179] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,263] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,273] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,363] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,373] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,456] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,467] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,529] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:29,551] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,562] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,624] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:29,625] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:29,626] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:29,648] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,658] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:29,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:29,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:29,744] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,754] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,824] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:29,848] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,858] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:29,951] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:29,961] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:30,040] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,049] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,126] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,135] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,216] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,226] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,286] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:30,310] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,320] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,382] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:30,404] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,413] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,473] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:30,494] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,504] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,562] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:30,563] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:30,583] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,592] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,670] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,679] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:30,754] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:30,755] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:30,778] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Undetermined.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,788] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Undetermined.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,857] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:30,879] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,890] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:30,987] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:30,997] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,056] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:31,057] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:31,077] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,087] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,146] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:31,146] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:31,147] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:31,168] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,178] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,239] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:31,259] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,269] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,327] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:31,348] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,357] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,436] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,446] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,505] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:31,526] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,535] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,614] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,624] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,702] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,711] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,790] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,799] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,889] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,898] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:31,978] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:31,987] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:32,067] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:32,076] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:32,134] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:32,154] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,163] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,220] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:32,221] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:32,242] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,251] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,330] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,339] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,416] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,426] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,484] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:32,506] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,515] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,594] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,603] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,681] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,690] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:32,750] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:32,751] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:32,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:32,752] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:32,772] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,781] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:32,859] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:32,869] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:32,949] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:32,959] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:33,017] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:33,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:33,018] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.R2.fq.gz
+[2024-07-16 20:40:33,020] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R1.fq.gz
+[2024-07-16 20:40:33,040] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:33,050] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:33,132] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:33,142] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.R2_fastqc.html
+[2024-07-16 20:40:33,219] multiqc                                            [DEBUG  ]  File ignored by hicexplorer because it exceeded search pattern filesize limit: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:33,228] multiqc                                            [DEBUG  ]  File ignored by longranger/invocation because it exceeded search pattern filesize limit: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.R1_fastqc.html
+[2024-07-16 20:40:33,295] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_080-Ex1-2E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_017-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_010-Ex1-4G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,296] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_018-Ex1-5G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,297] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_016-Ex1-1E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,297] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_029-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_018-Ex1-11A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_013-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,298] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_015-Ex1-5D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_004-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_053-Ex1-9G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,299] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_085-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_061-Ex1-9A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_035-Ex1-12D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,300] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_014-Ex1-5C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,301] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_032-Ex1-3E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,301] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,301] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_023-Ex1-12B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,302] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_040-Ex1-11E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,302] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_025-Ex1-6F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,302] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_020-Ex1-6A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_008-Ex1-4E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,303] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_002-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,304] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_051-Ex1-12G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,304] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_062-Ex1-11D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,305] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_075-Ex1-11G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,305] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_005-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,306] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_044-Ex1-2C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,306] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_095-Ex1-2B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_071-Ex1-10A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,307] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_043-Ex1-1C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,308] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_060-Ex1-2H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,308] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_088-Ex1-2D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_019-Ex1-1H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_010-Ex1-2F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,309] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_021-Ex1-6B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_024-Ex1-6E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_009-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,310] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_028-Ex1-12H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_090-Ex1-12F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_042-Ex1-10D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,311] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_022-Ex1-1D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,312] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_038-Ex1-11C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,312] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_049-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_034-Ex1-3C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_024-Ex1-12C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,313] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,314] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_015-Ex1-4A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,314] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_093-Ex1-10C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,314] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_025-Ex1-3B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_086-Ex1-2A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_094-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,315] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_076-Ex1-10E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,316] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_031-Ex1-3G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,316] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_065-Ex1-11B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,316] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_063-Ex1-9F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_016-Ex1-5E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,317] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_013-Ex1-5B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,318] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_081-Ex1-10G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,318] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_012-Ex1-2G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,318] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_074-Ex1-12A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,318] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_007-Ex1-4D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,319] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_091-Ex1-1A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,319] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_019-Ex1-5H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,320] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_011-Ex1-4H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,320] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_079-Ex1-9H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,320] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_033-Ex1-1B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,320] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_050-Ex1-9B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_030-Ex1-10B-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_045-Ex1-11H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,321] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_011-Ex1-10H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,322] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_020-Ex1-12E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,322] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_089-Ex1-9E-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,322] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_001-Ex1-6G-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_041-Ex1-1F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,323] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_022-Ex1-6C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_039-Ex1-10F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_058-Ex1-9D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Undetermined.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,324] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_023-Ex1-6D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_021-Ex1-3D-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_003-Ex1-3H-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,325] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_067-Ex1-9C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,326] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-CPnd_092-Ex1-11F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,326] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_012-Ex1-5A-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,326] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_017-Ex1-5F-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:33,327] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: Sin-APnd_006-Ex1-4C-lcwgs-1-1.clmp.fp2_repr.orph.fq
+[2024-07-16 20:40:34,504] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-07-16 20:40:34,508] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.2
+[2024-07-16 20:40:34,510] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2024-07-16 20:40:34,521] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2024-07-16 20:40:34,539] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2024-07-16 20:40:34,560] multiqc                                            [DEBUG  ]  No samples found: somalier
+[2024-07-16 20:40:34,578] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2024-07-16 20:40:34,611] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2024-07-16 20:40:34,626] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2024-07-16 20:40:34,633] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2024-07-16 20:40:34,648] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2024-07-16 20:40:34,662] multiqc                                            [DEBUG  ]  No samples found: quast
+[2024-07-16 20:40:34,675] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2024-07-16 20:40:34,689] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2024-07-16 20:40:34,703] multiqc                                            [DEBUG  ]  No samples found: rockhopper
+[2024-07-16 20:40:34,714] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2024-07-16 20:40:34,742] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2024-07-16 20:40:34,773] multiqc                                            [DEBUG  ]  No samples found: busco
+[2024-07-16 20:40:34,792] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2024-07-16 20:40:34,808] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2024-07-16 20:40:34,825] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2024-07-16 20:40:34,858] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2024-07-16 20:40:34,875] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2024-07-16 20:40:34,893] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2024-07-16 20:40:34,911] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2024-07-16 20:40:34,930] multiqc                                            [DEBUG  ]  No samples found: happy
+[2024-07-16 20:40:34,946] multiqc                                            [DEBUG  ]  No samples found: mirtop
+[2024-07-16 20:40:34,964] multiqc                                            [DEBUG  ]  No samples found: homer
+[2024-07-16 20:40:34,978] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2024-07-16 20:40:34,994] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2024-07-16 20:40:35,009] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2024-07-16 20:40:35,030] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2024-07-16 20:40:35,046] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2024-07-16 20:40:35,063] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2024-07-16 20:40:35,081] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2024-07-16 20:40:35,100] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2024-07-16 20:40:35,126] multiqc                                            [DEBUG  ]  No samples found: dragen
+[2024-07-16 20:40:35,137] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2024-07-16 20:40:35,149] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2024-07-16 20:40:35,208] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2024-07-16 20:40:35,222] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2024-07-16 20:40:35,228] multiqc                                            [DEBUG  ]  No samples found: picard
+[2024-07-16 20:40:35,240] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2024-07-16 20:40:35,251] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2024-07-16 20:40:35,270] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2024-07-16 20:40:35,280] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2024-07-16 20:40:35,298] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2024-07-16 20:40:35,312] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2024-07-16 20:40:35,335] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2024-07-16 20:40:35,352] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2024-07-16 20:40:35,366] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2024-07-16 20:40:35,379] multiqc                                            [DEBUG  ]  No samples found: varscan2
+[2024-07-16 20:40:35,423] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2024-07-16 20:40:35,441] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2024-07-16 20:40:35,458] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2024-07-16 20:40:35,472] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2024-07-16 20:40:35,486] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2024-07-16 20:40:35,500] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2024-07-16 20:40:35,515] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2024-07-16 20:40:35,530] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2024-07-16 20:40:35,542] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2024-07-16 20:40:35,556] multiqc                                            [DEBUG  ]  No samples found: star
+[2024-07-16 20:40:35,570] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2024-07-16 20:40:35,583] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2024-07-16 20:40:35,595] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2024-07-16 20:40:35,605] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2024-07-16 20:40:35,617] multiqc                                            [DEBUG  ]  No samples found: snpsplit
+[2024-07-16 20:40:35,625] multiqc                                            [DEBUG  ]  No samples found: kat
+[2024-07-16 20:40:35,635] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2024-07-16 20:40:35,647] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2024-07-16 20:40:35,658] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2024-07-16 20:40:35,673] multiqc                                            [DEBUG  ]  No samples found: cutadapt
+[2024-07-16 20:40:35,689] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2024-07-16 20:40:35,702] multiqc                                            [DEBUG  ]  No samples found: kaiju
+[2024-07-16 20:40:35,716] multiqc                                            [DEBUG  ]  No samples found: kraken
+[2024-07-16 20:40:35,731] multiqc                                            [DEBUG  ]  No samples found: malt
+[2024-07-16 20:40:35,745] multiqc                                            [DEBUG  ]  No samples found: trimmomatic
+[2024-07-16 20:40:35,759] multiqc                                            [DEBUG  ]  No samples found: sickle
+[2024-07-16 20:40:35,772] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2024-07-16 20:40:35,786] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2024-07-16 20:40:35,798] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2024-07-16 20:40:35,814] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2024-07-16 20:40:35,828] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2024-07-16 20:40:35,844] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2024-07-16 20:40:45,730] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 180 reports
+[2024-07-16 20:41:33,625] multiqc                                            [DEBUG  ]  No samples found: pycoqc
+[2024-07-16 20:41:33,633] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2024-07-16 20:41:33,642] multiqc                                            [DEBUG  ]  No samples found: multivcfanalyzer
+[2024-07-16 20:41:33,652] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2024-07-16 20:41:33,660] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2024-07-16 20:41:33,669] multiqc                                            [DEBUG  ]  No samples found: interop
+[2024-07-16 20:41:33,676] multiqc                                            [DEBUG  ]  No samples found: ivar
+[2024-07-16 20:41:33,683] multiqc                                            [DEBUG  ]  No samples found: flash
+[2024-07-16 20:41:33,691] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2024-07-16 20:41:33,955] multiqc                                            [INFO   ]  Compressing plot data
+[2024-07-16 20:41:36,441] multiqc                                            [INFO   ]  Report      : fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html
+[2024-07-16 20:41:36,442] multiqc                                            [INFO   ]  Data        : fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report_data
+[2024-07-16 20:41:36,442] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpf2ccc1yh/multiqc_data' to './fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report_data'
+[2024-07-16 20:41:36,503] multiqc                                            [INFO   ]  Plots       : fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report_plots
+[2024-07-16 20:41:36,503] multiqc                                            [DEBUG  ]  Moving plots directory from '/tmp/tmpf2ccc1yh/multiqc_plots' to './fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report_plots'
+[2024-07-16 20:41:36,783] multiqc                                            [INFO   ]  MultiQC complete
