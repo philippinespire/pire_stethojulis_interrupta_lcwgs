@@ -593,3 +593,21 @@ Submitted batch job 3353876
 
 </details>
 
+---
+
+</details>
+
+<details><summary>16. Filter BAM Files</summary>
+
+## 16. Filter BAM Files
+
+Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+Submitted batch job 3355185
+```
+
+---
+
+</details>
+
