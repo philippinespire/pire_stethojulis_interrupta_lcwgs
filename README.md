@@ -477,3 +477,119 @@ Submitted batch job 3353747
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
 *
+
+```
+‣ % duplication -
+	• Alb: 
+	• Contemp: 
+	• Undetermined: 
+‣ GC content -
+	• Alb: 
+	• Contemp: 
+	• Undetermined:
+‣ length -
+	• Alb: 
+	• Contemp: 
+	• Undetermined:
+‣ number of reads -
+	• Alb: 
+	• Contemp: 
+	• Undetermined:
+```
+
+---
+
+</details>
+
+<details><summary>14. Clean Up</summary>
+<p>
+
+## 14. Clean Up
+
+Move any .out files into the logs dir
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir logs
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv *out logs/
+```
+
+---
+
+</details>
+
+<details><summary>15. Map Repaired `fq.gz` to Reference Genome</summary>
+<p>
+
+## 15. Map Repaired `fq.gz` to Reference Genome
+
+The following steps 15 & 16 are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+
+### Get your reference genome
+
+Make a new directory `refGenome` and `cd` into it
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir refGenome
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd refGenome/
+```
+
+This species is not on ncbi, but we do have a reference genome in house. Copy this file `scaffolds.fasta` into refGenome:
+```
+[hpc-0356@wahab-01 refGenome]$ cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/refGenome/
+```
+
+### Map your reads to your reference genome
+Start by cloning the dDocentHPC repo to gain access to the scripts we need to run:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
+```
+Create a `mkBAM_ddocent` directory and copy all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into this new directory:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0356@wahab-01 1st_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+Copy the reference genome to `mkBAM_ddocent` as well as the scripts we need to run:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ cp refGenome/scaffolds.fasta mkBAM_ddocent/reference.denovoSSL.Sin.fasta
+
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd mkBAM_ddocent/
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
+[hpc-0356@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+```
+Before moving forward, I needed to edit the `config.6.lcwgs` file to suit this species:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano config.6.lcwgs
+
+# within file:
+# change Cutoff1 and Cutoff2 to "denovoSSL" and "Sin"
+
+----------mkREF: Settings for de novo assembly of the reference genome----------------------------------------->
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRA>
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdh>
+denovoSSL       Cutoff1 (integer)                                                                              >
+Sin             Cutoff2 (integer)                                                                              >
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-base>
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-base>
+--------------------------------------------------------------------------------------------------------------->
+```
+Then, I needed to alter the `dDocentHPC.sbatch` file to load the newer version:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
+
+# within file:
+# change where the "#" is
+
+enable_lmod
+# module load container_env ddocent/2.7.8
+module load container_env ddocent/2.9.4
+```
+
+Now, I am able to map reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwg`s which aligns reads (in FASTQ format) to a reference genome and creates BAM files (Binary Alignment Map files)
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 3353876
+```
+---
+
+</details>
+
