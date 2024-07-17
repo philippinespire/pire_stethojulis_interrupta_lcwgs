@@ -660,3 +660,24 @@ pctpos_wcvg:
 * Contemp: 0.00005 - 25.01%
 * Und: 65.95%
 ```
+---
+
+</details>
+
+<details><summary>18. Extract mitochondrial genomes from read data</summary>
+
+## 18. Extract mitochondrial genomes from read data
+
+If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
+
+Copy the runMitoZ bash and sbatch scripts to your sequencing project directory
+```
+[hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* 1st_sequencing_run
+```
+* The `runMitoZ_array.bash` and `runMitoZ_array.sbatch` scripts need to be altered before running. Using nano and ctrl+\ I found every instance of `_clmp.fp2_r1.fq.gz` and replaced it with `.clmp.fp2_r1.fq.gz`.
+
+Now, execute the runMitoZ script:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 3355700
+```
