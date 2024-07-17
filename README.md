@@ -584,7 +584,7 @@ module load container_env ddocent/2.9.4
 
 Now, I am able to map reads.
 
-Execute `dDocentHPC.sbatch mkBAM config.6.lcwg`s which aligns reads (in FASTQ format) to a reference genome and creates BAM files (Binary Alignment Map files)
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns reads (in FASTQ format) to a reference genome and creates BAM files (Binary Alignment Map files)
 ```
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
 Submitted batch job 3353876
