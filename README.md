@@ -189,10 +189,10 @@ After 1st trim:
 ---
 </details>
 
-<details><summary>9. Remove duplicates with clumpify</summary>
+<details><summary>9. Remove duplicates with clumpify (*)</summary>
 <p>
 
-## 9. Remove duplicates with clumpify
+## 9. Remove duplicates with clumpify (*)
 
 ### 9a. Remove duplicates
  ```
@@ -215,14 +215,16 @@ Clumpify Successfully worked on all samples
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0356 "*clumpify*temp*"
 Submitted batch job 3349945
 ```
-### 9e. Generate metadata on deduplicated FASTQ files
+### 9e. Generate metadata on deduplicated FASTQ files (*)
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
 Submitted batch job 3349946
 ```
 
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
-*
+* `Sin-CPnd_016-Ex1-1E-lcwgs-1-1` still very volatile on Per Sequence GC Content -> low read count
+* Still quite a few overrepresented sequences
+* % duplication going down
 
 ```
 ‣ % duplication - 
@@ -444,3 +446,34 @@ Submitted batch job 3353569
 #### Confirm that the paired end fq.gz files are complete and formatted correctly:
 
 Start by running the script:
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ bash
+[hpc-0356@wahab-01 1st_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch 
+                                        DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+                                        fqPATTERN="*fq.gz"
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 3353571
+```
+
+Check the SLURM `out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ cat valiate_FQ_-3353571.out
+PAIRED END FASTQ VALIDATION REPORT
+
+Directory: fq_fp1_clmp_fp2_fqscrn_rprd
+File Pattern: *fq.gz
+File extensions found: .R1.fq.gz .R2.fq.gz
+
+Number of paired end fq files evaluated: 90
+Number of paired end fq files validated: 90
+
+Errors Reported:
+```
+#### Run `Multi_FASTQC`
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 3353747
+```
+
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+*
