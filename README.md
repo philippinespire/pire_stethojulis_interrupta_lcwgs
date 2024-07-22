@@ -622,8 +622,8 @@ Submitted batch job 3355582
 	* `Sin-CPnd_037-Ex1-4F-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	113
 	* `Sin-CPnd_027-Ex1-3A-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	226
 	* `Sin-CPnd_014-Ex1-3F-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	454
-	*` Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	457
-	*` Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	669
+	* `Sin-CPnd_026-Ex1-1G-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	457
+	* `Sin-CPnd_087-Ex1-4B-lcwgs-1-1.clmp.fp2_repr.denovoSSL.Sin-RG.bam`:	669
 * Overall, low #'s for Contemporary individuals -> 24 more are under 10,000 reads 
 * Mean depth with coverage is pretty good for Albatross: between 1.16 and 3.1
 ```
@@ -681,3 +681,24 @@ Now, execute the runMitoZ script:
 [hpc-0356@wahab-01 1st_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_fp1_clmp_fp2 32
 Submitted batch job 3355700
 ```
+For the next script to work, I need my MitoZ output files to be in my `fq_fp1_clmp_fp2` directory.
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+Then, after copying it, I was able to run the `process_MitoZ_outputs.sh` script
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ cd fq_fp1_clmp_fp2
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/process_MitoZ_outputs.sh .
+
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ sh process_MitoZ_outputs.sh
+```
+Now, we can see which individuals MitoZ worked for: 
+
+**Individuals that succeeded:**
+```
+[hpc-0356@wahab-01 fq_fp1_clmp_fp2]$ cat MitoZ_success.txt
+Undetermined
+```
+
+**Individuals that failed:**
+All of them, besides Undetermined...
