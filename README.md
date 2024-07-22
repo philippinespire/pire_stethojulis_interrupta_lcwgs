@@ -479,25 +479,26 @@ Submitted batch job 3353747
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
-*
+* Only contemporary individuals are stll failing Per Sequence GC Content
+* Mean Quality Scores ~40% not passing
 
 ```
 ‣ % duplication -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 1.7 - 6.7%
+	• Contemp: 0.0 - 0.8%
+	• Undetermined: 3.6 - 3.7%
 ‣ GC content -
-	• Alb: 
-	• Contemp: 
-	• Undetermined:
+	• Alb: 36 - 40%
+	• Contemp: 39 - 44%
+	• Undetermined: 38% 
 ‣ length -
-	• Alb: 
-	• Contemp: 
-	• Undetermined:
+	• Alb: 75 - 86 bp
+	• Contemp: 80 - 127 bp
+	• Undetermined: 81 - 82 bp
 ‣ number of reads -
-	• Alb: 
-	• Contemp: 
-	• Undetermined:
+	• Alb: 2.3 - 35.1 mil
+	• Contemp: 0.0 - 5.9 mil
+	• Undetermined: 69 mil
 ```
 
 ---
