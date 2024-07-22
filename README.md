@@ -262,29 +262,31 @@ Submitted batch job 3350043
 
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
 After 2nd trim:
-* 
+* Duplication dropped
+* % passing filter is high (96%+), besides `Undetermined` and `Sin-CPnd_016-Ex1-1E` in the high 80s
+* Everything is looking normal, besides `Sin-CPnd_016-Ex1-1E-lcwgs-1-1`. This individual has a low number of reads (22) which is manifesting as volatility on graphs displaying Insert Size Distribution, Sequence Quality, and GC Content.
 
 ```
 ‣ % duplication -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 0.2 - 5.5%
+	• Contemp: 0.0 - 0.3%
+	• Undetermined: 0.4%
 ‣ GC content -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 36.9 - 41.1%
+	• Contemp: 39.5 - 44.7%
+	• Undetermined: 39.4%
 ‣ passing filter -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 96.1 - 97.7%
+	• Contemp: 81.8: [Sin-CPnd_016-Ex1-1E], 96.6 - 98.6%
+	• Undetermined: 89.6%
 ‣ % adapter -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 2.3 - 2.5%
+	• Contemp: 0.0 - 2.8%
+	• Undetermined: 2.5%
 ‣ number of reads -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 5.0 - 75.6 mil
+	• Contemp: 0.0 - 3.4 mil, 12.6 mil: [Sin-CPnd_088-Ex1-2D]
+	• Undetermined: 166.5 mil
 ```
 
 ---
