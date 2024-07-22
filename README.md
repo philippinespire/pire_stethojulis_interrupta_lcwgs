@@ -414,17 +414,18 @@ Submitted batch job 3353560
 ```
 
 Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html):
-*
+* Everything looked normal, no notable signs of contamination
+* `Sin-CPnd_016-Ex1-1E` was 100% no hits, 0% multiple genomes -> from low read count 
 
 ```
 ‣ multiple genomes -
-	• Alb: 
-	• Contemp: 
-	• Undetermined: 
+	• Alb: 2.5 - 5.0%
+	• Contemp: 0.0 - 6.5%
+	• Undetermined: 3.6 - 4.6%
 ‣ no hits -
-	• Alb: 
-	• Contemp: 
-	• Undetermined:
+	• Alb: 92.2 - 96.0%
+	• Contemp: 92.3 - 100% 
+	• Undetermined: 93.4 - 94.3%
 ```
 
 </details>
