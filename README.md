@@ -706,3 +706,151 @@ Undetermined
 
 **Individuals that failed:**
 All of them, besides Undetermined...
+
+--- 
+
+</details>
+
+---
+
+</details>
+
+
+<details><summary>2. Process Sequencing Metadata</summary>
+
+## 2. Process Sequencing Metadata
+<p>
+
+This portion follows the instructions on [this repo](https://github.com/philippinespire/process_sequencing_metadata).
+
+<details><summary>1. Clone Repos</summary>
+
+## 1. Clone Repos
+
+```
+[hpc-0356@wahab-01 ~]$ cd pire_lcwgs_data/
+[hpc-0356@wahab-01 ~/pire_lcwgs_data]$ git clone https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs.git
+```
+ The ScriptDirs are already cloned: `process_sequencing_metadata` & `read_multiqc`
+
+ ---
+
+</details>
+
+<details><summary>2. Access R</summary>
+
+## 2. Access R
+
+Go to ODU's [OnDemand](https://ondemand.wahab.hpc.odu.edu/pun/sys/dashboard)
+
+Go to Interactive Apps > RStudio Server.
+* Number of Cores: 4
+* Partition: main
+* Number of Hours: 4
+* R Version: 4.3.2 (newest)
+
+Once ready, `Connect to RStudio Server` 
+
+---
+</details>
+
+<details><summary>3. Install packages</summary>
+
+## 3. Install packages
+
+Within the Console on R:
+```
+> install.packages ("pacman")
+```
+ 
+---
+</details>
+
+<details><summary>4. Run wrangleSslCsslLcwgsMetadata.R</summary>
+	
+## 4. Run wrangleSslCsslLcwgsMetadata.R
+
+First, make sure `inDir = "../pire_lcwgs_data"`.
+
+For this species, I was running into an error message when trying to Read in Metadata. The error was caused by my `Sin_lcwgs-testlane_SequenceNameDecode.tsv` within `pire_lcwgs_data/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_raw` not containing column titles. I used `nano` to edit the file, adding "Sequence_Name" and "Extraction_ID" so the file looked as following:
+
+```
+Sequence_Name	Extraction_ID
+SiC0106109A	Sin-CPnd_061-Ex1-9A-lcwgs-1-1
+SiC0105009B	Sin-CPnd_050-Ex1-9B-lcwgs-1-1
+SiC0106709C	Sin-CPnd_067-Ex1-9C-lcwgs-1-1
+SiC0105809D	Sin-CPnd_058-Ex1-9D-lcwgs-1-1
+SiC0108909E	Sin-CPnd_089-Ex1-9E-lcwgs-1-1
+SiC0106309F	Sin-CPnd_063-Ex1-9F-lcwgs-1-1
+SiC0105309G	Sin-CPnd_053-Ex1-9G-lcwgs-1-1
+SiC0107909H	Sin-CPnd_079-Ex1-9H-lcwgs-1-1
+SiC0107110A	Sin-CPnd_071-Ex1-10A-lcwgs-1-1
+```
+
+I was able to Source the script and run it without issue. 
+* One thing to note, in order for this to work, I needed to have cloned ` pire_sphaeramia_nematoptera_lcwgs`, `pire_zenarchopterus_dispar_lcwgs`, and `pire_stethojulis_interrupta_lcwgs` within `pire_lcwgs_data` in order for the script to properly run for Sin.
+* Another thing, this script had already been edited from previously running Zdi. To see the alterations I made then, check that [repo](https://github.com/philippinespire/pire_zenarchopterus_dispar_lcwgs/blob/main/1st_sequencing_run/README.md).
+
+---
+
+</details>
+
+<details><summary>5. Run visualizeTestLaneLcwgsMETADATA.R</summary>
+	
+## 5. Run visualizeTestLaneLcwgsMETADATA.R
+
+Go to the [process_sequencing_metadata/out](https://github.com/philippinespire/process_sequencing_metadata/tree/main/out) directory on github to see the naming convention. 
+
+The "sp_code_pattern" and "test_lane_id" for Sin will be 0025_Sin. Confirm 0025 is the next number in the out files in the github directory. 
+
+In R, within the files on the right, click on the `process_sequencing_metadata` folder and open `visualizeTestLaneLcwgsMETADATA.R`.
+
+Go to line 100 and update the naming convention for Sin:
+```
+line 101: sp_code_pattern = "(Sin)"
+line 102: era_pattern = "[AC]" #do not change
+line 103: test_lane_id = "0025"
+```
+I then Source'd the script and ran into no issues.
+
+Check to make sure the files were properly created:
+```
+[hpc-0356@wahab-01 ~]$ cd process_sequencing_metadata/out
+[hpc-0356@wahab-01 out]$ ls
+
+# the last 3 files
+sequencing_metadata_test_lane_0025_Sin_lcwgs_readcounts.tsv
+sequencing_metadata_test_lane_0025_Sin_lcwgs_readlength_histogram.png
+sequencing_metadata_test_lane_0025_Sin_lcwgs_totalseqs_histogram.png
+```
+---
+
+</details>
+
+<details><summary>6. Script Output</summary>
+
+## 6. Script Output
+
+### Read Counts TSV file:
+
+[sequencing_metadata_test_lane_0025_Sin_lcwgs_readcounts.tsv](https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0025_Sin_lcwgs_readcounts.tsv)
+
+### Proportion of Reads Removed by Step:
+`sequencing_metadata_test_lane_0025_Sin_lcwgs_colplot_prop_reads_removed_by_step.png`
+
+<img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0025_Sin_lcwgs_colplot_prop_reads_removed_by_step.png" alt="sequencing_metadata_test_lane_0025_Sin_lcwgs_colplot_prop_reads_removed_by_step.png" width="800"/>
+
+### Read length:
+`sequencing_metadata_test_lane_0025_Sin_lcwgs_readlength_histogram.png`:
+
+<img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0025_Sin_lcwgs_readlength_histogram.png" alt="sequencing_metadata_test_lane_0025_Sin_lcwgs_readlength_histogram.png" width="500"/>
+
+### Totals Seqs:
+`sequencing_metadata_test_lane_0025_Sin_lcwgs_totalseqs_histogram.png`:
+
+<img src="https://github.com/philippinespire/process_sequencing_metadata/blob/main/out/sequencing_metadata_test_lane_0025_Sin_lcwgs_totalseqs_histogram.png" alt="sequencing_metadata_test_lane_0025_Sin_lcwgs_totalseqs_histogram.png" width="500"/>
+
+---
+
+
+
