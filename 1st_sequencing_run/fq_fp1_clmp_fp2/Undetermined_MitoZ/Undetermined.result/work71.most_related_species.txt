@@ -1,0 +1,2 @@
+scaffold80_FivePCGs	Macropharyngodon negrosensis
+scaffold81	Macropharyngodon negrosensis
