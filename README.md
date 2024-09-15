@@ -13,7 +13,10 @@ fq_gz processing being done by Gianna Mazzei (started 7/5/24).
 <details><summary>1. fq.gz Pre-processing</summary>
 	
 ## 1. fq.gz Pre-processing
+This portion follows the instructions on [this repo](https://github.com/philippinespire/pire_fq_gz_processing).
+
 → (*) _denotes steps with MultiQC Report Analyses_
+
 <details><summary>0. Set-up</summary>
 <p>
 
