@@ -834,7 +834,7 @@ Undetermined
 **Individuals that failed:**
 All of them, besides Undetermined...
 
---- 
+
 
 </details>
 
