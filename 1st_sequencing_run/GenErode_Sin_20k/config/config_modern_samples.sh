@@ -7,12 +7,12 @@
 
 # User-defined variables for species and species code (Spp). 
 # For species use lowercase and an underscore so the directory path can be identified (e.g. lethrinus_variegatus)
-species="lethrinus_variegatus"
+species="stethojulis_interrupta"
 # For Spp, this is the three letter species code. Capitalize the first letter.
-Spp="Lva"
+Spp="Sin"
 
 # Define the base path to the GenErode directory using the species variable. Edit if necessary. 
-base_path=$"/archive/carpenterlab/pire/pire_${species}_lcwgs/GenErode_${Spp}_20k"
+base_path=$"/archive/carpenterlab/pire/pire_${species}_lcwgs/1st_sequencing_run/GenErode_Sin_20k"
 
 # Define the input files
 input_file="${base_path}/config/old_new_lane_GenErode_${Spp}_config.log"
