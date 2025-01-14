@@ -2,11 +2,11 @@
 
 # *Stethojulis interrupta* lcWGS
 
-## 1st sequencing run (test lane)
----
+## 1st Sequencing Run (test lane)
+
 Analysis of low-coverage whole genome sequencing data for Sin 1st_sequencing_run.
 
-fq_gz processing being done by Gianna Mazzei (started 7/5/24).
+fq_gz processing being done by Gianna Mazzei (started July 2024).
 
 ---
 
