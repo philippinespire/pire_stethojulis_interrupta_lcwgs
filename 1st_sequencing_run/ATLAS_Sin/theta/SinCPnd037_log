@@ -1,0 +1,70 @@
+                   ATLAS 0.92
+                  ------------
+
+     https://bitbucket.org/wegmannlab/atlas
+
+ Commit ae0738c40defcabfd3115a6442bfe8ab9a147454
+
+   - Estimating heterozygosity (theta) (task = theta):
+      - Relevant citations:
+         - Kousathanas et al. (2017) Genetics
+      - Initializing random generator ... done with seed 1736036597421!
+      - Will use the following filters on reads:
+         - Mapped length: restrict to range [0,500]. (parameter 'filterMappingLength')
+         - Duplicate reads: filter out. (use 'keepDuplicates' to keep)
+         - Soft clipped reads: keep. (use 'filterSoftClips' to filter out)
+         - Improper pairs: filter out. (use 'keepImproperPairs' to keep)
+         - Unmapped reads: filter out. (use 'keepUnmappedReads' to keep)
+         - Failed QC: filter out. (use 'keepFailedQC' to keep)
+         - Secondary reads: filter out. (use 'keepSecondaryReads' to keep)
+         - Supplementary reads: filter out. (use 'keepSupplementaryReads' to keep)
+         - Reads longer than fragment size: keep. (use 'filterReadsLongerThanFragment' to filter out)
+         - Strand: keep forward and reverse. (use 'keepOnlyFwd' or 'keepOnlyRev' to limit)
+         - Mate: keep first and second. (use 'keepOnlyFirst' or 'keepOnlySecond' to limit)
+         - Blacklist: keep all. (use 'blacklist' to provide a list and filter specific reads)
+         - Mapping quality: keep all. (use 'filterMQ' to limit)
+         - Read length: keep all. (use 'filterReadLength' to limit)
+         - Fragment length: keep all. (use 'filterFragmentLength' to limit)
+      - Opening BAM file 'SinCPnd037.merged.rmdup.merged.realn.bam'.
+      - Opening BAM index file 'SinCPnd037.merged.rmdup.merged.realn.bam.bai'.
+      - Will keep existing duplicates tags. (use 'resetDuplicates')
+      - Will not identify and mark duplicates. (use 'markDuplicates')
+      - Postmortem damage model: reading read group specific settings from read group info file 'SinCPnd037.merged.rmdup.merged.realn_RGInfo.json'. (overwrite with 'pmd')
+      - Base quality score recalibration model: reading read group specific settings from read group info file 'SinCPnd037.merged.rmdup.merged.realn_RGInfo.json'. (overwrite with 'recal')
+      - Writing output files with prefix 'SinCPnd037_theta'. (parameter 'out')
+      - Will filter out bases with quality outside the range [1,93]. (use 'filterBaseQual' to change)
+      - Will keep bases regardless of base context. (use 'ignoreContexts' to filter)
+      - Parsing window settings:
+         - Will keep windows regardless of missingness. (use 'maxMissing' to filter)
+         - Will filter out windows with a fraction of 'N' in reference > 1. (parameter 'maxRefN')
+         - Will read data up to depth 1000 and ignore additional bases. (parameter 'readUpToDepth')
+         - Will keep sites regardless of depth. (use 'filterDepth' to filter)
+         - Will keep CpG sites. (use 'filterCpG' to remove)
+         - Setting window size to 1000000. (parameter 'window')
+           -> Will traverse 973 windows with cumulative length of 30511488 bp on 973 chromosomes.
+      - Parameters regarding theta estimation:
+         - Will store all required data in memory. (use 'useTmpFile' to write to a file instead)
+         - Will only infer theta for windows with at least 1000 sites with data. (parameter 'minSitesWithData')
+         - Will only write minimal output during theta EM runs. (request extra output with 'extraVerbose')
+         - Will estimate base frequencies. (use 'equalBaseFreqs' to assume equal base frequencies)
+         - Parameters of EM algorithm to infer theta:
+            - Will run up to 100 iterations. (parameter 'iterations')
+            - In each iteration, theta will be updated 10 times. (parameter 'iterationsThetaOnly')
+            - Will run EM until deltaLL < 1e-06. (parameter 'maxEps')
+            - Will run Newton-Raphson algorithm up to 10 times. (parameter 'NRiterations')
+            - Will run Newton-Raphson algorithm until max(F) < 1e-05. (parameter 'maxF')
+         - Parameters of the initial theta search:
+            - Will start with an initial theta of 0.01. (parameter 'initTheta')
+            - Will run 10 iterations of a crude search for an initial theta. (parameter 'initThetaNumSearchIterations')
+            - The initial search factor will be 100. (parameter 'initThetaSearchFactor')
+         - Will estimating heterozygosity (theta) per Window.
+         - Will estimate theta on full data.
+         - Will estimate theta after downsampling reads with probabilities 0.5, 0.2, 0.1, 0.05, 0.02, 0.01. (parameter 'prob')
+         - Will write theta estimates to file 'SinCPnd037_theta_theta.txt.gz'.
+         - Will only print windows for which estimation was possible. (use 'printAll' to print all)
+         - Parsing through BAM file SinCPnd037.merged.rmdup.merged.realn.bam:
+            - Writing read group info to file 'SinCPnd037_theta_RGInfo.json'.
+ERROR: No read of file 'SinCPnd037.merged.rmdup.merged.realn.bam' passes filters. Are Readgroup IDs set?
+
+   - ATLAS terminated with errors in 0 seconds!
+
