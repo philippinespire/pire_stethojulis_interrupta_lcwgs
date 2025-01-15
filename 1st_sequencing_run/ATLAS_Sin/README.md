@@ -380,4 +380,11 @@ site_code="Pnd"
 
 Run through the script to generate the plots and tables.
 
+The dataframe `t` is not being populated. All 88 files are being recognized by the dataframe `theta_data`. But some of the files seem to be empty. There were 26 warnings:
+```
+File is empty or improperly formatted
+```
+
+The warnings seem to correspond to the smallest file sizes (~300 bytes), and they look to be empty. But I'm not sure why the other files would not be populated in dataframe `t`.
+
 </details>
