@@ -20,6 +20,7 @@
 *.glf
 
 # BIG files
+*_log
 *.ld
 *.LD_blocks
 *.gz
