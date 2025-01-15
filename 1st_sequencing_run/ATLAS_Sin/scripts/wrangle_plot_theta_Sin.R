@@ -19,17 +19,17 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # specify input directory path with the *theta.txt.gz files and this script 
 # replace the string in quotes with the absolute path of your directory
-inDir = "/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/ATLAS_Lva/theta"
+inDir = "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/ATLAS_Sin/theta"
 
 # specify output directory path for plots
-outDir = "/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/ATLAS_Lva/plots"
+outDir = "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/ATLAS_Sin/plots"
 # if the outDir is not yet created this will create it. 
 if (!dir.exists(outDir)) {
   dir.create(outDir)
 }
 
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Lva"
+spp_code="Sin"
 
 # change your site_code (e.g. Pnd, Gal, Mvi)
 site_code="Pnd"
@@ -85,6 +85,57 @@ for(fnum in 1:length(files)) {
   theta_data$avg_depth[fnum]=mean(t$p1.0_depth)
   theta_data$avg_missing[fnum]=mean(t$p1.0_fracMissing)
 }
+
+
+##
+
+# Loop through files
+for (fnum in 1:length(files)) {
+  # File path
+  file_path <- files[fnum]
+  
+  # Check if the file exists
+  if (!file.exists(file_path)) {
+    warning(paste("File not found:", file_path))
+    next # Skip to the next file
+  }
+  
+  # Attempt to load the file
+  t <- tryCatch({
+    read.table(gzfile(file_path), header = TRUE)
+  }, error = function(e) {
+    warning(paste("Error reading file:", file_path, ":", e$message))
+    NULL
+  })
+  
+  # Check if 't' was loaded successfully
+  if (is.null(t) || nrow(t) == 0) {
+    warning(paste("File is empty or improperly formatted:", file_path))
+    next # Skip to the next file
+  }
+  
+  # Populate the theta_data dataframe
+  theta_data$file[fnum] <- file_path
+  theta_data$Era[fnum] <- ifelse(
+    grepl(era_site_pattern, file_path),
+    "Albatross - ATLAS GERP recalibration",
+    "Contemporary - ATLAS GERP recalibration"
+  )
+  theta_data$recal[fnum] <- "Recalibrated/SSL"
+  
+  # Calculate and assign averages
+  theta_data$avg_theta[fnum] <- mean(t$p1.0_thetaMLE, na.rm = TRUE)
+  theta_data$avg_A[fnum] <- mean(t$p1.0_piA, na.rm = TRUE)
+  theta_data$avg_C[fnum] <- mean(t$p1.0_piC, na.rm = TRUE)
+  theta_data$avg_T[fnum] <- mean(t$p1.0_piT, na.rm = TRUE)
+  theta_data$avg_G[fnum] <- mean(t$p1.0_piG, na.rm = TRUE)
+  theta_data$avg_depth[fnum] <- mean(t$p1.0_depth, na.rm = TRUE)
+  theta_data$avg_missing[fnum] <- mean(t$p1.0_fracMissing, na.rm = TRUE)
+}
+
+
+##
+
 
 ## Examine your data ##
 # set the avg_theta filter to list Albatross files with an avg_theta less than alb_fltr_avg_theta.
