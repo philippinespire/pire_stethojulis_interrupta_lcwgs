@@ -1,27 +1,27 @@
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/236392150/original.jpg" alt="Sin" width="300"/>
 
-# *Stethojulis interrupta* lcWGS
+# *Stethojulis interrupta* lcWGS analysis of 2nd Sequencing Run
 
-## 2nd Sequencing Run
-
-Analysis of low-coverage whole genome sequencing data for *Stethojulis interrupta* 2nd sequencing run.
+Analysis of low-coverage whole genome sequencing data for *Stethojulis interrupta* 2nd sequencing run from Pandanon Island.
 
 ---
 
 ## fq.gz Pre-processing
 
-This portion follows the instructions on [this repo](https://github.com/philippinespire/pire_fq_gz_processing).
+This portion follows the instructions in the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repository. 
 
 
 <details><summary>1. Set-up</summary>
 
 ### 1. Set-up
 
-Make 2nd sequencing run directory
+Make 2nd sequencing run directory and a README.
 ```
-cd 
+cd /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run
 
 mkdir 2nd_sequencing_run
+
+nano 2nd_sequencing_run/README.md
 ```
 
 </details>
@@ -32,7 +32,7 @@ mkdir 2nd_sequencing_run
 ### 2. Get raw data
 
 ```
-rsync -r /archive/carpenterlab/pire/downloads/stethojulis_interrupta/1st_sequencing_run-lcwgs/fq_raw 1st_sequencing_run
+rsync -a /archive/carpenterlab/pire/downloads/stethojulis_interrupta/2nd_sequencing_run-lcwgs/fq_raw 2nd_sequencing_run &
 ```
 
 </details>
@@ -43,8 +43,15 @@ rsync -r /archive/carpenterlab/pire/downloads/stethojulis_interrupta/1st_sequenc
 ### 3. Proofread the decode file
 
 ```
-cat Sin_lcwgs-testlane_SequenceNameDecode.tsv
+cat Sin_LCWGS-FullSeq_SequenceNameDecode.tsv
 ```
+
+<details><summary>Sin_LCWGS-FullSeq_SequenceNameDecode.tsv</summary>
+```
+
+```
+</p>
+</details> 
 
 Checked that I have sequencing data for all individuals in the decode file:
 ```
