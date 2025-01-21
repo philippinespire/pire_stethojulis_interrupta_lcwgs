@@ -13,7 +13,7 @@ Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupt
 
 ## [2nd Sequencing Run](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/2nd_sequencing_run)
 
-2nd sequencing run fq.gz processing done by Gianna Mazzei (January 2025).
+2nd sequencing run fq.gz processing done by John Whalen (January 2025).
 
 ## [GenErode_Sin](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/GenErode_Sin_20k)
 
