@@ -2,6 +2,8 @@
 
 # GenErode: *Stethojulis interrupta* lcWGS 1st sequencing run (test lane) from Pandanon Island
 
+This directory is **DEPRECATED**. This GenErode run for the 1st sequencing run and SSL used the `SPAdes_allLibs_decontam_R1R2_noIsolate` reference genome that was used for mapping in the 1st sequencing run. This may have caused issues in ATLAS for the 1st sequencing run because it was not able to generate theta results for many samples. This reference genome was significantly worse than the `SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate` reference genome that was used for probe design. A new GenErode run was initiated in the main species directory, which will use the `SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate` reference genome and all sequencing files from the 1st sequencing run, 2nd sequencing run, and SSL.
+
 Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_wahab) for Sin 1st sequencing run from Pandanon Island. 
 ```
 /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/GenErode_Sin_20k
@@ -472,3 +474,5 @@ mv *.out logs
 ```
 
 </details>
+
+**This GenErode run is deprecated. A new GenErode run was initiated in the main species directory, which will use the `SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate` reference genome and all sequencing files from the 1st sequencing run, 2nd sequencing run, and SSL.**
