@@ -1,8 +1,8 @@
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/236392150/original.jpg" alt="Sin" width="300"/>
 
-# *Stethojulis interrupta* lcWGS
+# *Stethojulis interrupta* lcWGS 
 
-Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupta_ (Sin).
+Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupta_ (Sin) from Pandanon Island, Bohol.
 
 ---
 
@@ -14,6 +14,7 @@ Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupt
 ## [2nd Sequencing Run](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/2nd_sequencing_run)
 
 2nd sequencing run fq.gz processing done by John Whalen (January 2025).
+
 
 ## [GenErode_Sin](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/GenErode_Sin_20k)
 
