@@ -176,3 +176,27 @@ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sin_lcwgs
 ```
 
 </details>
+
+
+<details><summary>#. Get reference genome</summary>
+	
+### #. Get reference genome
+
+Make a new directory `refGenome`.
+```
+mkdir refGenome
+```
+
+Identify best reference genome from the [pire_ssl_data_processing/stethojulis_interrupta](https://github.com/philippinespire/pire_ssl_data_processing/tree/main/stethojulis_interrupta) page. Probe design used `SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta`, so use this for mapping. 
+
+Copy the reference genome to the `refGenome` directory.
+```
+rsync -a /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/refGenome &
+```
+
+Rename the reference genome. 
+```
+mv scaffolds.fasta SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_scaffolds.fasta
+```
+
+</details>
