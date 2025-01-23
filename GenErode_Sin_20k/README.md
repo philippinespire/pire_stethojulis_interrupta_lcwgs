@@ -2,7 +2,8 @@
 
 # GenErode: *Stethojulis interrupta* lcWGS from Pandanon Island.
 
-Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_wahab) for *Stethojulis interrupta* lcWGS data from the 1st & 2nd sequencing runs from Pandanon Island. 
+Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_data_processing/tree/main/scripts/GenErode_wahab) for *Stethojulis interrupta* lcWGS data from the 1st & 2nd sequencing runs from Pandanon Island (Modern) and Cebu City Market (Historical). 
+
 ```
 /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k
 ```
@@ -29,7 +30,7 @@ Copy the contents of the template directory to your GenErode directory.
 rsync -a /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_wahab/GenErode_templatedir/* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/ &
 ```
 
-Analyzing 1st sequencing run, 2nd sequencing run, and SSL files. 
+Analyzing lcWGS data from the 1st & 2nd sequencing run. Not analyzing SSL data. SSL data is just from individual SinCPnd001, which is not represented in the lcWGS data. These files can be analyzed later if necessary.
 
 Count and copy raw `\*.fq.gz` files to their respective GenErode directories. Do not copy `Undetermined\*.fq.gz` files. 
 
@@ -182,27 +183,23 @@ In the `gerp_tree.nwk` file, `Stethojulis_interrupta` was already renamed to the
 
 ### 3. Config Files
 
-Copy config scripts to the config directory. 
+1. Copy config scripts to the config directory. 
 ```
 cd /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k
 
 cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_wahab/config/config* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/config/
 ```
 
-Edited the user-defined variables for the files `config_modern_samples.sh`, `config_historical_samples.sh`, and `config_generode_old_new_lane.sh`.
+2. Edit the user-defined variables for the files `config_modern_samples.sh`, `config_historical_samples.sh`, and `config_generode_old_new_lane.sh`.
 ```
 species="stethojulis_interrupta"
 
 Spp="Sin"
 ```
 
-#### Creating Config Files
+3. Identify all `old_new_config.log` files.
 
-The script `config_generode_old_new_lane.sh` will be used to create the file `old_new_lane_GenErode_Spp_config.log`. This will be used as an input for the scripts `config_modern_samples.sh` and `config_historical_samples.sh`, which will create the files `modern_samples.txt` and `historical_samples.txt`, respectively. These scripts require the input file `old_new_lane_GenErode__config.log`, which is created from the bash script `generode_config_old_new_lane.sh`.
-
-1. Identify all `old_new_config.log` files.
-
-The `config_generode_old_new_lane.sh` script requires the `old_new_config.log` files from each fq_raw directory that will be used in GenErode.
+The `config_generode_old_new_lane.sh` script requires the `old_new_config.log` files from each fq_raw directory that will be used in GenErode. The log files for both the 1st & 2nd sequencing runs are available.
 ```
 # 1st run
 ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_raw/old_new_filenames.log
@@ -211,7 +208,7 @@ ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_r
 ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_raw/old_new_filenames.log
 ```
 
-2. Run `config_generode_old_new_lane.sh` to create `old_new_lane_GenErode_Spp_config.log`.
+4. Run `config_generode_old_new_lane.sh` to create `old_new_lane_GenErode_Spp_config.log`.
 
 Once all of the `old_new_config.log` files have been identified and the user-defined variables have been edited, run `config_generode_old_new_lane.sh` to create `old_new_lane_GenErode_Spp_config.log`.
 ```
@@ -233,7 +230,7 @@ wc -l old_new_lane_GenErode_Sin_config.log
 325
 ```
 
-3. Run `config_historical_samples.sh` to create `historical_samples.txt`.
+5. Run `config_historical_samples.sh` to create `historical_samples.txt`.
 ```
 bash config_historical_samples.sh
 ```
@@ -245,7 +242,7 @@ All 50 1.fq.gz and 50 2.fq.gz files were incorporated into historical_samples.tx
 ```
 All 100 historical \*.fq.gz files incorporated into output file `historical_samples.txt`.
 
-4. Run `config_historical_rescaled_samplenames.sh` to get line 173: `historical_rescaled_samplenames:` for the `config.yaml` file. 
+6. Run `config_historical_rescaled_samplenames.sh` to get line 173: `historical_rescaled_samplenames:` for the `config.yaml` file. 
 ```
 bash config_historical_rescaled_samplenames.sh
 ```
@@ -257,7 +254,7 @@ cat historical_rescaled_samplenames.txt
 "SinAPnd001","SinAPnd002","SinAPnd003","SinAPnd004","SinAPnd005","SinAPnd006","SinAPnd007","SinAPnd008","SinAPnd009","SinAPnd010","SinAPnd011","SinAPnd012","SinAPnd013","SinAPnd014","SinAPnd015","SinAPnd016","SinAPnd017","SinAPnd018","SinAPnd019","SinAPnd020","SinAPnd021","SinAPnd022","SinAPnd023","SinAPnd024","SinAPnd025"
 ```
 
-5. Run `config_modern_samples.sh` to create `modern_samples.txt`. 
+7. Run `config_modern_samples.sh` to create `modern_samples.txt`. 
 ```
 bash config_modern_samples.sh
 ```
@@ -269,7 +266,7 @@ All 112 1.fq.gz and 112 2.fq.gz files were incorporated into modern_samples.txt
 ```
 All 224 modern \*.fq.gz files incorporated into output file `modern_samples.txt`. 
 
-#### Edit `config.yaml`
+8. Edit `config.yaml`.
 
 <details><summary>config.yaml</summary>
 
