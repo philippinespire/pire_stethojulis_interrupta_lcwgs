@@ -177,3 +177,140 @@ In the `gerp_tree.nwk` file, `Stethojulis_interrupta` was already renamed to the
 </details>
 
 </details>
+
+<details><summary>3. Config Files</summary>
+
+### 3. Config Files
+
+Copy config scripts to the config directory. 
+```
+cd /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k
+
+cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_wahab/config/config* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/config/
+```
+
+Edited the user-defined variables for the files `config_modern_samples.sh`, `config_historical_samples.sh`, and `config_generode_old_new_lane.sh`.
+```
+species="stethojulis_interrupta"
+
+Spp="Sin"
+```
+
+#### Creating Config Files
+
+The script `config_generode_old_new_lane.sh` will be used to create the file `old_new_lane_GenErode_Spp_config.log`. This will be used as an input for the scripts `config_modern_samples.sh` and `config_historical_samples.sh`, which will create the files `modern_samples.txt` and `historical_samples.txt`, respectively. These scripts require the input file `old_new_lane_GenErode__config.log`, which is created from the bash script `generode_config_old_new_lane.sh`.
+
+1. Identify all `old_new_config.log` files.
+
+The `config_generode_old_new_lane.sh` script requires the `old_new_config.log` files from each fq_raw directory that will be used in GenErode.
+```
+# 1st run
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_raw/old_new_filenames.log
+
+# 2nd run
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_raw/old_new_filenames.log
+```
+
+2. Run `config_generode_old_new_lane.sh` to create `old_new_lane_GenErode_Spp_config.log`.
+
+Once all of the `old_new_config.log` files have been identified and the user-defined variables have been edited, run `config_generode_old_new_lane.sh` to create `old_new_lane_GenErode_Spp_config.log`.
+```
+bash config_generode_old_new_lane.sh
+```
+
+The output file `old_new_lane_GenErode_Sin_config.log` does not have a header, but the columns are `origFileName newFileName lane`.
+```
+Including file: /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/fq_raw/old_new_filenames.log
+Including file: /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_raw/old_new_filenames.log
+File not found: /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/3rd_sequencing_run/fq_raw/old_new_filenames.log
+File not found: /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/fq_raw_shotgun/old_new_filenames.log
+Concatenation completed. Output saved to /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/config/old_new_lane_GenErode_Sin_config.log
+```
+
+Count the number of lines in the file. There should be 325 lines (224 modern + 100 historical + 1 header). 
+```
+wc -l old_new_lane_GenErode_Sin_config.log
+325
+```
+
+3. Run `config_historical_samples.sh` to create `historical_samples.txt`.
+```
+bash config_historical_samples.sh
+```
+
+Output:
+```
+Historical samples processing completed. Output saved to historical_samples.txt
+All 50 1.fq.gz and 50 2.fq.gz files were incorporated into historical_samples.txt
+```
+All 100 historical \*.fq.gz files incorporated into output file `historical_samples.txt`.
+
+4. Run `config_historical_rescaled_samplenames.sh` to get line 173: `historical_rescaled_samplenames:` for the `config.yaml` file. 
+```
+bash config_historical_rescaled_samplenames.sh
+```
+
+Contents of output file `historical_rescaled_samplenames.txt`.
+```
+cat historical_rescaled_samplenames.txt
+
+"SinAPnd001","SinAPnd002","SinAPnd003","SinAPnd004","SinAPnd005","SinAPnd006","SinAPnd007","SinAPnd008","SinAPnd009","SinAPnd010","SinAPnd011","SinAPnd012","SinAPnd013","SinAPnd014","SinAPnd015","SinAPnd016","SinAPnd017","SinAPnd018","SinAPnd019","SinAPnd020","SinAPnd021","SinAPnd022","SinAPnd023","SinAPnd024","SinAPnd025"
+```
+
+5. Run `config_modern_samples.sh` to create `modern_samples.txt`. 
+```
+bash config_modern_samples.sh
+```
+
+Output:
+```
+Modern samples processing completed. Output saved to modern_samples.txt
+All 112 1.fq.gz and 112 2.fq.gz files were incorporated into modern_samples.txt
+```
+All 224 modern \*.fq.gz files incorporated into output file `modern_samples.txt`. 
+
+#### Edit `config.yaml`
+
+<details><summary>config.yaml</summary>
+
+```
+line 23: ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta"
+line 31: historical_samples: "config/historical_samples.txt"
+line 32: modern_samples: "config/modern_samples.txt"
+Line 70: fastq_processing: True
+line 89: map_historical_to_mitogenomes: False
+line 165: historical_bam_mapDamage: True
+line 173: historical_rescaled_samplenames: ["SinAPnd001","SinAPnd002","SinAPnd003","SinAPnd004","SinAPnd005","SinAPnd006","SinAPnd007","SinAPnd008","SinAPnd009","SinAPnd010","SinAPnd011","SinAPnd012","SinAPnd013","SinAPnd014","SinAPnd015","SinAPnd016","SinAPnd017","SinAPnd018","SinAPnd019","SinAPnd020","SinAPnd021","SinAPnd022","SinAPnd023","SinAPnd024","SinAPnd025"]
+line 446: snpEff: False
+line 455: gtf_path: ""
+line 486: gerp: True
+line 492: gerp_ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/gerp_outgroups"
+line 501: tree: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/gerp_outgroups/gerp_tree.nwk"
+```
+
+</p>
+</details>
+
+</details>
+
+
+<details><summary>4. Run GenErode</summary>
+
+### 4. Run GenErode
+
+#### Run the pipeline
+
+Copy the `run_GenErode*.sbatch` files to the GenErode_Sin_20k directory.
+```
+cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_wahab/run_GenErode*.sbatch /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k
+```
+
+Move to the GenErode_Sin_20k direcotry and run the script `run_GenErode.sbatch`.
+```
+sbatch run_GenErode.sbatch
+```
+
+JobID:
+```
+Submitted batch job 4137740
+```
