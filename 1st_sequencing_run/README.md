@@ -4,13 +4,11 @@
 
 ## 1st Sequencing Run (test lane)
 
-Analysis of low-coverage whole genome sequencing data for Sin 1st_sequencing_run.
+Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupta_ from Pandanon Island (APnd, CPnd).
 
-fq_gz processing being done by Gianna Mazzei (started July 2024).
+Processing done by Gianna Mazzei (July 2024).
 
 ---
-
-<details><summary>1. fq.gz Pre-processing</summary>
 	
 ## 1. fq.gz Pre-processing
 This portion follows the instructions on [this repo](https://github.com/philippinespire/pire_fq_gz_processing).
@@ -840,10 +838,6 @@ All of them, besides Undetermined...
 
 ---
 
-</details>
-
-
-<details><summary>2. Process Sequencing Metadata</summary>
 
 ## 2. Process Sequencing Metadata
 <p>

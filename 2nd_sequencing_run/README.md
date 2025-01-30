@@ -1,8 +1,12 @@
 <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/236392150/original.jpg" alt="Sin" width="300"/>
 
-# *Stethojulis interrupta* lcWGS analysis of 2nd Sequencing Run
+# *Stethojulis interrupta* lcWGS Analysis
 
-Analysis of low-coverage whole genome sequencing data for *Stethojulis interrupta* 2nd sequencing run from Pandanon Island.
+## 2nd Sequencing Run
+
+Analysis of low-coverage whole genome sequencing data for *Stethojulis interrupta* from Pandanon Island (APnd, CPnd).
+
+fq.gz processing done by John Whalen and Gianna Mazzei (January 2025).
 
 ---
 
@@ -10,6 +14,7 @@ Analysis of low-coverage whole genome sequencing data for *Stethojulis interrupt
 
 This portion follows the instructions in the [pire_fq_gz_processing](https://github.com/philippinespire/pire_fq_gz_processing) repository. 
 
+→ (*) _denotes steps with MultiQC Report Analyses_
 
 <details><summary>1. Set-up</summary>
 
@@ -23,7 +28,7 @@ mkdir 2nd_sequencing_run
 
 nano 2nd_sequencing_run/README.md
 ```
-
+---
 </details>
 
 
@@ -35,7 +40,7 @@ Raw fq.gz files were uploaded to `/archive/carpenterlab/pire/downloads/stethojul
 ```
 rsync -a /archive/carpenterlab/pire/downloads/stethojulis_interrupta/2nd_sequencing_run-lcwgs/fq_raw 2nd_sequencing_run &
 ```
-
+---
 </details>
 
 
@@ -151,6 +156,7 @@ ls Undetermined*2.fq.gz | wc -l
 ```
 The Undetermined files are not included in the decode file. Undetermined files just become `Undetermined.1.fq.gz` & `Undetermined.2.fq.gz`.
 
+---
 </details>
 
 
@@ -162,7 +168,7 @@ Renaming dry run looks good. Only 1 underscore that separates the PopSampleID fr
 ```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sin_lcwgs-testlane_SequenceNameDecode.tsv
 ```
-
+---
 </details>
 
 
@@ -174,8 +180,43 @@ Rename the files for real. Renaming ran correctly.
 ```
 bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/renameFQGZ.bash Sin_lcwgs-testlane_SequenceNameDecode.tsv rename
 ```
+---
 
 </details>
+
+<details><summary>6. Check the quality of raw data (*)</summary>
+
+## 6. Check the quality of raw data (*)
+
+Execute `Multi_FASTQC.sh`:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
+Submitted batch job 4188432
+```
+
+### MultiQC output (fq_raw/fqc_raw_report.html):
+*
+
+```
+‣ % duplication - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+‣ number of reads - 
+    • Alb: 
+    • Contemp: 
+    • Undetermined: 
+```
+---
+</details>
+
+
+
+
 
 
 <details><summary>#. Get reference genome</summary>
