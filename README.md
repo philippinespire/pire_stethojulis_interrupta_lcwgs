@@ -2,7 +2,7 @@
 
 # *Stethojulis interrupta* lcWGS 
 
-Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupta_ (Sin) from Pandanon Island, Bohol.
+Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupta_ (Sin).
 ```
 /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs
 ```
