@@ -8,6 +8,8 @@ Following the [GenErode pipeline](https://github.com/philippinespire/pire_lcwgs_
 /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k
 ```
 
+---
+
 <details><summary>1. Set-Up</summary>
 
 ### 1. Set-up
@@ -295,19 +297,174 @@ line 501: tree: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/Ge
 
 ### 4. Run GenErode
 
-#### Run the pipeline
-
 Copy the `run_GenErode*.sbatch` files to the GenErode_Sin_20k directory.
 ```
 cp /home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/scripts/GenErode_wahab/run_GenErode*.sbatch /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k
 ```
 
-Move to the GenErode_Sin_20k direcotry and run the script `run_GenErode.sbatch`.
+1. Run #1 
+
+Move to the GenErode_Sin_20k directory and run the script `run_GenErode.sbatch`.
 ```
 sbatch run_GenErode.sbatch
 ```
+JobID: 4137740
 
-JobID:
+
+The first job seemed to get stuck after ~5 days. It produced all 64 modern files, but only 24 of the 25 historical files, and it did not produce the ancestral rates file. I cancelled this job. 
+
+2. Run #2
+
+Rerun GenErode, but only to generate the 1 historical file `SinAPnd021` and the ancestral rates file `reference.denovoSSL.Sin20k.ancestral.rates.gz`.
+
+Edit config.yaml. Remove every sample but `SinAPnd021` from line 173. Leave line 32 for `modern_samples` empty. 
+
+<details><summary>config.yaml</summary>
 ```
-Submitted batch job 4137740
+line 23: ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta"
+line 31: historical_samples: "config/historical_samples.txt"
+line 32: modern_samples: ""
+Line 70: fastq_processing: True
+line 89: map_historical_to_mitogenomes: False
+line 165: historical_bam_mapDamage: True
+line 173: historical_rescaled_samplenames: ["SinAPnd021"]
+line 446: snpEff: False
+line 455: gtf_path: ""
+line 486: gerp: True
+line 492: gerp_ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/gerp_outgroups"
+line 501: tree: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/gerp_outgroups/gerp_tree.nwk"
 ```
+
+</p>
+</details>
+
+Edit the historical_samples.txt file to just include `SinAPnd021`.
+```
+cp historical_samples.txt historical_samples_run1.txt 
+
+nano historical_samples.txt
+
+cat historical_samples.txt
+samplename_index_lane readgroup_id readgroup_platform path_to_R1_fastq_file path_to_R2_fastq_file
+SinAPnd021_Ex16B_L2 22MK23LT3:2 illumina historical/Sin-APnd_021-Ex1-6B-lcwgs-1-1.1.fq.gz historical/Sin-APnd_021-Ex1-6B-lcwgs-1-1.2.fq.gz
+SinAPnd021_Ex16B_L6 22M5VHLT4:6 illumina historical/Sin-APnd_021-Ex1-6B-lcwgs-1-2.1.fq.gz historical/Sin-APnd_021-Ex1-6B-lcwgs-1-2.2.fq.gz
+```
+
+Run the unlock script.
+```
+sbatch run_GenErode_unlock.sbatch
+```
+
+Run the script `run_GenErode.sbatch`.
+```
+sbatch run_GenErode.sbatch
+```
+JobID: 4186105
+
+The job ended after ~13 minutes and failed, but it created the output files for `SinAPnd021`. They have a comparable size to the other output files. I'm not sure why it failed. 
+
+3. Run #3
+
+Rerun but without modern & historical. 
+
+Edit config.yaml. Set `historical_bam_mapDamage: False`, `fastq_processing: False`. Remove every sample from line 173 `historical_rescaled_samplenames: [""]`. Leave lines 31 & 32 for `historical_samples` & `modern_samples`, respectively, empty. This way it should only run to create the `reference.denovoSSL.Sin20k.ancestral.rates.gz` file. 
+
+<details><summary>config.yaml</summary>
+
+```
+line 23: ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta"
+line 31: historical_samples: ""
+line 32: modern_samples: ""
+Line 70: fastq_processing: False
+line 89: map_historical_to_mitogenomes: False
+line 165: historical_bam_mapDamage: False
+line 173: historical_rescaled_samplenames: [""]
+line 446: snpEff: False
+line 455: gtf_path: ""
+line 486: gerp: True
+line 492: gerp_ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/gerp_outgroups"
+line 501: tree: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/gerp_outgroups/gerp_tree.nwk"
+```
+
+</p>
+</details>
+
+Run the unlock script.
+```
+sbatch run_GenErode_unlock.sbatch
+```
+
+Run the script `run_GenErode.sbatch`.
+```
+sbatch run_GenErode.sbatch
+```
+JobID: 4186350, 4187070, 4187098
+
+4186350 seemed to mostly work then it reported "Exiting because a job execution failed. Look above for error message".
+
+4187070, 4187098 didn't seem to work. 
+
+But the `reference.denovoSSL.Sin20k.ancestral.rates.gz` file was created! I'm not sure after which run though. 
+
+
+</details>
+
+
+<details><summary>5. Results</summary>
+
+### 5. Results
+
+Check input and output
+
+#### GERP Scores
+```
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/results/gerp/reference.denovoSSL.Sin20k.ancestral.rates.gz | wc -l 
+1
+```
+GenErode successfully created the ancestral rates file. 
+
+#### Modern
+```
+# modern expected
+find /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/modern -maxdepth 1 -type f -name 'Sin-CPnd_*' -printf '%f\n' | cut -c 10-12 | sort | uniq | wc -l
+64
+
+# modern output *.merged.rmdup.merged.realn.bam
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/results/modern/mapping/reference.denovoSSL.Sin20k/*.merged.rmdup.merged.realn.bam | wc -l
+64
+
+# modern output *.merged.rmdup.merged.realn.bai
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/results/modern/mapping/reference.denovoSSL.Sin20k/*.merged.rmdup.merged.realn.bai | wc -l
+64
+```
+GenErode created all 64 modern `\*.merged.rmdup.merged.realn.bam` & `\*.merged.rmdup.merged.realn.bai` files.
+
+#### Historical
+```
+# historical expected
+find /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/historical -maxdepth 1 -type f -name 'Sin-APnd_*' -printf '%f\n' | cut -c 10-12 | sort | uniq | wc -l
+25
+
+# historical output *.merged.rmdup.merged.realn.bam
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/results/historical/mapping/reference.denovoSSL.Sin20k/*.merged.rmdup.merged.realn.rescaled.bam | wc -l
+25
+
+# historical output *.merged.rmdup.merged.realn.bai
+ls /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/results/historical/mapping/reference.denovoSSL.Sin20k/*.merged.rmdup.merged.realn.rescaled.bam.bai | wc -l
+25
+```
+GenErode successfully created all 25 historical `\*.merged.rmdup.merged.realn.rescaled.bam` & `\*.merged.rmdup.merged.realn.rescaled.bam.bai` files. 
+
+</details>
+
+
+<details><summary>6. Clean up</summary>
+
+### 6. Clean up
+
+Move `\*.out` files to logs directory.  
+```
+mv *.out logs
+```
+
+</details>
