@@ -192,6 +192,7 @@ Execute `Multi_FASTQC.sh`:
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_raw" "fqc_raw_report"  "fq.gz"
 Submitted batch job 4188432
+4189765
 ```
 
 ### MultiQC output (fq_raw/fqc_raw_report.html):
