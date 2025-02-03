@@ -28,8 +28,8 @@ ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode
 # 2) Relative paths (from the main snakemake directory) to metadata 
 # files with sample information.
 # Example files can be found in "config/"
-historical_samples: "config/historical_samples.txt" # leave empty ("") if not run for historical samples.
-modern_samples: "config/modern_samples.txt" # leave empty ("") if not run for modern samples. 
+historical_samples: "" # leave empty ("") if not run for historical samples.
+modern_samples: "" # leave empty ("") if not run for modern samples. 
 #################################################################
 #################################################################
 
@@ -67,7 +67,7 @@ reference_repeat_identification: False
 # Adapter sequences are automatically detected.
 # Automatic detection of NovaSeq or NextSeq samples and activation of
 # poly-G tail trimming.
-fastq_processing: True
+fastq_processing: False
 
 # Minimum read length.
 # Historical samples (after trimming and read merging)
@@ -162,7 +162,7 @@ maxDP: 10
 # Will rescale base qualities at potentially damaged sites and 
 # calculate statistics on DNA damage patterns in realigned BAM 
 # files.
-historical_bam_mapDamage: True
+historical_bam_mapDamage: False
 
 # List of historical samples on which mapDamage2 should be run. 
 # Sample names without lane or index number in quotation marks, 
@@ -170,7 +170,7 @@ historical_bam_mapDamage: True
 # List has to be left empty ([]) if mapDamage2 is not run.
 # Keep the list of sample names for the entire pipeline run 
 # if rescaled BAM files should be used in downstream analyses.
-historical_rescaled_samplenames: ["SinAPnd001","SinAPnd002","SinAPnd003","SinAPnd004","SinAPnd005","SinAPnd006","SinAPnd007","SinAPnd008","SinAPnd009","SinAPnd010","SinAPnd011","SinAPnd012","SinAPnd013","SinAPnd014","SinAPnd015","SinAPnd016","SinAPnd017","SinAPnd018","SinAPnd019","SinAPnd020","SinAPnd021","SinAPnd022","SinAPnd023","SinAPnd024","SinAPnd025"]
+historical_rescaled_samplenames: [""]
 #####
 
 
