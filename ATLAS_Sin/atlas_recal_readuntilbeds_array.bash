@@ -17,4 +17,4 @@ JOBID=$(sbatch --array=0-$((${#all_samples[@]}-1))%20 \
        --output=atlas_gerp.%A.%a.out \
        --partition main \
        -t 96:00:00 \
-       /archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run/ATLAS_nurecal/atlas_recal_readuntilbeds_array.sbatch ${BAMDIR} ${REFLOC} ${OUTDIR})
+       /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/ATLAS_Sin/atlas_recal_readuntilbeds_array.sbatch ${BAMDIR} ${REFLOC} ${OUTDIR})

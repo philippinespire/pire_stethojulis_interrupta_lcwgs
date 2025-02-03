@@ -31,4 +31,4 @@ cp ${BAMDIR}/${sample_name}.merged.rmdup.merged.realn.bam .
 
 crun.samtools samtools index ${sample_name}.merged.rmdup.merged.realn.bam
 
-crun.atlas atlas --task estimateErrors --bam ${sample_name}.merged.rmdup.merged.realn.bam --fasta ${REFLOC} --regions bed1_nosingle.bed,bed2_nosingle.bed --readUpToDepth 10
+crun.atlas atlas --task estimateErrors --bam ${sample_name}.merged.rmdup.merged.realn.bam --fasta ${REFLOC} --regions gerp_15.merge.nosingle.bed,gerp_10.merge.nosingle.bed,gerp_05.merge.nosingle.bed --readUpToDepth 10
