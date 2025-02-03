@@ -320,6 +320,7 @@ Rerun GenErode, but only to generate the 1 historical file `SinAPnd021` and the 
 Edit config.yaml. Remove every sample but `SinAPnd021` from line 173. Leave line 32 for `modern_samples` empty. 
 
 <details><summary>config.yaml</summary>
+
 ```
 line 23: ref_path: "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta"
 line 31: historical_samples: "config/historical_samples.txt"
