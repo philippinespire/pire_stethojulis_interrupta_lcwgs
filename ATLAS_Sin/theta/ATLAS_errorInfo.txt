@@ -1,0 +1,8 @@
+ATLAS 0.92
+Commit: ae0738c40defcabfd3115a6442bfe8ab9a147454
+Email developer: andreas.fueglistaler@unifr.ch
+
+atlas --RGInfo SinCPnd091.merged.rmdup.merged.realn_RGInfo.json --bam SinCPnd091.merged.rmdup.merged.realn.bam --logFile SinCPnd091_log --out SinCPnd091_theta --prob 1,0.5,0.2,0.1,0.05,0.02,0.01 --task theta 
+ERROR: File /tmp/install.Z0f6/atlas/genometools/core/genometools/GenomePositions/TGenomePosition.h, line 53, function constexpr size_t genometools::TGenomePosition::operator-(const genometools::TGenomePosition&) const: positions are not on same chromosome!
+
+Files attached to email: ATLAS_usedParams.txt , ATLAS_errorInfo.txt , SinCPnd091.merged.rmdup.merged.realn_RGInfo.json, SinCPnd091.merged.rmdup.merged.realn.bam, SinCPnd091_log
