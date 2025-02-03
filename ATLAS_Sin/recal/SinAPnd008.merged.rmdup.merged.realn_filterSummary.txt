@@ -1,0 +1,4 @@
+readGroup	No_read_group	Not_aligned	MappedLengthOutside[0,500]	Duplicate	ImproperPair	Unmapped	FailedQC	SecondaryAlignment	SupplementaryAlignment
+allReadGroups	0	72801082	0	0	0	1246964	0	0	0
+22M5VHLT4:6	0	58300355	0	0	0	991358	0	0	0
+22MK23LT3:2	0	14500727	0	0	0	255606	0	0	0
