@@ -18,7 +18,7 @@ cd ${OUTDIR}
 
 crun angsd \
         -b /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/ANGSD_Sin/bam_list_all_fullpath.txt \
-	-ref /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta \ 
+	-ref /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta \
 	-out angsd_depth1_15_notrans -GL 1 -doGlf 2 -doMaf 1 -doMajorMinor 1 -doCounts 1 -doDepth 1 -maxDepth 10000 -dumpCounts 1 -doIBS 1 -makematrix 1 -doCov 1 -noTrans 1  \
         -setMinDepth 89 -setMaxDepth 1335 -minInd 45 \
         -minMapQ 30 \
