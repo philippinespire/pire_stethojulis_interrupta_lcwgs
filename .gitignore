@@ -20,6 +20,8 @@
 *.glf
 
 # BIG files
+*.cov
+*.selection
 *_log
 *.ld
 *.LD_blocks
