@@ -74,7 +74,7 @@ Copy the `snp_calling.sbatch` script from ANGSD_wahab.
 cp /archive/carpenterlab/pire/pire_lcwgs_data_processing/scripts/ANGSD_wahab/snp_calling.sbatch ./
 ```
 
-First make a list of all \*.bam files from the historical and modern specimens.
+First make .txt files with list of all \*.bam files and a list of all \*.bam files with their full path.
 ```
 ls *.bam > bam_list_all.txt
 
@@ -91,7 +91,7 @@ crun samtools index -M *.bam
 ```
 
 Edit the `snp_calling.sbatch` script to fit your data. 
-- After `-b`, add the file `bam_list_all_fullpath.txt`.
+- After `-b`, add the full directory pathway to the file name of the `bam_list_all_fullpath.txt` file.
 - After `-ref`, change the pathway to the correct reference genome for your species. Use the `reference.denovoSSL.Sin20k.fasta` reference genome from `GenErode_Sin_20k/reference`.
 - setMinDepth: Minimum depth filter should be 1x the number of individuals: 89
 - setMaxDepth: Maximum depth filter should be 15x the number of individuals: 1335
