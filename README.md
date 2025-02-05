@@ -9,11 +9,13 @@ Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupt
 
 ---
 
-## [1st Sequencing Run– test lane](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/1st_sequencing_run) (APnd, CPnd)
+## [1st Sequencing Run– test lane](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/1st_sequencing_run)
+**APnd / CPnd**
 
 1st sequencing run fq.gz processing & sequence metadata processing done by Gianna Mazzei (July 2024).
 
-## [2nd Sequencing Run](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/2nd_sequencing_run) (APnd, CPnd)
+## [2nd Sequencing Run](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/2nd_sequencing_run) 
+**APnd / CPnd**
 
 2nd sequencing run fq.gz processing done by John Whalen and Gianna Mazzei (January 2025). 
 
