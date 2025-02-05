@@ -64,25 +64,32 @@ site_C_code="Pnd"
 spp_era_A_site_pattern=paste0(spp_code,"A",site_A_code)
 spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
-# Count the number of *.bam files matching the patterns
-albatross_n <- as.numeric(length(list.files(pattern = paste0(spp_era_A_site_pattern, ".*\\.bam$")))) # number of albatross individuals (*A*.bam files)
-contemporary_n <- as.numeric(length(list.files(pattern = paste0(spp_era_C_site_pattern, ".*\\.bam$")))) # number of contemporary individuals (*C*.bam files)
+
+#### READ IN DATA ####
+
+cov_matrix_angsd <- as.matrix(read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/angsd_notrans_snps_pca_it500_subset.cov"))
+#Matrix is in order 1-222 on each side
+#sample_table <- read_table("sample_table_merged_allpop.tsv")
+
+# Read the BAM list file
+bamlist <- read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/bam_list_all_subset.txt")
+# Ensure it's treated as a vector
+bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
+
+
+#### SAMPLE SIZE ####
+
+# Count the number of albatross and contemporary individuals based on the patterns
+albatross_n <- as.numeric(sum(grepl(paste0(spp_era_A_site_pattern, ".*\\.bam$"), bamlist)))  # Count lines matching albatross pattern
+contemporary_n <- as.numeric(sum(grepl(paste0(spp_era_C_site_pattern, ".*\\.bam$"), bamlist)))  # Count lines matching contemporary pattern
 albatross_n_plus_1 <- as.numeric(albatross_n + 1)
-total_n <- as.numeric(albatross_n + contemporary_n) # total number of individuals (*.bam files) 
+total_n <- as.numeric(sum(grepl(paste0(".*\\.bam$"), bamlist)))  # Count all lines matching *.bam
 
 # Display the counts
 cat("Number of Albatross (historical) BAM files:", albatross_n, "\n")
 cat("Number of Contemporary (modern) BAM files:", contemporary_n, "\n")
 cat("Total number of BAM files:", total_n, "\n")
 
-
-#### READ IN angsd_notrans_snps_pca*.cov ####
-
-cov_matrix_angsd <- as.matrix(read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/angsd_notrans_snps_pca_it500.cov"))
-#Matrix is in order 1-222 on each side
-#sample_table <- read_table("sample_table_merged_allpop.tsv")
-
-bamlist=read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/bam_list_all.txt")
 
 #### ADD POP LABELS ####
 
@@ -312,7 +319,7 @@ PCA(cov_matrix_angsd, ind_label_angsd, pop_label_angsd,x_axis,y_axis)
 #### IDENTIFY OUTLIERS ####
 
 # Define outlier thresholds for PC1 and PC2
-PC1_lower_threshold <- -0.28   # Set to NA if not applicable
+PC1_lower_threshold <- NA   # Set to NA if not applicable
 PC1_upper_threshold <- NA   # Set to NA if not applicable
 PC2_lower_threshold <- NA   # Set to NA if not applicable
 PC2_upper_threshold <- NA   # Set to NA if not applicable

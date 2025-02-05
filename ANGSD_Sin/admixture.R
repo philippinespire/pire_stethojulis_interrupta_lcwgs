@@ -42,7 +42,7 @@ options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Cha"
+spp_code="Sin"
 
 # change your site_A_code to the 3 letter site code of the Albatross (historical) population (e.g. Pnd, Gal, Mvi)
 site_A_code="Pnd"
@@ -56,24 +56,34 @@ site_C_code="Pnd"
 spp_era_A_site_pattern=paste0(spp_code,"A",site_A_code)
 spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
-# Count the number of *.bam files matching the patterns
-albatross_n <- as.numeric(length(list.files(pattern = paste0(spp_era_A_site_pattern, ".*\\.bam$")))) # number of albatross individuals (*A*.bam files)
-contemporary_n <- as.numeric(length(list.files(pattern = paste0(spp_era_C_site_pattern, ".*\\.bam$")))) # number of contemporary individuals (*C*.bam files)
+
+#### READ IN DATA ####
+
+# K=2
+
+# Define the input file with the full directory path
+k2_angsd_not <- read.table("angsd_admix_notrans_it500.admix.2.Q")
+k2_angsd_not <- as.data.frame(k2_angsd_not) # is this data read in alphanumerically?
+
+# Read the BAM list file
+bamlist <- read.table("bam_list_all.txt")
+# Ensure it's treated as a vector
+bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
+
+
+#### SAMPLE SIZE ####
+
+# Count the number of albatross and contemporary individuals based on the patterns
+albatross_n <- as.numeric(sum(grepl(paste0(spp_era_A_site_pattern, ".*\\.bam$"), bamlist)))  # Count lines matching albatross pattern
+contemporary_n <- as.numeric(sum(grepl(paste0(spp_era_C_site_pattern, ".*\\.bam$"), bamlist)))  # Count lines matching contemporary pattern
 # albatross_n_plus_1 <- as.numeric(albatross_n + 1)
-total_n <- as.numeric(albatross_n + contemporary_n) # total number of individuals (*.bam files)  
+total_n <- as.numeric(sum(grepl(paste0(".*\\.bam$"), bamlist)))  # Count all lines matching *.bam
 
 # Display the counts
 cat("Number of Albatross (historical) BAM files:", albatross_n, "\n")
 cat("Number of Contemporary (modern) BAM files:", contemporary_n, "\n")
-cat("Total number of BAM files", total_n, "\n")
+cat("Total number of BAM files:", total_n, "\n")
 
-#### READ IN angsd_admix_notrans*.admix.3.Q ####
-
-# K=3
-
-# Define the input file with the full directory path
-k3_angsd_not <- read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/angsd_admix_notrans_it500.admix.3.Q")
-k3_angsd_not <- as.data.frame(k3_angsd_not) # is this data read in alphanumerically?
 
 #### ADD POP LABELS ####
 
@@ -87,11 +97,11 @@ meta.data$loc <- c(
 
 #### CREATE PLOT ####
 
-q3_not <- list(k3_angsd_not)
-plot_q3_not <- 
-  plotQ(as.qlist(q3_not), imgoutput = "sep", returnplot = TRUE, exportpath=getwd(), dpi=1000,
-        clustercol = c("#00BFC4", "#F8766D","#AB82FF"),
-        showsp = TRUE, spbgcol = "white", splab = "K = 3", splabsize = 10,
+q2_not <- list(k2_angsd_not)
+plot_q2_not <- 
+  plotQ(as.qlist(q2_not), imgoutput = "sep", returnplot = TRUE, exportpath=getwd(), dpi=1000,
+        clustercol = c("#00BFC4", "#F8766D"),
+        showsp = TRUE, spbgcol = "white", splab = "K = 2", splabsize = 10,
         showyaxis = TRUE, showticks = FALSE, indlabsize = 10, ticksize = 0.5,
         grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = FALSE, grplabspacer = 0.1,)
-print(plot_q3_not) # save to your directory
+print(plot_q2_not) # save to your directory
