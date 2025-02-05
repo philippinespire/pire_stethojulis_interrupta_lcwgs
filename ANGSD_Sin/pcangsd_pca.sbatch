@@ -16,5 +16,4 @@ OUTDIR=$1
 
 cd ${OUTDIR}
 
-
 crun pcangsd -b angsd_depth1_15_notrans.beagle.gz  --maf 0.001 --threads 16 --out angsd_notrans_snps_pca
