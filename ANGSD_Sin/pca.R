@@ -47,7 +47,7 @@ options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Cha"
+spp_code="Sin"
 
 # location longform
 site_long = "Pandanon"
@@ -67,12 +67,12 @@ spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
 #### READ IN DATA ####
 
-cov_matrix_angsd <- as.matrix(read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/angsd_notrans_snps_pca_it500_subset.cov"))
+cov_matrix_angsd <- as.matrix(read.table("angsd_notrans_snps_pca_it500.cov"))
 #Matrix is in order 1-222 on each side
 #sample_table <- read_table("sample_table_merged_allpop.tsv")
 
 # Read the BAM list file
-bamlist <- read.table("/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ANGSD_Cha/bam_list_all_subset.txt")
+bamlist <- read.table("bam_list_all.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
