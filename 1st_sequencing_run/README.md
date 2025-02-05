@@ -650,110 +650,20 @@ Move any .out files into the logs dir
 
 ## 15. Map Repaired `fq.gz` to Reference Genome
 
-The following steps 15 & 16 are from the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing).
+The following steps follow the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing). 
 
-### Get your reference genome
+**_Please note that Steps 15 and 16 were reprocessed in February 2025 due to the initial use of a suboptimal reference genome (July 2024). The following steps reflect the change._**
 
-Make a new directory `refGenome` and `cd` into it
-```
-[hpc-0356@wahab-01 1st_sequencing_run]$ mkdir refGenome
-[hpc-0356@wahab-01 1st_sequencing_run]$ cd refGenome/
-```
+<details><summary>See steps before update (July 2024 version)</summary>
 
-This species is not on ncbi, but we do have a reference genome in house. Check the [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) repo to assess which reference genome is the best for mapping. 
+## **–––––DEPRECATED–––––**
 
-From [pire_ssl_data_processing/stethojulis_interrupta](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/stethojulis_interrupta/README.md):
-
-Species    |Assembly    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
-------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------
-Sin  |A  |decontam       |contgs       |off       |2       |  69126  |  150657  |  583970986  |  87% |  10319  |  15699  |  0  | 62%
-Sin  |A  |decontam       |scaffolds       |off       |2    |  66358  |  156265  |  594601111  |  88% |  11303  |  14290  |  86  |  64%
-Sin  |B  |decontam       |contgs       |off       |2       |  69634 |  150819  |  579984097  |  86% |  10094  |  15982  |  0  | 62%
-Sin  |B  |decontam       |scaffolds       |off       |2    |  66872  |  176262  |  590947710  |  88%  |  11039  |  14518  |  89  |  65%
-Sin  |C  |decontam       |contgs       |off       |2       |  67590  |  130976  |  344743603  |  51%  |  5055  |  22374  |  0  |  31%
-Sin  |C  |decontam       |scaffolds       |off       |2    |  69302  |  158888  |  401718557  |  60%  |  5936  |  20361  | 613 |  38%
-Sin  |allLibs  |decontam       |contigs       |off       |2    |  63103  |  135104  |  307932117  |  46% |  4743  |  21357  |  0  |  25%
-Sin  |allLibs  |decontam       |scaffolds       |off       |2   |  66165  |  207211  |  372871799  |  55%  |  5629  |  19212  |  762  |  32%
-Sin | A | contam | contigs | off | 2 | 69146 | 150657 | 583952407 | 87% | 10298 | 15714 | 0 | 62.1%
-Sin | A | contam | scaffolds | off | 2 | 66368 | 156256 | 594609150 | 88% | 11279 | 14293 | 0 | 64.3%
-
-I am going to use the same genome used for probe development: `SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta`
-
-Copy this file into refGenome:
-```
-[hpc-0373@wahab-01 refGenome]$ cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta .
-```
-
-### Map your reads to your reference genome
-Start by cloning the dDocentHPC repo to gain access to the scripts we need to run:
-```
-[hpc-0373@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
-```
-Create a `mkBAM_ddocent` directory and copy all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into this new directory:
-```
-[hpc-0373@wahab-01 1st_sequencing_run]$ mkdir mkBAM_ddocent
-[hpc-0373@wahab-01 1st_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
-```
-Copy the reference genome to `mkBAM_ddocent` as well as the scripts we need to run:
-```
-[hpc-0373@wahab-01 1st_sequencing_run]$ cp refGenome/scaffolds.fasta mkBAM_ddocent/reference.denovoSSL.Sin.fasta
-
-[hpc-0373@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
-[hpc-0373@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
-```
-Before moving forward, I need to edit the `config.6.lcwgs` file to suit this species:
-```
-[hpc-0356@wahab-01 mkBAM_ddocent]$ nano config.6.lcwgs
-
-# within file:
-# change Cutoff1 and Cutoff2 to "denovoSSL" and "Sin"
-
-----------mkREF: Settings for de novo assembly of the reference genome----------------------------------------->
-PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRA>
-0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdh>
-denovoSSL       Cutoff1 (integer)                                                                              >
-Sin             Cutoff2 (integer)                                                                              >
-0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-base>
-0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-base>
---------------------------------------------------------------------------------------------------------------->
-```
-Then, I needed to alter the `dDocentHPC.sbatch` file to load the newer version:
-```
-[hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
-# within file:
-# change where the "#" is
-
-enable_lmod
-# module load container_env ddocent/2.7.8
-module load container_env ddocent/2.9.4
-```
-Now, I am able to map reads.
-
-Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns reads (in FASTQ format) to a reference genome and creates BAM files (Binary Alignment Map files).
-```
-[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
-Submitted batch job 4258245
-```
----
-
-
-<details><summary>*deprecated refGenome*</summary>
-
-## **deprecated refGenome**
-<p>
-	
-</p>
-	
-**I accidentally used a less than ideal reference genome when working through this portion of the fq.gz pipeline the first time (July 2024).
-Now (February 2025) I have updated this repo with a better refGenome. The following _outdated_ steps reflect my first work through:**
-
+### 15. Map Repaired `fq.gz` to Reference Genome
 
 This species is not on ncbi, but we do have a reference genome in house. Copy this file `scaffolds.fasta` into refGenome:
 ```
 [hpc-0356@wahab-01 refGenome]$ cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/SPAdes_allLibs_decontam_R1R2_noIsolate/scaffolds.fasta /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run/refGenome/
 ```
-
-### Map your reads to your reference genome
 Start by cloning the dDocentHPC repo to gain access to the scripts we need to run:
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
@@ -806,27 +716,15 @@ Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns reads (in FASTQ fo
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
 Submitted batch job 3353876
 ```
----
 
-</details>
-
-<details><summary>16. Filter BAM Files</summary>
-
-## 16. Filter BAM Files
+### 16. Filter BAM Files
 
 Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
 ```
 [hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
 Submitted batch job 3355185
 ```
-
----
-
-</details>
-
-<details><summary>17. Generate Number of Mapped Reads</summary>
-
-## 17. Generate Number of Mapped Reads
+### 17. Generate Number of Mapped Reads
 
 ```
 [hpc-0356@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
@@ -877,6 +775,102 @@ pctpos_wcvg:
 * Contemp: 0.00005 - 25.01%
 * Und: 65.95%
 ```
+## **–––––END–––––**
+---
+
+</details>
+
+### Get your reference genome
+
+Rename old refGenome dir and make a new one:
+```
+[hpc-0373@wahab-01 1st_sequencing_run]$ mv refGenome deprecated_refGenome
+[hpc-0373@wahab-01 1st_sequencing_run]$ mkdir refGenome
+```
+
+This species is not on ncbi, but we do have a reference genome in house. Check the [pire_ssl_data_processing](https://github.com/philippinespire/pire_ssl_data_processing) repo to assess which reference genome is the best for mapping. 
+
+From [pire_ssl_data_processing/stethojulis_interrupta](https://github.com/philippinespire/pire_ssl_data_processing/blob/main/stethojulis_interrupta/README.md):
+
+Species    |Assembly    |DataType    |SCAFIG    |covcutoff    |genome scope v.    |No. of contigs    |Largest contig    |Total length    |% Genome size completeness    |N50    |L50    |Ns per 100 kbp    |BUSCO single copy
+------  |------  |------ |------ |------ |------  |------ |------ |------ |------ |------  |------ |------ |------
+Sin  |A  |decontam       |contgs       |off       |2       |  69126  |  150657  |  583970986  |  87% |  10319  |  15699  |  0  | 62%
+Sin  |A  |decontam       |scaffolds       |off       |2    |  66358  |  156265  |  594601111  |  88% |  11303  |  14290  |  86  |  64%
+Sin  |B  |decontam       |contgs       |off       |2       |  69634 |  150819  |  579984097  |  86% |  10094  |  15982  |  0  | 62%
+Sin  |B  |decontam       |scaffolds       |off       |2    |  66872  |  176262  |  590947710  |  88%  |  11039  |  14518  |  89  |  65%
+Sin  |C  |decontam       |contgs       |off       |2       |  67590  |  130976  |  344743603  |  51%  |  5055  |  22374  |  0  |  31%
+Sin  |C  |decontam       |scaffolds       |off       |2    |  69302  |  158888  |  401718557  |  60%  |  5936  |  20361  | 613 |  38%
+Sin  |allLibs  |decontam       |contigs       |off       |2    |  63103  |  135104  |  307932117  |  46% |  4743  |  21357  |  0  |  25%
+Sin  |allLibs  |decontam       |scaffolds       |off       |2   |  66165  |  207211  |  372871799  |  55%  |  5629  |  19212  |  762  |  32%
+Sin | A | contam | contigs | off | 2 | 69146 | 150657 | 583952407 | 87% | 10298 | 15714 | 0 | 62.1%
+Sin | A | contam | scaffolds | off | 2 | 66368 | 156256 | 594609150 | 88% | 11279 | 14293 | 0 | 64.3%
+
+I am going to use the same genome used for probe development: `SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta`
+
+Copy this file into `refGenome`:
+```
+[hpc-0373@wahab-01 refGenome]$ cp /home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta/SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate/scaffolds.fasta .
+```
+
+### Map your reads to your reference genome
+Start by cloning the dDocentHPC repo to gain access to the scripts we need to run (I already had this repo cloned due to this being the second time running through these steps): 
+```
+[hpc-0356@wahab-01 1st_sequencing_run]$ git clone https://github.com/cbirdlab/dDocentHPC
+```
+
+Rename old mkBam_ddocent dir and make a new one, copying all `fq.gz` files from `fq_fp1_clmp_fp2_fqscrn_rprd` into it:
+```
+[hpc-0373@wahab-01 1st_sequencing_run]$ mv mkBAM_ddocent deprecated_mkBAM_ddocent
+[hpc-0373@wahab-01 1st_sequencing_run]$ mkdir mkBAM_ddocent
+[hpc-0373@wahab-01 1st_sequencing_run]$ rsync fq_fp1_clmp_fp2_fqscrn_rprd/*fq.gz mkBAM_ddocent
+```
+Copy the **new** reference genome to `mkBAM_ddocent` as well as the scripts we need to run:
+```
+[hpc-0373@wahab-01 1st_sequencing_run]$ cp refGenome/scaffolds.fasta mkBAM_ddocent/reference.denovoSSL.Sin.fasta
+
+[hpc-0373@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/configs/config.6.lcwgs .
+[hpc-0373@wahab-01 mkBAM_ddocent]$ cp ../dDocentHPC/dDocentHPC.sbatch .
+```
+Before moving forward, I need to edit the `config.6.lcwgs` file to suit this species:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano config.6.lcwgs
+
+# within file:
+# change Cutoff1 and Cutoff2 to "denovoSSL" and "Sin"
+
+----------mkREF: Settings for de novo assembly of the reference genome----------------------------------------->
+PE              Type of reads for assembly (PE, SE, OL, RPE)                                    PE=ddRAD & ezRA>
+0.9             cdhit Clustering_Similarity_Pct (0-1)                                                   Use cdh>
+denovoSSL       Cutoff1 (integer)                                                                              >
+Sin             Cutoff2 (integer)                                                                              >
+0.05    rainbow merge -r <percentile> (decimal 0-1)                                             Percentile-base>
+0.95    rainbow merge -R <percentile> (decimal 0-1)                                             Percentile-base>
+--------------------------------------------------------------------------------------------------------------->
+```
+Then, I needed to alter the `dDocentHPC.sbatch` file to load the newer version:
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ nano dDocentHPC.sbatch
+# within file:
+# change where the "#" is
+
+enable_lmod
+# module load container_env ddocent/2.7.8
+module load container_env ddocent/2.9.4
+```
+Now, I am able to map reads.
+
+Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns reads (in FASTQ format) to the reference genome and creates BAM files.
+```
+[hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch mkBAM config.6.lcwgs
+Submitted batch job 4258245
+```
+---
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+<details><summary>17. Generate Number of Mapped Reads</summary>
+
+
 ---
 
 </details>
