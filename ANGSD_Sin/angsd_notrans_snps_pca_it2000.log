@@ -1,0 +1,17 @@
+PCAngsd v1.21
+Time: 05/02/2025 18:43:24
+Directory: /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/ANGSD_Sin
+Options:
+	--beagle angsd_depth1_15_notrans.beagle.gz
+	--threads 16
+	--out angsd_notrans_snps_pca_it2000
+	--maf 0.001
+	--iter 2000
+
+Loaded 2108 sites and 89 individuals.
+Number of sites after MAF filtering (0.001): 2108
+
+PCAngsd converged in 701 iterations using 1 eigenvectors.
+Saved covariance matrix as angsd_notrans_snps_pca_it2000.cov
+
+Total elapsed time: 0m42s
