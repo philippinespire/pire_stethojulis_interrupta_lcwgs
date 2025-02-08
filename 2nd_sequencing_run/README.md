@@ -251,7 +251,19 @@ Submitted batch job 4265443
 ---
 </details>
 
+<details><summary>8. Remove duplicates with clumpify (*)</summary>
 
+## 8. Remove duplicates with clumpify (*)
+
+<details><summary>6a. Remove duplicates</summary>
+	
+### 8a. Remove duplicates
+
+```
+[hpc-0373@wahab-01 4th_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
+Submitted batch job 4265458
+```
+</details>
 
 
 
