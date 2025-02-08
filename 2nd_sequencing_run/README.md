@@ -214,6 +214,65 @@ Submitted batch job 4265307
 ---
 </details>
 
+<details><summary>7. First trim (*)</summary>
+
+## 7. First trim (*)
+
+Run `runFASTP_1st_trim.sbatch`:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFASTP_1st_trim.sbatch fq_raw fq_fp1
+Submitted batch job 4265443
+```
+### Review the FastQC output (fq_fp1/1st_fastp_report.html):
+* 
+
+```
+‣ % duplication - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ passing filter - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ % adapter - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ number of reads - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+```
+---
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
