@@ -645,7 +645,7 @@ Move any .out files into the logs dir
 
 </details>
 
-<details><summary>15. Map Repaired `fq.gz` to Reference Genome</summary>
+<details><summary>15. Map Repaired fq.gz to Reference Genome</summary>
 <p>
 
 ## 15. Map Repaired `fq.gz` to Reference Genome
@@ -890,41 +890,52 @@ Submitted batch job 4265423
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-* 
+* number of reads:
+	* contemporary very low- if we are targeting ~10 mil, only one individual is at that
+ 	* only 4 individuals below 10 mil for albatross, and they all are above 3 mil
+* mean depth with coverage:
+	* albatross looks good
+ 	* contemporary is closer to 1, but generally at or just above it
+* mean depth:
+	* overall contemporary has very low depth
+* % positions with coverage:
+	* we are shooting for around 80%- contemporary much lower than that
+
+Overall, this looks better than it did when mapping to the worse reference genome. Mean depth with coverage, mean depth, and percent positions with coverage are all higher than before.
 
 ```
 numreads:
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 3,282,298 - 55,852,673
+    • Contemp: 15 - 10,175,360
+    • Undertermined: 103,029,102
 
 meanreadlength:
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 75.21 - 86.45
+    • Contemp: 82.28 - 127.51
+    • Undertermined: 81.78
 
 meandepth_wcvg:
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 1.26 - 3.73
+    • Contemp: 0.99 - 1.49
+    • Undertermined: 5.98
 
 numpos:
-    • 
+    • 798,880,421 bp
 
 numpos_wcvg:
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 104,228,317 - 619,773,131 bp
+    • Contemp: 947 - 325,570,415 bp
+    • Undertermined: 709,704,515 bp
 
 meandepth:
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 0.17 - 2.89
+    • Contemp: 0.0000012 - 0.61
+    • Undertermined: 5.32
 
 pctpos_wcvg:
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 13.05 - 77.58%
+    • Contemp: 0.00012 - 40.75%
+    • Undertermined: 88.84%
 ```
 
 ---
