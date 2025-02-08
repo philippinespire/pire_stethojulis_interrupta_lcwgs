@@ -9,7 +9,7 @@ Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupt
 
 ---
 
-## [1st Sequencing Run– test lane](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/1st_sequencing_run)
+## [1st Sequencing Run (test lane)](https://github.com/philippinespire/pire_stethojulis_interrupta_lcwgs/tree/main/1st_sequencing_run)
 **APnd / CPnd**
 
 1st sequencing run fq.gz processing & sequence metadata processing done by Gianna Mazzei (July 2024).

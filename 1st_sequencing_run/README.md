@@ -652,7 +652,7 @@ Move any .out files into the logs dir
 
 The following steps follow the [pire_lcwgs_data_processing repo](https://github.com/philippinespire/pire_lcwgs_data_processing). 
 
-**_Please note that Steps 15 and 16 were reprocessed in February 2025 due to the initial use of a suboptimal reference genome (July 2024). The following steps reflect the change._**
+**_Please note that Steps 15-17 were reprocessed in February 2025 due to the initial use of a suboptimal reference genome (July 2024). The following steps reflect the change._**
 
 <details><summary>See steps before update (July 2024 version)</summary>
 
@@ -865,11 +865,67 @@ Execute `dDocentHPC.sbatch mkBAM config.6.lcwgs` which aligns reads (in FASTQ fo
 Submitted batch job 4258245
 ```
 ---
+</details> 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<details><summary>16. Filter BAM Files</summary>
+	
+### 16. Filter BAM Files
+
+Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
+```
+[hpc-0356@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
+Submitted batch job 4265305 
+```
+---
+</details> 
 
 <details><summary>17. Generate Number of Mapped Reads</summary>
+<p>
+	
+</p>
+ 
+```
+[hpc-0373@wahab-01 1st_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job 4265423
+```
 
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+* 
+
+```
+numreads:
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+
+meanreadlength:
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+
+meandepth_wcvg:
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+
+numpos:
+    • 
+
+numpos_wcvg:
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+
+meandepth:
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+
+pctpos_wcvg:
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+```
 
 ---
 
