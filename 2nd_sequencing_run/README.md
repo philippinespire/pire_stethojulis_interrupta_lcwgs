@@ -255,7 +255,7 @@ Submitted batch job 4265443
 
 ## 8. Remove duplicates with clumpify (*)
 
-<details><summary>6a. Remove duplicates</summary>
+<details><summary>8a. Remove duplicates</summary>
 	
 ### 8a. Remove duplicates
 
