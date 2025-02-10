@@ -260,14 +260,51 @@ Submitted batch job 4265443
 ### 8a. Remove duplicates
 
 ```
-[hpc-0373@wahab-01 4th_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1 fq_fp1_clmp /scratch/hpc-0373 20
 Submitted batch job 4265458
 ```
 </details>
 
+<details><summary>8b. Check duplicate removal success</summary>
+	
+### 8b. Check duplicate removal success
 
+Clumpify failed on some samples:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ salloc
+[hpc-0373@d1-w6420a-05 2nd_sequencing_run]$ enable_lmod
+[hpc-0373@d1-w6420a-05 2nd_sequencing_run]$ module load container_env R/4.3 
+[hpc-0373@d1-w6420a-05 2nd_sequencing_run]$ crun R < /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/checkClumpify_EG.R --no-save
 
+Clumpify failed on 3 samples. Inspect the following outfiles:
+clmp_r1r2_-4265458_15.out
+clmp_r1r2_-4265458_16.out
+clmp_r1r2_-4265458_2.out
+```
 
+</details> 
+
+<details><summary>8c. Rerun Clumpify on failed files</summary>
+	
+### 8c. Rerun Clumpify on failed files
+
+The individuals that failed are `Sin-APnd_016-Ex1-5E-lcwgs-1-2`, `Sin-APnd_017-Ex1-5F-lcwgs-1-2`, & `Sin-APnd_003-Ex1-3H-lcwgs-1-2`
+
+Isolate them in a new directory to be rerun:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir fq_fp1_clmp_rpt
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cp fq_fp1/Sin-APnd_016-Ex1-5E-lcwgs-1-2* fq_fp1/Sin-APnd_017-Ex1-5F-lcwgs-1-2* fq_fp1/Sin-APnd_003-Ex1-3H-lcwgs-1-2* fq_fp1_clmp_rpt
+```
+
+Re-run Clumpify:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 20
+Submitted batch job 4269533
+```
+
+Check the out file to make sure it worked:
+```
+```
 
 
 
