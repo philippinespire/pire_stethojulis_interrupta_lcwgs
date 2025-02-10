@@ -265,8 +265,6 @@ Submitted batch job 4265458
 ```
 </details>
 
-XXXXXXXXXXXXXXXX
-
 <details><summary>8b. Check duplicate removal success</summary>
 	
 ### 8b. Check duplicate removal success
@@ -301,7 +299,7 @@ Isolate them in a new directory to be rerun:
 Re-run Clumpify:
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ bash /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runCLUMPIFY_r1r2_array.bash fq_fp1_clmp_rpt fq_fp1_clmp /scratch/hpc-0373 20
-Submitted batch job XXXXXX
+Submitted batch job 4269823
 ```
 
 Check the out file to make sure it worked:
