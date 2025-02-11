@@ -302,9 +302,27 @@ Re-run Clumpify:
 Submitted batch job 4269823
 ```
 
-Check the out file to make sure it worked:
+Check the out files to make sure it worked: cat `clmp_r1r2_-4269823_0.out` `clmp_r1r2_-4269823_1.out` `clmp_r1r2_-4269823_2.out`
+
+All looks good.
+
+</details>
+
+<details><summary>6d. Clean the scratch drive</summary>
+	
+### 8d. Clean the scratch drive
 ```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/cleanSCRATCH.sbatch /scratch/hpc-0373 "*clumpify*temp*"
+Submitted batch job 4270298
 ```
+
+Check:
+```
+ls /scratch/hpc-0373
+```
+Nothing printed, so its cleared.
+
+</details>
 
 
 
