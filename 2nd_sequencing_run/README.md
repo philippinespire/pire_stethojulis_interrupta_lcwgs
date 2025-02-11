@@ -308,7 +308,7 @@ All looks good.
 
 </details>
 
-<details><summary>6d. Clean the scratch drive</summary>
+<details><summary>8d. Clean the scratch drive</summary>
 	
 ### 8d. Clean the scratch drive
 ```
@@ -325,7 +325,39 @@ Nothing printed, so its cleared.
 </details>
 
 
+<details><summary>8e. Generate metadata on deduplicated FASTQ files (*)</summary>
 
+### 8e. Generate metadata on deduplicated FASTQ files (*)
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "fq_fp1_clmp" "fqc_clmp_report"  "fq.gz"
+Submitted batch job 4270357
+```
+
+**Results** (fq_fp1_clmp/fqc_clmp_report.html): 
+* 
+
+```
+‣ % duplication - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ length - 
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+```
+</details>
+
+---
+</details>
 
 
 
