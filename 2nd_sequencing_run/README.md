@@ -397,6 +397,25 @@ Submitted batch job 4271507
 ---
 </details>
 
+<details><summary>10. Decontaminate files (*)</summary>
+
+## 10. Decontaminate files (*)
+
+<details><summary>10a. Run fastq_screen</summary>
+	
+### 10a. Run fastq_screen
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0373@wahab-01 2nd_sequencing_run]$ fqScrnPATH=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runFQSCRN_6.bash
+[hpc-0373@wahab-01 2nd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ nodes=20
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash $fqScrnPATH $indir $outdir $nodes
+```
+JobID: 4273642
+
+</details>
 
 
 
