@@ -417,9 +417,81 @@ JobID: 4273642
 
 </details>
 
+<details><summary>10b. Check for Errors</summary>
+	
+### 10b. Check for Errors
 
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0373@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQ.sbatch $outdir "*filter.fastq.gz"
+Submitted batch job 4283410
+```
+When complete check the $outdir/fqValidateReport.txt file
+```
+less -S $outdir/fqValidationReport.txt file
+```
+Everythihg looks good.
 
+**Confirm files were succesfully completed:**
 
+Check that all 5 files were created for each fqgz file:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ outdir=/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls $outdir/*r1.tagged.fastq.gz | wc -l
+					ls $outdir/*r2.tagged.fastq.gz | wc -l
+					ls $outdir/*r1.tagged_filter.fastq.gz | wc -l
+					ls $outdir/*r2.tagged_filter.fastq.gz | wc -l 
+					ls $outdir/*r1_screen.txt | wc -l
+					ls $outdir/*r2_screen.txt | wc -l
+					ls $outdir/*r1_screen.png | wc -l
+					ls $outdir/*r2_screen.png | wc -l
+					ls $outdir/*r1_screen.html | wc -l
+					ls $outdir/*r2_screen.html | wc -l
+74
+74
+74
+74
+74
+74
+74
+74
+74
+74
+```
+For each, you should have the same number as the number of input files (number of fq.gz files):
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ indir=fq_fp1_clmp_fp2
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls $indir/*r1.fq.gz | wc -l
+                                        ls $indir/*r2.fq.gz | wc -l
+74
+74
+```
+Check the `*out` files: (no results)
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ grep 'error' slurm-fqscrn.*out
+                                        grep 'No reads in' slurm-fqscrn.*out
+                                        grep 'FATAL' slurm-fqscrn.*out
+```
+
+Check for any unzipped files with the word temp, which means that the job didn't finish and needs to be rerun: 
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls $outdir/*temp*
+ls: cannot access '/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/*temp*': No such file or directory
+```
+
+No errors!
+
+<details><summary>10d. Move output files</summary>
+
+### 10d. Move output files
+
+XXXXXXXX
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/* /archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/4th_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+```
 
 
 
