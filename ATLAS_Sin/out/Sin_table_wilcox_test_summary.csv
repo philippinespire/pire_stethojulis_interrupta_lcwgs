@@ -1,0 +1,2 @@
+"statistic","p_value","method","alternative_hypothesis","n_modern","n_historical","median_modern","median_historical","effect_size_cliffs_delta"
+1016,2.81719415289978e-08,"Wilcoxon rank sum test with continuity correction","two.sided",45,25,0.0209054118630369,0.0172731442068975,0.806222222222222
