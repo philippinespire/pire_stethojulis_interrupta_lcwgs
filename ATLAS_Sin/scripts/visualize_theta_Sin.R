@@ -49,16 +49,16 @@ lapply(packages_used,
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Spp"
+spp_code="Sin"
 
 # change your site_A_code to the 3 letter site code of the Albatross (historical) population (e.g. Pnd, Gal, Mvi)
-site_A_code=""
+site_A_code="Pnd"
 
 # change your site_C_code to the 3 letter site code of the contemporary (modern) population (e.g. Pnd, Gal, Mvi)
-site_C_code=""
+site_C_code="Pnd"
 
 # specify output directory path for plots
-outDir = ""
+outDir = "../plots"
 # if the outDir is not yet created this will create it. 
 if (!dir.exists(outDir)) {
   dir.create(outDir)
@@ -91,6 +91,15 @@ theta_data <-
 
 #### VISUALIZE THETA DATA ####
 
+# Change the Eras to Modern and Historical
+theta_data <- theta_data %>%
+  mutate(Era = trimws(Era)) %>%
+  mutate(Era = recode(Era,
+                      "Albatross - ATLAS GERP recalibration" = "Historical",
+                      "Contemporary - ATLAS GERP recalibration" = "Modern"
+  ))
+
+
 # Create labels with sample sizes for the plot legends
 # Calculate sample sizes by Era (after filtering)
 era_sample_sizes <- theta_data %>%
@@ -99,8 +108,8 @@ era_sample_sizes <- theta_data %>%
 
 # Define Era labels with sample sizes
 era_labels <- c(
-  "Albatross - ATLAS GERP recalibration" = paste0("Historical (n = ", era_sample_sizes$sample_size[era_sample_sizes$Era == "Albatross - ATLAS GERP recalibration"], ")"),
-  "Contemporary - ATLAS GERP recalibration" = paste0("Modern (n = ", era_sample_sizes$sample_size[era_sample_sizes$Era == "Contemporary - ATLAS GERP recalibration"], ")")
+  "Historical" = paste0("Historical (n = ", era_sample_sizes$sample_size[era_sample_sizes$Era == "Historical"], ")"),
+  "Modern" = paste0("Modern (n = ", era_sample_sizes$sample_size[era_sample_sizes$Era == "Modern"], ")")
 )
 
 # Create labels for the legend
@@ -119,9 +128,9 @@ plot_theta <- theta_data %>%
     fill = Era
   )) +
   labs(
-    x = "Era",
-    y = "Estimated Heterozygosity (Theta)",
-    title = paste(spp_code, "- Theta")
+    #x = "Era",
+    #y = "Mean Theta"#,
+    #title = paste(spp_code, "- Theta")
   ) +
   theme_bw() +
   geom_boxplot() +
@@ -130,11 +139,35 @@ plot_theta <- theta_data %>%
   theme(legend.position = "none")  # Remove legend
 print(plot_theta)
 
+#FORMATTED
+plot_theta <- theta_data %>% 
+  ggplot(aes(
+    x = Era, 
+    y = avg_theta, 
+    fill = Era
+  )) +
+  theme_bw() +
+  geom_boxplot() +
+  scale_y_continuous(limits = c(0.00, 0.30), breaks = seq(0.00, 0.30, by = 0.05)) +  # Set y-axis limits and breaks
+  scale_fill_manual(values = scales::hue_pal()(length(unique(theta_data$Era)))) +
+  theme(
+    legend.position = "none",  # Remove legend
+    plot.title = element_blank(),  # Remove title
+    axis.title.y = element_blank(),  # Remove y-axis title
+    axis.title.x = element_blank(),  # Remove x-axis title
+    axis.text.x = element_blank(),  # Remove x-axis labels
+    axis.ticks.x = element_blank(),  # Remove x-axis ticks
+    panel.grid.major = element_blank(),  # Remove major gridlines
+    panel.grid.minor = element_blank(),  # Remove minor gridlines
+    text = element_text(family = "Times New Roman", size = 12)  # Set font
+  )
+print(plot_theta)
+
 # outFile pattern
-outFile_plot_theta_rmna_rmout <- paste0(outDir, "/", spp_code, "_plot_theta", ".png")  
+outFile_plot_theta_rmna_rmout <- paste0(outDir, "/", spp_code, "_plot_theta_format", ".png")  
 
 # Save the plot to a file
-ggsave(filename = outFile_plot_theta_rmna_rmout, plot = plot_theta, width = 6, height = 6)
+ggsave(filename = outFile_plot_theta_rmna_rmout, plot = plot_theta, width = 2.15, height = 2.5)
 
 
 # PLOT: boxplot of depth
@@ -222,11 +255,11 @@ ggsave(filename = outFile_plot_theta_density_rmna_rmout, plot = plot_theta_densi
 # Perform Mann-Whitney U test (Wilcoxon rank-sum test) on theta estimates
 # Separate theta estimates by Era
 theta_modern <- theta_data %>%
-  filter(Era == 'Contemporary - ATLAS GERP recalibration') %>%
+  filter(Era == 'Modern') %>%
   pull(avg_theta)
 
 theta_historical <- theta_data %>%
-  filter(Era == 'Albatross - ATLAS GERP recalibration') %>%
+  filter(Era == 'Historical') %>%
   pull(avg_theta)
 
 # Run the test
@@ -349,7 +382,8 @@ bayesian_model <- brm(
   family = gaussian(),  # Assume normal distribution
   prior = c(
     prior(normal(0, 1), class = "b"),  # Prior for regression coefficients
-    prior(cauchy(0, 1), class = "Intercept")  # Prior for intercept
+    prior(normal(0, 1), class = "Intercept")  # Prior for intercept
+    # prior(cauchy(0, 1), class = "Intercept")  # Prior for intercept
   ),
   chains = 4, iter = 4000, warmup = 1000, cores = 4
 )
@@ -363,7 +397,7 @@ print(fixef_table)
 outFile_fixef <- paste0("../out/", spp_code, "_table_bayesian_fixef.csv")
 
 # Save fixed effects summary as CSV
-write.csv(fixef_table, outFile_fixef, row.names = TRUE)
+write.csv(fixef_table, outFile_fixef, row.names = FALSE)
 
 # ---- 3️⃣ Print & Save Model Summary ----
 bayesian_model_summary <- summary(bayesian_model)
@@ -377,10 +411,12 @@ summary_text <- capture.output(print(bayesian_model_summary))
 outFile_bayesian_model_summary <- paste0("../out/", spp_code, "_table_bayesian_model_summary.txt")
 
 # Save the summary as a text file
-writeLines(summary_text, outFile_bayesian_model_summary)
+write.csv(summary_text, outFile_bayesian_model_summary, row.names = FALSE)
 
 # ---- 4️⃣ Bayesian Hypothesis Test ----
-bayesian_model_result <- hypothesis(bayesian_model, "EraContemporaryMATLASGERPrecalibration < 0", class = "b")
+bayesian_model_result <- hypothesis(bayesian_model, "EraModern < 0", class = "b")
+
+print(bayesian_model_result)
 
 # Convert to a dataframe
 table_bayesian_model_result <- as.data.frame(bayesian_model_result$hypothesis)
@@ -400,7 +436,8 @@ bayesian_model_null <- brm(
   data = theta_data,
   family = gaussian(),
   prior = c(
-    prior(cauchy(0, 1), class = "Intercept")  # Match the full model’s prior
+    prior(normal(0, 1), class = "Intercept")  # Match the full model’s prior
+    # prior(cauchy(0, 1), class = "Intercept")  # Match the full model’s prior
     ),
   chains = 4, iter = 4000, warmup = 1000, cores = 4
 )
@@ -454,7 +491,7 @@ ggsave(filename = outFile_plot_bayesian_pp_check, plot = plot_bayesian_pp_check,
 posterior_samples <- as_draws_df(bayesian_model)  # Extract full posterior draws
 
 # Select only the parameter of interest while keeping draws_df structure
-posterior_df <- subset_draws(posterior_samples, variable = "b_EraContemporaryMATLASGERPrecalibration")
+posterior_df <- subset_draws(posterior_samples, variable = "b_EraModern")
 
 # Rename the column safely
 colnames(posterior_df) <- "theta_difference"

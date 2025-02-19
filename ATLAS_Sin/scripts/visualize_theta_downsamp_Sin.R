@@ -41,16 +41,16 @@ lapply(packages_used,
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Spp"
+spp_code="Sin"
 
 # change your site_A_code to the 3 letter site code of the Albatross (historical) population (e.g. Pnd, Gal, Mvi)
-site_A_code=""
+site_A_code="Pnd"
 
 # change your site_C_code to the 3 letter site code of the contemporary (modern) population (e.g. Pnd, Gal, Mvi)
-site_C_code=""
+site_C_code="Pnd"
 
 # specify output directory path for plots
-outDir = ""
+outDir = "../plots"
 # if the outDir is not yet created this will create it. 
 if (!dir.exists(outDir)) {
   dir.create(outDir)

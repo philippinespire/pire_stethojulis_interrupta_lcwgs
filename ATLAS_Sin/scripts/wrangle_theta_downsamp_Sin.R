@@ -38,17 +38,17 @@ lapply(packages_used,
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Spp"
+spp_code="Sin"
 
 # change your site_A_code to the 3 letter site code of the Albatross (historical) population (e.g. Pnd, Gal, Mvi)
-site_A_code=""
+site_A_code="Pnd"
 
 # change your site_C_code to the 3 letter site code of the contemporary (modern) population (e.g. Pnd, Gal, Mvi)
-site_C_code=""
+site_C_code="Pnd"
 
 # specify input directory path with the *theta.txt.gz files
 # replace the string in quotes with the absolute path of your directory
-inDir = ""
+inDir = "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/ATLAS_Sin/theta"
 
 # If the 'out' directory does not exist, create it.
 if (!dir.exists("../out/")) {

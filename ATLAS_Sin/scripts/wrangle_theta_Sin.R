@@ -39,20 +39,20 @@ lapply(packages_used,
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Spp"
+spp_code="Sin"
 
 # change your site_A_code to the 3 letter site code of the Albatross (historical) population (e.g. Pnd, Gal, Mvi)
-site_A_code=""
+site_A_code="Pnd"
 
 # change your site_C_code to the 3 letter site code of the contemporary (modern) population (e.g. Pnd, Gal, Mvi)
-site_C_code=""
+site_C_code="Pnd"
 
 # specify input directory path with the *theta.txt.gz files and this script 
 # replace the string in quotes with the absolute path of your directory
-inDir = ""
+inDir = "/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/ATLAS_Sin/theta"
 
 # # specify output directory path for plots
-# outDir = ""
+# outDir = "/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/ATLAS_Cha/plots"
 # # if the outDir is not yet created this will create it. 
 # if (!dir.exists(outDir)) {
 #   dir.create(outDir)
@@ -181,14 +181,15 @@ theta_data <- theta_data %>%
 theta_data_summary_rmna <- theta_data %>%  
   group_by(Era) %>%  
   summarise(
-    avg_theta_mean = mean(avg_theta, na.rm = TRUE),  # Mean of avg_theta
-    avg_theta_n = n(),                               # Sample size for avg_theta
-    avg_theta_sd = sd(avg_theta, na.rm = TRUE),      # Standard deviation of avg_theta
-    avg_theta_se = avg_theta_sd / sqrt(avg_theta_n), # Standard error of avg_theta
-    avg_depth_mean = mean(avg_depth, na.rm = TRUE),  # Mean of avg_depth
-    avg_depth_n = n(),                               # define sample size for avg_depth
-    avg_depth_sd = sd(avg_depth, na.rm = TRUE),      # Standard deviation of avg_depth
-    avg_depth_se = avg_depth_sd / sqrt(avg_depth_n), # Standard error of avg_depth
+    theta_n = n(),                                   # Sample size for avg_theta
+    theta_mean = mean(avg_theta, na.rm = TRUE),      # Mean of avg_theta
+    theta_median = median(avg_theta, na.rm = TRUE),  # Median of avg_theta
+    theta_sd = sd(avg_theta, na.rm = TRUE),          # Standard deviation of avg_theta
+    theta_se = theta_sd / sqrt(theta_n),     # Standard error of avg_theta
+    depth_mean = mean(avg_depth, na.rm = TRUE),      # Mean of avg_depth
+    depth_median = median(avg_depth, na.rm = TRUE),  # Median of avg_depth
+    depth_sd = sd(avg_depth, na.rm = TRUE),          # Standard deviation of avg_depth
+    depth_se = depth_sd / sqrt(theta_n),     # Standard error of avg_depth
     .groups = "drop"  # Ensures the result is not grouped
   )
 
@@ -212,7 +213,7 @@ write.csv(theta_data_summary_rmna,
 # Identify file names that have an avg_theta greater than 3 standard deviations above the mean  
 theta_data_avg_theta_greater_3sd_outliers <- theta_data %>%  
   inner_join(theta_data_summary_rmna, by = "Era") %>%  
-  filter(avg_theta > avg_theta_mean + 3 * avg_theta_sd) %>%  
+  filter(avg_theta > theta_mean + 3 * theta_sd) %>%  
   mutate(file_name = basename(file))  
 
 # Print the file names of the avg_theta > 3sd outliers  
@@ -221,17 +222,17 @@ print(theta_data_avg_theta_greater_3sd_outliers$file_name)
 # Identify file names that have an avg_theta less than 3 standard deviations below the mean  
 theta_data_avg_theta_less_3sd_outliers <- theta_data %>%  
   inner_join(theta_data_summary_rmna, by = "Era") %>%  
-  filter(avg_theta < avg_theta_mean - 3 * avg_theta_sd) %>%  
+  filter(avg_theta < theta_mean - 3 * theta_sd) %>%  
   mutate(file_name = basename(file))  
 
 # Print the file names of the avg_theta < 3sd outliers
-print(theta_data_avg_theta_less_3_outliers$file_name)
+print(theta_data_avg_theta_less_3sd_outliers$file_name)
 
 #avg_depth
 # Identify file names that have an avg_theta greater than 3 standard deviations above the mean  
 theta_data_avg_depth_greater_3sd_outliers <- theta_data %>%  
   inner_join(theta_data_summary_rmna, by = "Era") %>%  
-  filter(avg_depth > avg_depth_mean + 3 * avg_depth_sd) %>%  
+  filter(avg_depth > depth_mean + 3 * depth_sd) %>%  
   mutate(file_name = basename(file))  
 
 # Print the file names of the avg_depth > 3sd outliers  
@@ -240,18 +241,18 @@ print(theta_data_avg_depth_greater_3sd_outliers$file_name)
 # Identify file names that have an avg_theta less than 3 standard deviations below the mean  
 theta_data_avg_depth_less_3sd_outliers <- theta_data %>%  
   inner_join(theta_data_summary_rmna, by = "Era") %>%  
-  filter(avg_depth < avg_depth_mean - 3 * avg_depth_sd) %>%  
+  filter(avg_depth < depth_mean - 3 * depth_sd) %>%  
   mutate(file_name = basename(file))  
 
 # Print the file names of the avg_depth < 3sd outliers
-print(theta_data_avg_depth_less_3_outliers$file_name)
+print(theta_data_avg_depth_less_3sd_outliers$file_name)
 
 # Combine all outlier dataframes into one with distinct file names
 all_outliers <- bind_rows(
-  theta_data_avg_theta_greater_3sd_outliers %>% select(file_name),
-  theta_data_avg_theta_less_3sd_outliers %>% select(file_name),
-  theta_data_avg_depth_greater_3sd_outliers %>% select(file_name),
-  theta_data_avg_depth_less_3sd_outliers %>% select(file_name)
+  theta_data_avg_theta_greater_3sd_outliers,
+  theta_data_avg_theta_less_3sd_outliers,
+  theta_data_avg_depth_greater_3sd_outliers,
+  theta_data_avg_depth_less_3sd_outliers
 ) %>% 
   distinct(file_name)
 
@@ -268,13 +269,15 @@ theta_data <- theta_data %>%
 theta_data_summary_rmna_rmout <- theta_data %>%  
   group_by(Era) %>%  
   summarise(
-    avg_theta_mean = mean(avg_theta, na.rm = TRUE),  # Mean of avg_theta
-    avg_theta_n = n(),                               # Sample size for avg_theta
-    avg_theta_sd = sd(avg_theta, na.rm = TRUE),      # Standard deviation of avg_theta
-    avg_theta_se = avg_theta_sd / sqrt(avg_theta_n), # Standard error of avg_theta
-    avg_depth_mean = mean(avg_depth, na.rm = TRUE),  # Mean of avg_depth
-    avg_depth_sd = sd(avg_depth, na.rm = TRUE),      # Standard deviation of avg_depth
-    avg_depth_se = avg_depth_sd / sqrt(avg_theta_n), # Standard error of avg_depth
+    theta_n = n(),                                   # Sample size for avg_theta
+    theta_mean = mean(avg_theta, na.rm = TRUE),      # Mean of avg_theta
+    theta_median = median(avg_theta, na.rm = TRUE),  # Median of avg_theta
+    theta_sd = sd(avg_theta, na.rm = TRUE),          # Standard deviation of avg_theta
+    theta_se = theta_sd / sqrt(theta_n),     # Standard error of avg_theta
+    depth_mean = mean(avg_depth, na.rm = TRUE),      # Mean of avg_depth
+    depth_median = median(avg_depth, na.rm = TRUE),  # Median of avg_depth
+    depth_sd = sd(avg_depth, na.rm = TRUE),          # Standard deviation of avg_depth
+    depth_se = depth_sd / sqrt(theta_n),     # Standard error of avg_depth
     .groups = "drop"  # Ensures the result is not grouped
   )
 
