@@ -431,7 +431,6 @@ When complete check the $outdir/fqValidateReport.txt file
 ```
 less -S $outdir/fqValidationReport.txt file
 ```
-Everythihg looks good.
 
 **Confirm files were succesfully completed:**
 
@@ -482,16 +481,56 @@ ls: cannot access '/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/*temp*': No such fil
 
 No errors!
 
+---
+</details>
+
 <details><summary>10d. Move output files</summary>
 
 ### 10d. Move output files
 
-XXXXXXXX
-
 ```
 [hpc-0373@wahab-01 2nd_sequencing_run]$ mkdir fq_fp1_clmp_fp2_fqscrn
-[hpc-0373@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/* /archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/4th_sequencing_run/fq_fp1_clmp_fp2_fqscrn
+[hpc-0373@wahab-01 2nd_sequencing_run]$ mv /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2_fqscrn
 ```
+Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ ls /scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn
+#nothing printed
+```
+---
+</details>
+
+<details><summary>10e. Run MultiQC (*)</summary>
+
+### 10e. Run MultiQC (*)
+
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMULTIQC.sbatch fq_fp1_clmp_fp2_fqscrn fastq_screen_report
+Submitted batch job 4288359
+```
+#### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
+*
+
+```
+‣ multiple genomes -
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+‣ no hits -
+    • Alb: 
+    • Contemp:
+    • Undertermined:
+```
+</details>
+
+---
+
+</details>
+
+
+
+
+
 
 
 
