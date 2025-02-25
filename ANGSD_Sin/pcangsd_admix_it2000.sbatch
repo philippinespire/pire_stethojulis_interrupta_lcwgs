@@ -16,4 +16,4 @@ OUTDIR=$1
 
 cd ${OUTDIR}
 
-crun pcangsd -b angsd_depth1_15_notrans.beagle.gz --admix --it 2000 --maf 0.001 --threads 16 --out angsd_admix_notrans_it2000
+crun pcangsd -b angsd_depth1_15_notrans_snplist.beagle.gz --admix --it 2000 --maf 0.001 --threads 16 --out angsd_admix_notrans_it2000
