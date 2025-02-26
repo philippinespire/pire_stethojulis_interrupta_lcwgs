@@ -42,7 +42,7 @@ options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Lva"
+spp_code="Sin"
 
 # change your site_A_code to the 3 letter site code of the Albatross (historical) population (e.g. Pnd, Gal, Mvi)
 site_A_code="Pnd"
@@ -62,11 +62,11 @@ spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 # K = 2
 
 # Define the input file with the full directory path
-k2_angsd_not <- read.table("angsd_admix_snps_notrans_subset.admix.2.Q")
+k2_angsd_not <- read.table("angsd_notrans_snps_it2000_admix.admix.2.Q")
 k2_angsd_not <- as.data.frame(k2_angsd_not) # is this data read in alphanumerically?
 
 # Read the BAM list file
-bamlist <- read.table("bam_list_all_subset.txt")
+bamlist <- read.table("bam_list_all.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
