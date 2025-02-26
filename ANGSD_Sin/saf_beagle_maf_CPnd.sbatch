@@ -18,8 +18,8 @@ cd ${OUTDIR}
 
 crun angsd \
         -b bam_list_all_CPnd.txt \
-        -anc /archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/GenErode_Hte_20k/reference/reference.denovoSSL.Hte20k.fasta \
-        -ref /archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/GenErode_Hte_20k/reference/reference.denovoSSL.Hte20k.fasta \
+        -anc /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta \
+        -ref /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta \
         -out CPnd_sites_notrans \
 	-doSaf 1 -noTrans 1 -GL 1 -doGlf 2 -doMaf 1 -doMajorMinor 3 -doCounts 1 -doDepth 1 -dumpCounts 1 -P 8 \
         -sites global_snp_list_depth1_15_notrans.txt -rf global_snp_list_depth1_15_notrans.chrs
