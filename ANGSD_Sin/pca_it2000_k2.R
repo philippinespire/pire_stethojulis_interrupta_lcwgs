@@ -50,7 +50,7 @@ options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
-spp_code="Lva"
+spp_code="Sin"
 
 # location longform
 site_long = "Pandanon"
@@ -70,12 +70,12 @@ spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
 #### READ IN DATA ####
 
-cov_matrix_angsd <- as.matrix(read.table("angsd_pca_snps_notrans_subset.cov"))
+cov_matrix_angsd <- as.matrix(read.table("angsd_notrans_snps_it2000_pca.cov"))
 #Matrix is in order 1-222 on each side
 #sample_table <- read_table("sample_table_merged_allpop.tsv")
 
 # Read the BAM list file
-bamlist <- read.table("bam_list_all_subset.txt")
+bamlist <- read.table("bam_list_all.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
@@ -506,10 +506,10 @@ table_permanova_result <- as.data.frame(permanova_result)
 print(table_permanova_result)
 
 # Define output file
-outFile_permanova_result_it500 <- paste0("./plots/", spp_code, "_pca_it500_subset_permanova.csv")
+outFile_permanova_result <- paste0("./plots/", spp_code, "_pca_it2000_subset_permanova.csv")
 
 # Save the hypothesis test results as a CSV file
-write.csv(table_permanova_result, outFile_permanova_result_it500, row.names = TRUE)
+write.csv(table_permanova_result, outFile_permanova_result, row.names = TRUE)
 
 
 #### STATISTICS: MANOVA ####
@@ -530,10 +530,10 @@ table_betdisp_result <- as.data.frame(anova(beta_disp))
 print(table_betdisp_result)
 
 # Define output file
-outFile_betdisp_result_it500 <- paste0("./plots/", spp_code, "_pca_it500_betdisp.csv")
+outFile_betdisp_result <- paste0("./plots/", spp_code, "_pca_it2000_betdisp.csv")
 
 # Save the hypothesis test results as a CSV file
-write.csv(table_betdisp_result, outFile_betdisp_result_it500, row.names = TRUE)
+write.csv(table_betdisp_result, outFile_betdisp_result, row.names = TRUE)
 
 
 #### IDENTIFY OUTLIERS ####
