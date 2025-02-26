@@ -177,4 +177,48 @@ Filters:
 	-minMaf  	-1.000000	(Remove sites with MAF below)
 	-SNP_pval	0.317311	(Remove sites with a pvalue larger)
 	-rmTriallelic	0.000000	(Remove sites with a pvalue lower)
-	-forceMaf	0	(Write .mafs file when running -do
+	-forceMaf	0	(Write .mafs file when running -doAsso (by default does not output .mafs file with -doAsso))
+	-skipMissing	1	(Set post to 0.33 if missing (do not use freq as prior))
+Extras:
+	-ref	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta	(Filename for fasta reference)
+	-anc	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta	(Filename for fasta ancestral)
+	-eps	0.001000 [Only used for -doMaf &8]
+	-beagleProb	0 (Dump beagle style postprobs)
+	-indFname	(null) (file containing individual inbreedcoeficients)
+	-underFlowProtect	0 (file containing individual inbreedcoeficients)
+NB These frequency estimators requires major/minor -doMajorMinor
+--------------
+abcSaf.cpp:
+	-doSaf		1
+	   1: SAF calculation integrating over possible minor alleles
+	   2: SAF calculation incorporating inbreeding
+	   3: Calculate genotype probabilities using SAF (DEPRECATED; use -doPost 3)
+	   4: SAF calculation from genotype posteriors (input is beagle text format)
+	   5: SAF calculation conditioning on minor allele from -doMajorMinor
+	 -underFlowProtect	0
+	 -anc		/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/GenErode_Sin_20k/reference/reference.denovoSSL.Sin20k.fasta	(ancestral fasta)
+	 -noTrans	1	(remove transitions)
+	 -pest		(null)	(prior SFS)
+	 -isHap		0	(samples are haploid; works with -doSaf 1 or 5)
+	 -scoreTol	1.0e-09	(tolerance for score-limited algorithm)
+	 -doPost	0	(doPost 3, used for accessing SAF based variables)
+
+NB: If -pest is supplied in addition to -doSaf then the output will be posterior probabilities of the sample allele frequency for each site
+NB: Increasing -scoreTol will trade accuracy for reduced computation time and storage
+------------------------
+abcHetPlas.cpp:
+	-doHetPlas=0 (Perform hetplasmid analysis)
+	-maxIter=100	(Max number of iterations)
+	-minLRT=-1.000000
+		->"APnd_sites_notrans.arg"
+		->"APnd_sites_notrans.pos.gz"
+		->"APnd_sites_notrans.beagle.gz"
+		->"APnd_sites_notrans.mafs.gz"
+		->"APnd_sites_notrans.saf.gz"
+		->"APnd_sites_notrans.saf.pos.gz"
+		->"APnd_sites_notrans.saf.idx"
+		->"APnd_sites_notrans.depthSample"
+		->"APnd_sites_notrans.depthGlobal"
+
+	[ALL done] cpu-time used =  276.51 sec
+	[ALL done] walltime used =  546.00 sec
