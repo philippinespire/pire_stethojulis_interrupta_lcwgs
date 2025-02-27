@@ -561,7 +561,7 @@ If there are potential cryptic species in the data, we should try to extract mit
 
 Copy the runMitoZ bash and sbatch scripts to your sequencing project directory
 ```
-[hpc-0356@wahab-01 pire_stethojulis_interrupta_lcwgs]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* 2nd_sequencing_run
+cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/
 ```
 * The `runMitoZ_array.bash` and `runMitoZ_array.sbatch` scripts need to be altered before running. Using nano and ctrl+\ find every instance of `_clmp.fp2_r1.fq.gz` and replace it with `.clmp.fp2_r1.fq.gz`.
 
@@ -572,6 +572,8 @@ Submitted batch job 10707751
 ```
 
 
+---
+</details>
 
 
 
@@ -600,4 +602,5 @@ Rename the reference genome.
 mv scaffolds.fasta SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_scaffolds.fasta
 ```
 
+---
 </details>
