@@ -532,12 +532,19 @@ Submitted batch job 4288359
 
 ## 11. Repair FASTQ Files Messed Up by FASTQ_SCREEN (*)
 
-#### Execute `runREPAIR.sbatch`
-
 Next we need to re-pair our reads. `runREPAIR.sbatch` matches up forward (r1) and reverse (r2) reads so that the `*1.fq.gz` and `*2.fq.gz` files have reads in the same order
+
+I have had trouble running jobs on wahab, so I am using turning which requires a lower cpu count. I need to make a copy of the script and edit the file:
 ```
-[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
-Submitted batch job 4320669 
+[hpc-0373@turing1 2nd_sequencing_run]$ cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runREPAIR.sbatch low_cpu_runREPAIR.sbatch
+
+[hpc-0373@turing1 2nd_sequencing_run]$ cat -n low_cpu_runREPAIR.sbatch 
+     7	#SBATCH --cpus-per-task=32
+```
+#### Execute `runREPAIR.sbatch`
+```
+[hpc-0373@turing1 2nd_sequencing_run]$ sbatch low_cpu_runREPAIR.sbatch fq_fp1_clmp_fp2_fqscrn fq_fp1_clmp_fp2_fqscrn_rprd 5
+Submitted batch job 10707530 
 ```
 #### Confirm that the paired end fq.gz files are complete and formatted correctly:
 
