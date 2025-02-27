@@ -553,27 +553,6 @@ Submitted batch job 10707530
 ---
 </details>
 
-<details><summary>#. Extract mitochondrial genomes from read data</summary>
-
-## #. Extract mitochondrial genomes from read data
-
-If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
-
-Copy the runMitoZ bash and sbatch scripts to your sequencing project directory
-```
-cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/
-```
-* The `runMitoZ_array.bash` and `runMitoZ_array.sbatch` scripts need to be altered before running. Using nano and ctrl+\ find every instance of `_clmp.fp2_r1.fq.gz` and replace it with `.clmp.fp2_r1.fq.gz`.
-
-Now, execute the runMitoZ script:
-```
-[hpc-0373@turing1 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
-Submitted batch job 10707751
-```
-
-
----
-</details>
 
 
 
@@ -601,6 +580,29 @@ Rename the reference genome.
 ```
 mv scaffolds.fasta SPAdes_Sin-CPnd-A_decontam_R1R2_noIsolate_scaffolds.fasta
 ```
+
+---
+</details>
+
+
+<details><summary>#. Extract mitochondrial genomes from read data</summary>
+
+## #. Extract mitochondrial genomes from read data
+
+If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
+
+Copy the runMitoZ bash and sbatch scripts to your sequencing project directory
+```
+cp /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/runMitoZ* /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/
+```
+* The `runMitoZ_array.bash` and `runMitoZ_array.sbatch` scripts need to be altered before running. Using nano and ctrl+\ find every instance of `_clmp.fp2_r1.fq.gz` and replace it with `.clmp.fp2_r1.fq.gz`.
+
+Now, execute the runMitoZ script:
+```
+[hpc-0373@turing1 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 10707751
+```
+
 
 ---
 </details>
