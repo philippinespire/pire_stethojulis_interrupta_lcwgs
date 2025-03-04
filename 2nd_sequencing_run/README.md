@@ -195,21 +195,26 @@ Submitted batch job 4265307
 ```
 
 ### MultiQC output (fq_raw/fqc_raw_report.html):
-*
+* low # reads for contemporary; albatross high
+* Many duplicate reads in albatross and undetermined
+* 1/148 passing Per Base Sequence Content
+* 13/148 passing Per Sequence GC Content
+	* peaks around 45%, 70%, 78%, and 100%
+* All failing adapter content
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 27 - 62.7%
+    • Contemp: 3.5 - 26.1%
+    • Undertermined: 39.7 - 40.7%
 ‣ GC content - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 43 - 63%
+    • Contemp: 43 - 60%
+    • Undetermined: 49 - 54%
 ‣ number of reads - 
-    • Alb: 
-    • Contemp: 
-    • Undetermined: 
+    • Alb: 28.5 - 129.2 mil
+    • Contemp: 0.0 - 3.9 mil
+    • Undetermined: 287 mil
 ```
 ---
 </details>
@@ -224,29 +229,31 @@ Run `runFASTP_1st_trim.sbatch`:
 Submitted batch job 4265443
 ```
 ### Review the FastQC output (fq_fp1/1st_fastp_report.html):
-* 
+* Sequence Quality much better after filtering. Quality dips from ~40 to ~27 between reads 90 and 150
+* GC content much better after filtering. CPnd_013 is an outlier ~50%, others between 36 - 43%
+* Read N Content did not appear to change after filtering; some noise still
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 6 - 44%
+    • Contemp: 0.9 - 7.8%
+    • Undertermined: 2.7%
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 37.5 - 40.6%
+    • Contemp: 40 - 43.3%; 50.1% [CPnd_013]
+    • Undertermined: 40.8%
 ‣ passing filter - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 67 -  96.2%
+    • Contemp:  73.2 - 97.6%
+    • Undertermined: 78.9%
 ‣ % adapter - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb:  81.5 - 95.7%
+    • Contemp: 45.5 - 91.1%
+    • Undertermined: 84.1%
 ‣ number of reads - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: ~ 52 - 242 mil
+    • Contemp: ~ 0.009 - 7.6 mil
+    • Undertermined: ~ 453 mil
 ```
 ---
 </details>
@@ -334,25 +341,31 @@ Submitted batch job 4270357
 ```
 
 **Results** (fq_fp1_clmp/fqc_clmp_report.html): 
-* 
+* duplication levels dropped considerably for albatross
+* 59/148 passing Per Base Sequence Content
+* 65/148 passing Per Sequence GC Content
+	* one peak ~41%
+	* One individual failing: `CPnd_013` with stochastic peaks around 44% and 65%
+* 148 samples had less than 1% of reads made up of overrepresented sequences
+* 148/148 passing Adapter Content
 
 ```
 ‣ % duplication - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 2.6 - 10.7%
+    • Contemp: 0.2 - 4.5%
+    • Undertermined: 4.9 - 5.3%
 ‣ GC content - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 37 - 41%
+    • Contemp: 39 - 43%; 50% [CPnd_013]
+    • Undertermined: 41%
 ‣ length - 
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 77 - 90 bp
+    • Contemp: 78 - 129 bp
+    • Undertermined: 85 bp
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 16.0 - 63.4 mil
+    • Contemp: 0.0 - 3.5 mil
+    • Undertermined: 144 mil
 ```
 </details>
 
