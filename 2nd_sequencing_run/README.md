@@ -603,6 +603,34 @@ Now, execute the runMitoZ script:
 Submitted batch job 10707751
 ```
 
+Move MitoZ\*.out files to `fq_fp1_clmp_fp2`.
+```
+mv MitoZ*.out fq_fp1_clmp_fp2/
+```
+
+Process MitoZ
+```
+cd fq_fp1_clmp_fp2
+
+cp /archive/carpenterlab/pire/pire_lcwgs_data_processing/scripts/MitoZ_wahab/process_MitoZ_outputs_lcwgs.sh ./
+
+sh process_MitoZ_outputs_lcwgs.sh
+```
+
+Rename duplicate sequence names in the fasta file. 
+```
+cp /archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/3rd_sequencing_run/fq_fp1_clmp_fp2/rename_duplicate_fasta_headers.sh ./
+
+sh rename_duplicate_fasta_headers.sh MitoZ_output.fasta Sin_2nd_MitoZ_output_cleaned.fasta
+```
+
+Rename files to include the species code and the sequencing run.
+```
+mv MitoZ_success.txt Sin_2nd_MitoZ_success.txt
+mv MitoZ_failure_lowdepth.txt Sin_2nd_MitoZ_failure_lowdepth.txt
+mv MitoZ_output.fasta Sin_2nd_MitoZ_output.fasta
+```
+
 
 ---
 </details>
