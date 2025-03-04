@@ -548,6 +548,24 @@ Submitted batch job 10707530
 ```
 #### Confirm that the paired end fq.gz files are complete and formatted correctly:
 
+Start by running the script:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash
+[hpc-0373@wahab-01 2nd_sequencing_run]$ SCRIPT=/home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/validateFQPE.sbatch 
+                                        DIR=fq_fp1_clmp_fp2_fqscrn_rprd
+                                        fqPATTERN="*fq.gz"
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
+Submitted batch job 
+```
+Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-.out
+PAIRED END FASTQ VALIDATION REPORT
+
+```
+
+
+
 
 
 ---
