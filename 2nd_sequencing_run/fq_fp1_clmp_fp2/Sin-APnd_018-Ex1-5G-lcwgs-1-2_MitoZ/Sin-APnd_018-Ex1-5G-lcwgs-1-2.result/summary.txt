@@ -1,0 +1,56 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C68982         357            no             Taenioides cirratus 
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C68982         <1     >358   358        -          CDS    COX1       cytochrome c oxidase subunit I    1              
+
+
+Protein coding genes totally found:  1
+tRNA genes totally found:            0
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                 1
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+ATP8                                 1
+COX2                                 1
+COX3                                 1
+CYTB                                 1
+ND1                                  1
+ND2                                  1
+ND3                                  1
+ND4                                  1
+ND4L                                 1
+ND5                                  1
+ND6                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Asp                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Lys                             1
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             2
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

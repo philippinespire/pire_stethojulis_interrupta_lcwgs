@@ -1,0 +1,58 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+C68860         846            no             Ranzania laevis     
+C24835         223            no             Eumegistus illustris
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+C24835         6      80     75         +          tRNA   trnK(uuu)  tRNA-Lys                          1              
+C24835         81     >216   136        +          CDS    ATP8       ATP synthase F0 subunit 8         1              
+C68860         <3     678    676        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+C68860         684    754    71         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+C68860         758    829    72         +          tRNA   trnS(uga)  tRNA-Ser                          1              
+
+
+Protein coding genes totally found:  2
+tRNA genes totally found:            3
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                 5
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+ATP6                                 1
+COX1                                 1
+COX3                                 1
+CYTB                                 1
+ND1                                  1
+ND2                                  1
+ND3                                  1
+ND4                                  1
+ND4L                                 1
+ND5                                  1
+ND6                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Ala                             1
+tRNA-Arg                             1
+tRNA-Asn                             1
+tRNA-Cys                             1
+tRNA-Gln                             1
+tRNA-Glu                             1
+tRNA-Gly                             1
+tRNA-His                             1
+tRNA-Ile                             1
+tRNA-Leu                             2
+tRNA-Met                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Ser                             1
+tRNA-Thr                             1
+tRNA-Trp                             1
+tRNA-Tyr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!
