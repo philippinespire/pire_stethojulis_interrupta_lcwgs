@@ -568,7 +568,7 @@ Start by running the script:
                                         DIR=fq_fp1_clmp_fp2_fqscrn_rprd
                                         fqPATTERN="*fq.gz"
 [hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch $SCRIPT $DIR $fqPATTERN
-Submitted batch job 
+Submitted batch job 4326841
 ```
 Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
 ```
