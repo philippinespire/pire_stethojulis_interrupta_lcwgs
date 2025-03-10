@@ -159,8 +159,14 @@ PCA <- function(cov_matrix_angsd,
   p <- ggplot(data = e, aes(x = PC1, y = PC2, color = Era, shape = Location)) +
     geom_point(size = 4, alpha = 0.4) +
     scale_color_manual(values = c("#00BFC4", "#F8766D")) +
-    scale_x_continuous(labels = scales::number_format(accuracy = 0.01)) +  # Round to 2 decimal places
-    scale_y_continuous(labels = scales::number_format(accuracy = 0.01)) +  # Round to 2 decimal places
+    scale_x_continuous(breaks = seq(-0.2, 0.2, by = 0.2), 
+                       limits = c(-0.2, 0.24), 
+                       # expand = c(0, 1.1),
+                       labels = scales::number_format(accuracy = 0.1)) +  # Round to 1 decimal places
+    scale_y_continuous(breaks = seq(-0.2, 0.6, by = 0.2), 
+                       limits = c(-0.32, 0.64), 
+                       #expand = c(0, 0.5),
+                       labels = scales::number_format(accuracy = 0.1)) +  # Round to 1 decimal places
     theme_classic() +
     theme(
       legend.position = "none",
