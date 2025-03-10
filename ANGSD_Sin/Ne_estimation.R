@@ -100,9 +100,14 @@ length(unique(all_mafs_001$nInd1))
 length(unique(all_mafs_001$nInd2))
 # 30
 
-# contemporary collected in 2021. albatross collected in 1909. So 112 years. GenTime? Check FishLife estimate. 
+# contemporary collected in 2021. albatross collected in 1909. So 112 years.
+# GenTime as estimated by FishLife is 2.890225 based on family-level estimate
+GenTime = 2.890225
+Years = 112
+Generations = Years/GenTime
+# 38.751308
 
-# How to set this number (114)? Sample size from both pops?  Or number of generations? 
+all_mafs_001[, jrNe2(freq1, freq2, nInd1, nInd2, Generations)] # 100.1814 w/ GenTime = 2.890225
 all_mafs_001[, jrNe2(freq1, freq2, nInd1, nInd2, 112)] # 289.5467 w/ GenTime = 1 yr
 all_mafs_001[, jrNe2(freq1, freq2, nInd1, nInd2, 56)] # 144.7734 w/ GenTime = 2 yr
 all_mafs_001[, jrNe2(freq1, freq2, nInd1, nInd2, 37)] # 95.65383 w/ GenTime = 3 yr (37.33)
@@ -136,21 +141,22 @@ jrNe2boot <- function(data, gen, indices){
 }
 
 # how to find original t1* bias, std error
+boot_pnd <- boot(data = all_mafs_001, statistic = jrNe2boot, R = 1000, gen = Generations) # 100.1814 w/ GenTime = 2.890225
 boot_pnd <- boot(data = all_mafs_001, statistic = jrNe2boot, R = 1000, gen = 112) # GenTime = 1
 boot_pnd <- boot(data = all_mafs_001, statistic = jrNe2boot, R = 1000, gen = 28) # GenTime = 4
 boot_pnd <- boot(data = all_mafs_001, statistic = jrNe2boot, R = 1000, gen = 37) # GenTime = 3
 
-# Ne @ t0 = 497.99
+# Ne @ t0 = 100.1814 w/ GenTime = 2.890225
 print(boot_pnd$t0)
 
-# 95% Confidence Interval: 350.7, 792.5
+# 95% Confidence Interval: 76.7, 135.1 w/ GenTime = 2.890225
 boot.ci(boot_pnd, type='perc') 
 
-# Bias: -18.10932
+# Bias: -1.859551 w/ GenTime = 2.890225
 bias <- boot_pnd$t0 - mean(boot_pnd$t)
 print(bias)
 
-# Standard Error: 110.6309
+# Standard Error: 15.56412 w/ GenTime = 2.890225
 se <- sqrt(var(boot_pnd$t))
 print(se)
 

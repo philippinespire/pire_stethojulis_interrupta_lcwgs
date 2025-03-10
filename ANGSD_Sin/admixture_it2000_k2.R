@@ -114,6 +114,18 @@ plot_q2_not <-
 print(plot_q2_not) # save to your directory
 
 
+
+q2_not <- list(k2_angsd_not)
+plot_q2_not <- 
+  plotQ(as.qlist(q2_not), imgoutput = "sep", returnplot = TRUE, exportpath=getwd(), dpi=1000,
+        clustercol = c("#F8766D", "#00BFC4"),
+        showsp = FALSE, spbgcol = "white", splab = "K = 2", splabsize = 12,
+        showyaxis = TRUE, showticks = FALSE, indlabsize = 12, ticksize = 0.5,
+        grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = FALSE, grplabspacer = 0.1,)
+print(plot_q2_not) # save to your directory
+
+
+
 #### BOXPLOT ANCESTRY PROPORTIONS BY POPULATION ####
 
 # Convert population column to factor for proper plotting

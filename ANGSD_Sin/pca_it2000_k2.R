@@ -110,6 +110,89 @@ x_axis <- 1
 y_axis <- 2
 
 
+#### PLOT PCA FORMATTED WITH 95% ELLIPSES (LINE) W/O TITLE & LEGEND ####
+
+PCA <- function(cov_matrix_angsd, 
+                ind_label_angsd, 
+                pop_label_angsd, 
+                x_axis, 
+                y_axis, 
+                show.point = TRUE, 
+                show.label = FALSE, 
+                show.ellipse = TRUE, 
+                show.line = TRUE, 
+                alpha = 0.2) {
+  ## This function takes a covariance matrix and performs PCA.
+  index_include <- ind_label_angsd
+  m <- as.matrix(cov_matrix_angsd)
+  e <- eigen(m)
+  e_value <- e$values
+  x_variance <- e_value[x_axis] / sum(e_value) * 100
+  y_variance <- e_value[y_axis] / sum(e_value) * 100
+  e <- as.data.frame(e$vectors)
+  e <- cbind(ind_label_angsd, pop_label_angsd, e) 
+  colnames(e)[3:(dim(e)[1])] <- paste0("PC", 1:(dim(e)[1] - 2)) 
+  colnames(e)[1:2] <- c("individual", "population")
+  assign("pca_table", e, .GlobalEnv)
+  
+  # Assigning 'Historical' and 'Contemporary' to the 'era' column
+  e$era <- "Historical"
+  e <- e %>% relocate(era, .after = population)
+  
+  # Update the 'era' column using the user-defined variables
+  e[albatross_n_plus_1:total_n, "era"] <- "Contemporary"
+  
+  # Add location to e dataframe
+  e$location <- site_long
+  e <- e %>% relocate(location, .after = population)
+  
+  colnames(e)[3] <- "Location"
+  colnames(e)[4] <- "Era"
+  
+  # Determine axis limits and breaks
+  x_limits <- range(e$PC1, na.rm = TRUE)
+  y_limits <- range(e$PC2, na.rm = TRUE)
+  x_breaks <- seq(x_limits[1], x_limits[2], length.out = 4)  # 4 evenly spaced values
+  y_breaks <- seq(y_limits[1], y_limits[2], length.out = 4)  # 4 evenly spaced values
+  
+  # Base PCA plot
+  p <- ggplot(data = e, aes(x = PC1, y = PC2, color = Era, shape = Location)) +
+    geom_point(size = 4, alpha = 0.4) +
+    scale_color_manual(values = c("#00BFC4", "#F8766D")) +
+    scale_x_continuous(labels = scales::number_format(accuracy = 0.01)) +  # Round to 2 decimal places
+    scale_y_continuous(labels = scales::number_format(accuracy = 0.01)) +  # Round to 2 decimal places
+    theme_classic() +
+    theme(
+      legend.position = "none",
+      # legend.justification = "center",  # Center legend horizontally
+      # legend.margin = margin(t = 5, b = 5),  # Adjust spacing above/below legend
+      # legend.spacing.x = unit(5, "pt"),  # Adjust spacing between legend items
+      axis.text = element_text(family = "Times New Roman", size = 12),  # Font for axis values
+      axis.title = element_text(family = "Times New Roman", size = 12),  # Font for axis titles
+      axis.ticks.length = unit(3, "pt"),  # Small tick marks
+      axis.ticks = element_line(color = "black")  # Black tick marks
+    ) +
+    xlab(paste0("PC", x_axis, " (", round(x_variance, 2), "%)")) +
+    ylab(paste0("PC", y_axis, " (", round(y_variance, 2), "%)"))
+  
+  # Add ellipses as outlines if requested
+  if (show.ellipse) {
+    p <- p + stat_ellipse(aes(color = Era), type = "norm", linetype = "solid", linewidth = 1, geom = "path")
+  }
+  
+  return(p)
+}
+
+# Create PCA plot
+pca <- PCA(cov_matrix_angsd, ind_label_angsd, pop_label_angsd, x_axis, y_axis)
+print(pca)
+# outFile pattern
+outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_FORMAT_angsd_notrans_snps_it2000_pca_cov", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
+
+
 #### PLOT PCA ####
 
 # create pca plot function
@@ -537,6 +620,15 @@ write.csv(table_betdisp_result, outFile_betdisp_result, row.names = TRUE)
 
 
 #### IDENTIFY OUTLIERS ####
+
+# Print PCA Table
+# Select columns: individual, population, PC1, PC2
+pca_table_cleaned <- pca_table %>%
+  select(individual, population, PC1, PC2) %>%
+  mutate(individual = str_remove(individual, "\\..*"))  # Remove first period and everything after
+
+# Write to CSV
+write.csv(pca_table_cleaned, "pca_table_cleaned_subset_k3.csv", row.names = FALSE)
 
 # Define outlier thresholds for PC1 and PC2
 PC1_lower_threshold <- NA   # Set to NA if not applicable
