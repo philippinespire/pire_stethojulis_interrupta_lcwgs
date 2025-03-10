@@ -143,6 +143,12 @@ plot_theta_depth <- angsd_thetas_depth_notrans %>%
   ylim(-0.05, 0.25)
 print(plot_theta_depth)
 
+# outFile pattern
+outFile_plot_theta_depth <- paste0("plots/", spp_code, "_plot_theta_depth_subset_FORMAT", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_theta_depth, plot = plot_theta_depth, width = 2.15, height = 2.5)
+
 
 # nucleotide diversity (pi) estimates
 plot_pi_depth <- angsd_thetas_depth_notrans %>%
@@ -153,8 +159,15 @@ plot_pi_depth <- angsd_thetas_depth_notrans %>%
   geom_point(size=1.5, alpha=0.5) +
   geom_smooth() +
   scale_color_manual(values = c("#00BFC4", "#F8766D")) +
-  ylim(-0.10, 0.50)
+  ylim(-0.1, 0.45)
 print(plot_pi_depth)
+
+# outFile pattern
+outFile_plot_pi_depth <- paste0("plots/", spp_code, "_plot_pi_depth_subset_FORMAT", ".png")  
+
+# Save the plot to a file
+ggsave(filename = outFile_plot_pi_depth, plot = plot_pi_depth, width = 2.15, height = 2.5)
+
 
 #Subset to depth 3-6X
 
@@ -233,11 +246,10 @@ t.test(apnd_notrans$tP_bysite, cpnd_notrans$tP_bysite, paired=TRUE)
 # -0.04635277
 
 # Using Wilcoxon Signed-Rank Test in R for nonparametric data
-wilcox.test(apnd_notrans$tW_bysite, cpnd_notrans$tW_bysite, paired = TRUE)
+wilcox.test(apnd_notrans$tP_bysite, cpnd_notrans$tP_bysite, paired = TRUE)
 # Wilcoxon signed rank test with continuity correction
-# 
 # data:  apnd_notrans$tW_bysite and cpnd_notrans$tW_bysite
-# V = 20, p-value < 2.2e-16
+# V = 1605, p-value < 2.2e-16
 # alternative hypothesis: true location shift is not equal to 0
 
 
@@ -330,9 +342,6 @@ hist(cpnd_notrans$tW_bysite) # normally distributed
 
 ##Paired t-test
 t.test(apnd_notrans$tW_bysite, cpnd_notrans$tW_bysite, paired=TRUE)
-
-# Paired t-test
-# 
 # data:  apnd_notrans$tW_bysite and cpnd_notrans$tW_bysite
 # t = -47.62, df = 270, p-value < 2.2e-16
 # alternative hypothesis: true mean difference is not equal to 0
@@ -352,7 +361,6 @@ wilcox.test(apnd_notrans$tW_bysite, cpnd_notrans$tW_bysite, paired = TRUE)
 
 
 #Bootstrapping of theta
-
 x = as.vector(apnd_notrans$tW_bysite)
 
 samplemean <- function(x, d) {
@@ -381,7 +389,6 @@ boot.ci(boot.out=cpnd_boot, type="norm") #95%   ( 0.1283,  0.1364 )
 boot.ci(boot.out=cpnd_boot, type="bca") #95%   ( 0.1281,  0.1363 )
 
 ##Create data frame with means and 95% CI for plotting
-
 population <- c("APnd","CPnd")
 location <- c("Pandanon Island", "Pandanon Island")
 mean_theta <- c(0.01286791, 0.1323658)
@@ -456,10 +463,14 @@ plot_tajima_density <- angsd_thetas_depth_notrans %>%
         axis.ticks = element_line(color = "black")) +  # Black tick mark
   geom_density(alpha=0.65) +
   scale_fill_manual(values = c("#F8766D", "#00BFC4")) +
-  xlim(-3.0, 3.0) +
-  ylim(0.00, 1.1) +
-  scale_y_continuous(breaks = seq(0, 2, by = 0.25)) + # Setting custom y-axis ticks
-  scale_x_continuous(breaks = seq(-2.0, 3, by = 2.0), limits = c(-3, 3))
+  scale_x_continuous(breaks = seq(-2, 2, by = 2), 
+                     limits = c(-2.5, 2.5), 
+                     # expand = c(0, 1.1),
+                     labels = scales::number_format(accuracy = 1)) +  # Round to 0 decimal places
+  scale_y_continuous(breaks = seq(0, 2.0, by = 0.4), 
+                     limits = c(0, 2.0), 
+                     #expand = c(0, 0.5),
+                     labels = scales::number_format(accuracy = 0.1))  # Round to 1 decimal places
 print(plot_tajima_density)
 
 # outFile pattern
@@ -467,6 +478,22 @@ outFile_plot_tajima <- paste0("plots/", spp_code, "_plot_tajima_FORMAT", ".png")
 
 # Save the plot to a file
 ggsave(filename = outFile_plot_tajima, plot = plot_tajima_density, width = 2.15, height = 2.5)
+
+
+# PEAKS
+# Compute density estimate for Historical
+density_historical <- density(angsd_thetas_depth_notrans$Tajima[angsd_thetas_depth_notrans$Era == "Historical"], na.rm = TRUE)
+peak_historical <- density_historical$x[which.max(density_historical$y)]
+
+# Compute density estimate for Modern
+density_modern <- density(angsd_thetas_depth_notrans$Tajima[angsd_thetas_depth_notrans$Era == "Modern"], na.rm = TRUE)
+peak_modern <- density_modern$x[which.max(density_modern$y)]
+
+# Print peak values
+print(paste("Peak of Historical:", peak_historical))
+# Peak of Historical: -0.00532408793080053
+print(paste("Peak of Modern:", peak_modern))
+# Peak of Modern: -1.03785287342584
 
 
 plot_tajima <- angsd_thetas_depth_notrans %>%
