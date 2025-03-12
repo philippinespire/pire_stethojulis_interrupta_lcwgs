@@ -572,12 +572,48 @@ Submitted batch job 4326841
 ```
 Check the SLURM `.out` file and `fqValidationReport.txt` to determine if all of the fqgz files are valid:
 ```
-[hpc-0373@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-.out
+[hpc-0373@wahab-01 2nd_sequencing_run]$ cat valiate_FQ_-4326841.out
 PAIRED END FASTQ VALIDATION REPORT
 
+Directory: fq_fp1_clmp_fp2_fqscrn_rprd
+File Pattern: *fq.gz
+File extensions found: .R1.fq.gz .R2.fq.gz
+
+Number of paired end fq files evaluated: 74
+Number of paired end fq files validated: 74
+
+Errors Reported:
+```
+#### Run `Multi_FASTQC`
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$ sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/Multi_FASTQC.sh "./fq_fp1_clmp_fp2_fqscrn_rprd" "fqc_rprd_report" "fq.gz"
+Submitted batch job 4342412
 ```
 
+#### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
+*
 
+```
+‣ % duplication -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ GC content -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ length -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+‣ number of reads -
+    • Alb: 
+    • Contemp: 
+    • Undertermined: 
+```
+
+---
+</details>
 
 
 
