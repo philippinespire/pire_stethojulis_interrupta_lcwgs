@@ -739,11 +739,59 @@ Submitted batch job 4343523
 Filtering BAM files ensures data quality, reduces noise, improves analysis accuracy, and prepares data for downstream genomic analyses.
 ```
 [hpc-0373@wahab-01 mkBAM_ddocent]$ sbatch dDocentHPC.sbatch fltrBAM config.6.lcwgs
-Submitted batch job XXXXXXX
+Submitted batch job 4343878
 ```
 ---
 </details>
 
+<details><summary>15. Generate Number of Mapped Reads</summary>
+
+## 15. Generate Number of Mapped Reads
+```
+[hpc-0373@wahab-01 2nd_sequencing_run]$  sbatch /home/e1garcia/shotgun_PIRE/pire_fq_gz_processing/mappedReadStats.sbatch mkBAM_ddocent mkBAM_ddocent/coverageMappedReads
+Submitted batch job XXXXXXX
+```
+
+#### Review Output (coverageMappedReads/out__ReadStats.tsv):
+* 
+
+```
+‣ numreads:
+    • Alb: 
+    • Contemp: 
+    • Undertermined:
+
+‣ meanreadlength:
+    • Alb: 
+    • Contemp: 
+    • Undertermined:
+
+‣ meandepth_wcvg:
+    • Alb: 
+    • Contemp: 
+    • Undertermined:
+
+‣ numpos:
+    • 
+
+‣ numpos_wcvg:
+    • Alb: 
+    • Contemp: 
+    • Undertermined:
+
+‣ meandepth:
+    • Alb: 
+    • Contemp: 
+    • Undertermined:
+
+‣ pctpos_wcvg:
+    • Alb: 
+    • Contemp: 
+    • Undertermined:
+```
+---
+
+</details>
 
 <details><summary>#. Extract mitochondrial genomes from read data</summary>
 
