@@ -793,9 +793,9 @@ Submitted batch job 4346548
 
 </details>
 
-<details><summary>#. Extract mitochondrial genomes from read data</summary>
+<details><summary>16. Extract mitochondrial genomes from read data</summary>
 
-## #. Extract mitochondrial genomes from read data
+## 16. Extract mitochondrial genomes from read data
 
 If there are potential cryptic species in the data, we should try to extract mitochondrial genes from the read data to get an idea of species IDs. You use MitoZ to do so.
 
@@ -839,6 +839,86 @@ mv MitoZ_failure_lowdepth.txt Sin_2nd_MitoZ_failure_lowdepth.txt
 mv MitoZ_output.fasta Sin_2nd_MitoZ_output.fasta
 ```
 
+Now, we can see which individuals MitoZ worked for:
 
+<details><summary>Individuals that succeeded/failed:</summary>
+<p>
+		
+**Individuals that succeeded:** (Albatross: 4/25   Contemporary: 2/48)
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat Sin_2nd_MitoZ_success.txt
+Sin-APnd_007-Ex1-4D-lcwgs-1-2
+Sin-APnd_014-Ex1-5C-lcwgs-1-2
+Sin-APnd_018-Ex1-5G-lcwgs-1-2
+Sin-APnd_025-Ex1-6F-lcwgs-1-2
+Sin-CPnd_045-Ex1-11H-lcwgs-1-2
+Sin-CPnd_090-Ex1-12F-lcwgs-1-2
+```
+**Individuals that failed:** (Albatross: 11/25   Contemporary: 42/48)
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ cat Sin_2nd_MitoZ_failure_lowdepth.txt
+Sin-APnd_002-Ex1-3G-lcwgs-1-2
+Sin-APnd_004-Ex1-4A-lcwgs-1-2
+Sin-APnd_005-Ex1-4B-lcwgs-1-2
+Sin-APnd_009-Ex1-4F-lcwgs-1-2
+Sin-APnd_013-Ex1-5B-lcwgs-1-2
+Sin-APnd_016-Ex1-5E-lcwgs-1-2
+Sin-APnd_017-Ex1-5F-lcwgs-1-2
+Sin-APnd_020-Ex1-6A-lcwgs-1-2
+Sin-APnd_022-Ex1-6C-lcwgs-1-2
+Sin-APnd_023-Ex1-6D-lcwgs-1-2
+Sin-APnd_024-Ex1-6E-lcwgs-1-2
+Sin-CPnd_013-Ex1-4E-lcwgs-1-2
+Sin-CPnd_015-Ex1-4A-lcwgs-1-2
+Sin-CPnd_018-Ex1-11A-lcwgs-1-2
+Sin-CPnd_019-Ex1-1H-lcwgs-1-2
+Sin-CPnd_020-Ex1-12E-lcwgs-1-2
+Sin-CPnd_021-Ex1-3D-lcwgs-1-2
+Sin-CPnd_022-Ex1-1D-lcwgs-1-2
+Sin-CPnd_023-Ex1-12B-lcwgs-1-2
+Sin-CPnd_024-Ex1-12C-lcwgs-1-2
+Sin-CPnd_025-Ex1-3B-lcwgs-1-2
+Sin-CPnd_031-Ex1-3G-lcwgs-1-2
+Sin-CPnd_032-Ex1-3E-lcwgs-1-2
+Sin-CPnd_033-Ex1-1B-lcwgs-1-2
+Sin-CPnd_034-Ex1-3C-lcwgs-1-2
+Sin-CPnd_035-Ex1-12D-lcwgs-1-2
+Sin-CPnd_038-Ex1-11C-lcwgs-1-2
+Sin-CPnd_039-Ex1-10F-lcwgs-1-2
+Sin-CPnd_040-Ex1-11E-lcwgs-1-2
+Sin-CPnd_042-Ex1-10D-lcwgs-1-2
+Sin-CPnd_043-Ex1-1C-lcwgs-1-2
+Sin-CPnd_049-Ex1-4C-lcwgs-1-2
+Sin-CPnd_050-Ex1-9B-lcwgs-1-2
+Sin-CPnd_051-Ex1-12G-lcwgs-1-2
+Sin-CPnd_053-Ex1-9G-lcwgs-1-2
+Sin-CPnd_058-Ex1-9D-lcwgs-1-2
+Sin-CPnd_061-Ex1-9A-lcwgs-1-2
+Sin-CPnd_062-Ex1-11D-lcwgs-1-2
+Sin-CPnd_063-Ex1-9F-lcwgs-1-2
+Sin-CPnd_065-Ex1-11B-lcwgs-1-2
+Sin-CPnd_067-Ex1-9C-lcwgs-1-2
+Sin-CPnd_074-Ex1-12A-lcwgs-1-2
+Sin-CPnd_075-Ex1-11G-lcwgs-1-2
+Sin-CPnd_076-Ex1-10E-lcwgs-1-2
+Sin-CPnd_079-Ex1-9H-lcwgs-1-2
+Sin-CPnd_080-Ex1-2E-lcwgs-1-2
+Sin-CPnd_081-Ex1-10G-lcwgs-1-2
+Sin-CPnd_085-Ex1-4H-lcwgs-1-2
+Sin-CPnd_088-Ex1-2D-lcwgs-1-2
+Sin-CPnd_089-Ex1-9E-lcwgs-1-2
+Sin-CPnd_092-Ex1-11F-lcwgs-1-2
+Sin-CPnd_093-Ex1-10C-lcwgs-1-2
+Sin-CPnd_095-Ex1-2B-lcwgs-1-2
+```
 ---
 </details>
+
+It seems like maybe MitoZ didn't run properly, because 14 individuals are not accounted for.
+I'm going to move all of the MitoZ out files to `2nd_sequencing_run/logs` to avoid confusion, and then rerun MitoZ.
+```
+[hpc-0373@wahab-01 fq_fp1_clmp_fp2]$ mv MitoZ*.out ../logs/
+
+[hpc-0373@wahab-01 2nd_sequencing_run]$ bash runMitoZ_array.bash /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/2nd_sequencing_run/fq_fp1_clmp_fp2 32
+Submitted batch job 4366975
+```
