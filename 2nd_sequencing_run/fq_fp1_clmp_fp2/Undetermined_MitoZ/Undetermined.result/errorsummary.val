@@ -1,0 +1,7 @@
+     9 ERROR:   SEQ_FEAT.InternalStop
+     6 ERROR:   SEQ_FEAT.NoStop
+     9 ERROR:   SEQ_INST.StopInProtein
+     1 WARNING: SEQ_FEAT.CollidingGeneNames
+     3 WARNING: SEQ_FEAT.PartialProblem
+     7 INFO:    SEQ_DESCR.OrganismIsUndefinedSpecies
+     2 INFO:    SEQ_FEAT.PartialProblem

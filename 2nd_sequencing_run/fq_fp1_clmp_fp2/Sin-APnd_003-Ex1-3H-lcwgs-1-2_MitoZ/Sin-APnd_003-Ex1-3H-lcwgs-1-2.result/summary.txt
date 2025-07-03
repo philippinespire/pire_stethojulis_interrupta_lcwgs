@@ -1,0 +1,59 @@
+#Seq_id        Length(bp)     Circularity    Closely_related_species
+scaffold155_FivePCGs4836           no             Cheilodactylus quadricornis
+C698840        5474           no             Halichoeres tenuispinis
+
+
+#Seq_id        Start  End    Length(bp) Direction  Type   Gene_name  Gene_prodcut                      Total_freq_occurred
+--------------------------------------------------------------------------------------------------------------------------
+scaffold155_FivePCGs115    283    169        -          CDS    ATP8       ATP synthase F0 subunit 8         1              
+scaffold155_FivePCGs284    358    75         -          tRNA   trnK(uuu)  tRNA-Lys                          1              
+scaffold155_FivePCGs350    1049   700        -          CDS    COX2       cytochrome c oxidase subunit II   1              
+scaffold155_FivePCGs1055   1125   71         -          tRNA   trnD(guc)  tRNA-Asp                          1              
+scaffold155_FivePCGs1129   1200   72         +          tRNA   trnS(uga)  tRNA-Ser                          2              
+scaffold155_FivePCGs1200   2751   1552       -          CDS    COX1       cytochrome c oxidase subunit I    1              
+scaffold155_FivePCGs2752   2822   71         +          tRNA   trnY(gua)  tRNA-Tyr                          1              
+scaffold155_FivePCGs2822   2888   67         +          tRNA   trnC(gca)  tRNA-Cys                          1              
+scaffold155_FivePCGs2925   2998   74         +          tRNA   trnN(guu)  tRNA-Asn                          1              
+scaffold155_FivePCGs2999   3068   70         +          tRNA   trnA(ugc)  tRNA-Ala                          1              
+scaffold155_FivePCGs3072   3143   72         -          tRNA   trnW(uca)  tRNA-Trp                          1              
+scaffold155_FivePCGs3141   4188   1048       -          CDS    ND2        NADH dehydrogenase subunit 2      1              
+scaffold155_FivePCGs4188   4258   71         -          tRNA   trnM(cau)  tRNA-Met                          1              
+scaffold155_FivePCGs4257   4328   72         +          tRNA   trnQ(uug)  tRNA-Gln                          1              
+scaffold155_FivePCGs4327   4397   71         -          tRNA   trnI(gau)  tRNA-Ile                          1              
+scaffold155_FivePCGs4399   >4837  439        -          CDS    ND1        NADH dehydrogenase subunit 1      1              
+C698840        <3     1665   1663       -          CDS    ND5        NADH dehydrogenase subunit 5      1              
+C698840        1666   1738   73         -          tRNA   trnL(uag)  tRNA-Leu                          1              
+C698840        1753   1821   69         -          tRNA   trnS(gcu)  tRNA-Ser                          2              
+C698840        1821   1890   70         -          tRNA   trnH(gug)  tRNA-His                          1              
+C698840        1885   3271   1387       -          CDS    ND4        NADH dehydrogenase subunit 4      1              
+C698840        3264   3561   298        -          CDS    ND4L       NADH dehydrogenase subunit 4L     1              
+C698840        3561   3630   70         -          tRNA   trnR(ucg)  tRNA-Arg                          1              
+C698840        3628   3982   355        -          CDS    ND3        NADH dehydrogenase subunit 3      1              
+C698840        3983   4054   72         -          tRNA   trnG(ucc)  tRNA-Gly                          1              
+C698840        4053   4839   787        -          CDS    COX3       cytochrome c oxidase subunit III  1              
+C698840        4838   5465   628        -          CDS    ATP6       ATP synthase F0 subunit 6         1              
+
+
+Protein coding genes totally found: 11
+tRNA genes totally found:           16
+rRNA genes totally found:            0
+--------------------------------------
+Genes totally found:                27
+
+
+Potential missing genes:
+#Gene             total_missing_number
+--------------------------------------
+CYTB                                 1
+ND6                                  1
+l-rRNA                               1
+s-rRNA                               1
+tRNA-Glu                             1
+tRNA-Leu                             1
+tRNA-Phe                             1
+tRNA-Pro                             1
+tRNA-Thr                             1
+tRNA-Val                             1
+
+The missing genes might be foud from the
+'*.high_abundance*' and '*.low_abundance*' files!

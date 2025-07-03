@@ -1,0 +1,7 @@
+scaffold27_FivePCGs	Hypoatherina tsurugae
+scaffold214_FivePCGs	Hypoatherina tsurugae
+scaffold1441	Hypoatherina tsurugae
+C599278_FivePCGs	Hypoatherina tsurugae
+C599824_FivePCGs	Aleurodicus dispersus
+C600164_FivePCGs	Macropharyngodon negrosensis
+C600324_FivePCGs	Plakina

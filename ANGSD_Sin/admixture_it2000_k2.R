@@ -107,7 +107,7 @@ colnames(admixture_data) <- c("population","cluster1", "cluster2")
 q2_not <- list(k2_angsd_not)
 plot_q2_not <- 
   plotQ(as.qlist(q2_not), imgoutput = "sep", returnplot = TRUE, exportpath=getwd(), dpi=1000,
-        clustercol = c("#F8766D", "#00BFC4"),
+        clustercol = c("#00BFC4", "#F8766D"),
         showsp = FALSE, spbgcol = "white", splab = "K = 2", splabsize = 12,
         showyaxis = TRUE, showticks = FALSE, indlabsize = 12, ticksize = 0.5,
         grplab = meta.data, linesize = 0.2, pointsize = 2, showgrplab = FALSE, grplabspacer = 0.1,)
