@@ -382,29 +382,31 @@ Submitted batch job 4270357
 Submitted batch job 4271507
 ```
 ### Review the FastQC output (fq_fp1_clmp_fp2/2nd_fastp_report.html):
-*
+* Sequence quality begins to dip from 40 to ~30 after read position 90, even after filtering, for all individuals
+* GC Content looks about the same for all libraries ~40%, except for CPnd_013, which is at ~50%
+* N Content looks much better after filtering
 
 ```
 ‣ % duplication -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 1.0 - 10.3%
+    • Contemp: 0.1 - 2.2%
+    • Undertermined: 0.7%
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 37.7 - 41.2%
+    • Contemp: 40.0 - 43.4%; 50.2% [CPnd_013]
+    • Undertermined: 40.8%
 ‣ passing filter -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 98.5 - 99.3%
+    • Contemp: 98.6 - 99.5%
+    • Undertermined: 95.3%
 ‣ % adapter -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 0.9 - 1.2%
+    • Contemp: 0.5 - 1.5%
+    • Undertermined: 1.7%
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 31.6 - 125.4 mil
+    • Contemp: 0.007 - 7 mil
+    • Undertermined: 274.6 mil
 ```
 
 ---
@@ -522,17 +524,17 @@ Check to see if `/scratch/hpc-0373/fq_fp1_clmp_fp2_fqscrn/` was cleared:
 Submitted batch job 4288359
 ```
 #### Review the MultiQC output (fq_fp1_clmp_fp2_fqscrn/fastq_screen_report.html): 
-*
+* Considerable bacterial contamination for `Sin-CPnd_013` (15.7%), which has been the outlier individual on GC Content graphs
 
 ```
 ‣ multiple genomes -
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 2.6 - 5.0%
+    • Contemp: 1.7 - 7.1%
+    • Undertermined: 3.4%
 ‣ no hits -
-    • Alb: 
-    • Contemp:
-    • Undertermined:
+    • Alb: 91.9% - 95.9%
+    • Contemp: 76.4 - 97.5%
+    • Undertermined: 94.4% 
 ```
 </details>
 
@@ -591,25 +593,28 @@ Submitted batch job 4342412
 ```
 
 #### Review MultiQC output (fq_fp1_clmp_fp2_fqscrn_rprd/fqc_rprd_report.html):
-*
+* Per Base Sequence Content: 59/148 have warnings
+* Per Sequence GC Content: 71/148 with warnings; 3/148 failing: [Sin-APnd_023 R2, Sin-CPnd_013 R1&R2]
+* All samples had less than 1% of reads made up of overrepresented sequences
+* No samples found with any adapter contamination > 0.1%
 
 ```
 ‣ % duplication -
-    • Alb: 
-    • Contemp: 
+    • Alb: 2.7 - 12.0%
+    • Contemp: 0.1 - 4.4%
     • Undertermined: 
 ‣ GC content -
-    • Alb: 
-    • Contemp: 
+    • Alb: 37 - 40%
+    • Contemp: 39 - 45%
     • Undertermined: 
 ‣ length -
-    • Alb: 
-    • Contemp: 
+    • Alb: 76 - 88 bp
+    • Contemp: 76 - 127 bp
     • Undertermined: 
 ‣ number of reads -
-    • Alb: 
-    • Contemp: 
-    • Undertermined: 
+    • Alb: 14.7 - 58.7 mil
+    • Contemp: 0.0 - 3.4 mil
+    • Undertermined: 128.3 mil
 ```
 
 ---
