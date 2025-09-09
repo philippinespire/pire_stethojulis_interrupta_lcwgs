@@ -758,41 +758,43 @@ Submitted batch job 4346548
 ```
 
 #### Review Output (coverageMappedReads/out__ReadStats.tsv):
-* 
+* Number of Reads very low for contemporary; all but 2 have under 1 million reads
+* Mean depth all above 1
+* Poor percent positions with coverage for contemporary
 
 ```
 ‣ numreads:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 20,079,431 - 26,290,652
+    • Contemp: 493 - 5,696,878
+    • Undertermined: 22,264,915
 
 ‣ meanreadlength:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 72.2 - 85.5
+    • Contemp: 80.4 - 126.4
+    • Undertermined: 79.4
 
 ‣ meandepth_wcvg:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 2.1 - 5.2
+    • Contemp: 1.0 - 1.4
+    • Undertermined: 6.6
 
 ‣ numpos:
-    • 
+    • 798,880,421
 
 ‣ numpos_wcvg:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 208,025,593 - 404,038,898
+    • Contemp: 23,952 - 269,972,622
+    • Undertermined: 136,356,621 
 
 ‣ meandepth:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 1.0 - 1.4 
+    • Contemp: 0.00003 - 0.5
+    • Undertermined: 1.1
 
 ‣ pctpos_wcvg:
-    • Alb: 
-    • Contemp: 
-    • Undertermined:
+    • Alb: 26.0 - 50.6%
+    • Contemp: 0.003 - 33.8%
+    • Undertermined: 17.1%
 ```
 ---
 
