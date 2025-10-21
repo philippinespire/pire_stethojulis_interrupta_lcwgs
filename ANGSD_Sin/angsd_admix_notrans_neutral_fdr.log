@@ -1,0 +1,19 @@
+PCAngsd v1.21
+Time: 21/10/2025 15:28:29
+Directory: /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/ANGSD_Sin
+Options:
+	--beagle angsd_depth1_15_notrans_snplist_neutral_fdr.beagle.gz
+	--threads 16
+	--out angsd_admix_notrans_neutral_fdr
+	--maf 0.001
+	--admix
+
+Loaded 376 sites and 89 individuals.
+Number of sites after MAF filtering (0.001): 183
+
+PCAngsd did not converge using 1 eigenvectors!
+Saved covariance matrix as angsd_admix_notrans_neutral_fdr.cov
+Saved admixture proportions as angsd_admix_notrans_neutral_fdr.admix.2.Q
+Saved ancestral allele frequencies proportions as angsd_admix_notrans_neutral_fdr.admix.2.P
+
+Total elapsed time: 0m9s
