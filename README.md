@@ -3,6 +3,11 @@
 # *Stethojulis interrupta* lcWGS 
 
 Analysis of low-coverage whole genome sequencing data for _Stethojulis interrupta_ (Sin).
+
+Metadata: https://n2t.net/ark:/21547/GZL2; https://n2t.net/ark:/21547/GZS2
+
+SRA BioProjects: PRJNA1336794; PRJNA1336944
+
 ```
 /archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs
 ```
