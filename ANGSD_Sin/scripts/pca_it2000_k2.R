@@ -31,22 +31,6 @@ lapply(packages_used,
 
 options(bitmapType = "cairo")  # Set Cairo as the default graphics device
 
-# install packages
-# install.packages("tidyverse")
-# install.packages("dplyr")
-# install.packages("cowplot")
-# install.packages("RcppCNPy")
-# install.packages("Cairo")
-# install.packages("vegan")
-
-# load libraries
-# library(tidyverse)
-# library(dplyr)
-# library(cowplot)
-# library(RcppCNPy)
-# library(Cairo)
-# library(vegan)
-
 
 #### USER DEFINED VARIABLES ####
 # change your spp_code (e.g. Sob, Aen, Pbb)
@@ -70,12 +54,12 @@ spp_era_C_site_pattern=paste0(spp_code,"C",site_C_code)
 
 #### READ IN DATA ####
 
-cov_matrix_angsd <- as.matrix(read.table("angsd_notrans_snps_it2000_pca.cov"))
+cov_matrix_angsd <- as.matrix(read.table("../angsd_notrans_snps_it2000_pca.cov"))
 #Matrix is in order 1-222 on each side
 #sample_table <- read_table("sample_table_merged_allpop.tsv")
 
 # Read the BAM list file
-bamlist <- read.table("bam_list_all.txt")
+bamlist <- read.table("../bam_list_all.txt")
 # Ensure it's treated as a vector
 bamlist <- bamlist$V1  # Assuming the BAM file names are in the first column
 
@@ -192,11 +176,21 @@ PCA <- function(cov_matrix_angsd,
 # Create PCA plot
 pca <- PCA(cov_matrix_angsd, ind_label_angsd, pop_label_angsd, x_axis, y_axis)
 print(pca)
-# outFile pattern
-outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_FORMAT_angsd_notrans_snps_it2000_pca_cov", ".png")  
 
-# Save the plot to a file
-ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
+
+## SAVE PLOT
+# outFile pattern
+# outFile_plot_pca <- paste0("plots/", spp_code, "_plot_pca_FORMAT_angsd_notrans_snps_it2000_pca_cov", ".png")  
+# # Save the plot to a file
+# ggsave(filename = outFile_plot_pca, plot = pca, width = 2.15, height = 2.5)
+
+
+## SAVE PCA TABLE ##
+# # Outfile pattern
+# outfile_pca <- paste0("../output/", spp_code, "_pnd_pca_table_snps.rds")
+# # Save dataframe as an RDS file
+# saveRDS(pca_table, file = outfile_pca)
+
 
 
 #### PLOT PCA ####
